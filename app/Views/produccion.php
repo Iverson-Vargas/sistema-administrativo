@@ -12,6 +12,10 @@
     <h1>
         Aqui es donde se van a crear los productos
     </h1>
+
+
+
+
 <?php echo $this->endSection(); ?>
 </body>
 </html>
