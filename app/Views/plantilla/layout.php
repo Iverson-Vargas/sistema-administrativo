@@ -94,9 +94,11 @@
 
         <div class="menu-superior-derecha">
             <div>
+                <!-- aqui va un Icono -->
                 <p>Configuraciones</p>
             </div>
             <div>
+                <!-- aqui va un Icono -->
                 <p>Icono usuario</p>
             </div>
         </div>
@@ -105,15 +107,19 @@
     <div class="menu-lateral">
         <ul>
             <li>
+                <!--Aqui va un Icono -->
                 <a href="<?= base_url('/home'); ?>">Home</a>
             </li>
             <li>
+                <!--Aqui va un Icono -->
                 <a href="<?= base_url('/ventas'); ?>">Ventas</a>
             </li>
             <li>
+                <!--Aqui va un Icono -->
                 <a href="<?= base_url('/produccion'); ?>">Produccion</a>
             </li>
             <li>
+                <!--Aqui va un Icono -->
                 <a href="<?= base_url('/reportes'); ?>">Reportes</a>
             </li>
         </ul>
