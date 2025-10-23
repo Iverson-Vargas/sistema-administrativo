@@ -5,76 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets\css\bootstrap.min.css">
-    <style>
-        body {
-            margin: 0;
-            display: grid;
-            grid-template-columns: 15% repeat(2, 1fr);
-            grid-template-rows: 60px 1fr 30px;
-            grid-template-areas:
-                "menuSuperior menuSuperior menuSuperior"
-                "menuLateral contenido contenido"
-                "menuLateral contenido contenido";
-            min-height: 100vh;
-        }
-
-        .menu-superior {
-            grid-area: menuSuperior;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            align-items: center;
-            padding: 0 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
-        }
-
-        #busqueda {
-            justify-self: center;
-            align-self: center;
-        }
-
-        .menu-superior-derecha {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-left: auto; /* Empuja este grupo a la derecha */
-        }
-
-
-
-        .menu-lateral {
-            grid-area: menuLateral;
-            background-color: #162456;
-            color: white;
-            padding: 20px;
-            height: 100%;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .menu-lateral ul {
-            color: white;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .menu-lateral ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 25px;
-        }
-
-
-        .contenido {
-            grid-area: contenido;
-        }
-
-        
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/layout.css'); ?>">
 
 </head>
 

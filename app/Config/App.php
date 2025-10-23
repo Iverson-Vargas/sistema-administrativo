@@ -16,7 +16,7 @@ class App extends BaseConfig
      *
      * E.g., http://example.com/
      */
-    public string $baseURL = 'http://localhost/PHP-IVERSON/sistema-administrativo/public/';
+    public string $baseURL = 'http://localhost/sistema-administrativo/';
 
     /**
      * Allowed Hostnames in the Site URL other than the hostname in the baseURL.
