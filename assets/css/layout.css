@@ -8,31 +8,35 @@ body {
                 "menuLateral contenido contenido"
                 "menuLateral contenido contenido";
             min-height: 100vh;
+            font-family: "fantasy";
         }
 
         .menu-superior {
             grid-area: menuSuperior;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             align-items: center;
-            padding: 0 20px;
+            padding: 0px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
         }
 
-        #busqueda {
-            justify-self: center;
-            align-self: center;
+        .menu-superior img {
+            margin-left: 10;
+            padding: 2px;
+            border-radius: 10px;
         }
 
-        .menu-superior-derecha {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin-left: auto; /* Empuja este grupo a la derecha */
+        .menu-superior .dropdown {
+            justify-self: end;
+            margin-right: 20px;
+            background-color: #162456;
+            color: white;
+            border-radius: 5px;
         }
 
-
+        #btn-usuario {
+            color: white;
+        }
 
         .menu-lateral {
             grid-area: menuLateral;
@@ -59,9 +63,7 @@ body {
             font-size: 25px;
         }
 
-
         .contenido {
             grid-area: contenido;
         }
-
         

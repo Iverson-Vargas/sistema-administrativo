@@ -4,34 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets\css\bootstrap.min.css">
+    
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/layout.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
 
 </head>
 
 <body>
 
     <div class="menu-superior">
-        <p>Logo</p>
+        <img src="<?php echo base_url('assets/img/logo2.jpg')?>" alt="logo empresa" width="50" height="50">
 
-        <nav id="busqueda" class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-
-        <div class="menu-superior-derecha">
-            <div>
-                <!-- aqui va un Icono -->
-                <p>Configuraciones</p>
-            </div>
-            <div>
-                <!-- aqui va un Icono -->
-                <p>Icono usuario</p>
-            </div>
+        <div class="dropdown">
+            <button id="btn-usuario" class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Usuario
+            </button>
+            <ul class="dropdown-menu">
+                <li><button class="dropdown-item" type="button" onclick="cerrarSeccion()">Cerrar Sección</button></li>
+            </ul>
         </div>
     </div>
 
@@ -65,8 +55,12 @@
 
     <?php echo $this->renderSection('scripts'); ?>
 
-    <script src="assets\js\bootstrap.bundle.min.js"></script>
-
+    <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
+    <script>
+        function cerrarSeccion() {
+            window.location.href = "<?php echo base_url('/'); ?>"; 
+        }
+    </script>
 </body>
 
 </html>
