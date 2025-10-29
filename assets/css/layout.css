@@ -11,6 +11,12 @@ body {
             font-family: "fantasy";
         }
 
+        #tabla-produccion {
+            position: relative;
+            width: 100%;
+            justify-content: center;
+        }
+
         .menu-superior {
             grid-area: menuSuperior;
             display: grid;
@@ -65,5 +71,6 @@ body {
 
         .contenido {
             grid-area: contenido;
+            padding: 20px;
         }
         

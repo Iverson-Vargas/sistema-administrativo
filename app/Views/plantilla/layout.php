@@ -7,6 +7,9 @@
     
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/layout.css'); ?>">
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/bootstrap.min.css'); ?>">
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/dataTables.dataTables.min.css'); ?>">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
 
 </head>
 
@@ -55,7 +58,9 @@
 
     <?php echo $this->renderSection('scripts'); ?>
 
+    
     <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
+    <script src="<?php echo base_url('assets/js/dataTables.min.js'); ?>"></script>
     <script>
         function cerrarSeccion() {
             window.location.href = "<?php echo base_url('/'); ?>"; 
