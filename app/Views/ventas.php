@@ -14,65 +14,74 @@
         <h1>Apartado de Ventas de Pantalones</h1>
         
         <!-- Botón Crear Venta -->
-        <button class="create-button" id="createBtn">Crear Venta</button>
+        <button class="create-button" id="createBtn" data-bs-toggle="modal" data-bs-target="#createSaleModal">Crear Venta</button>
         
-        <!-- Sección Crear Venta (Formulario) -->
-        <div class="section" id="createSection" style="display: none;">
-            <h2>Crear Venta</h2>
-            <form class="create-form" action="/submit-sale" method="post"> <!-- Ajusta la acción según tu backend -->
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
+        <!-- Modal para Crear Venta -->
+        <div class="modal fade" id="createSaleModal" tabindex="-1" aria-labelledby="createSaleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="createSaleModalLabel">Crear Venta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form class="create-form" action="/submit-sale" method="post"> <!-- Ajusta la acción según tu backend -->
+                            <div class="form-group">
+                                <label for="nombre">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cedula">Cédula:</label>
+                                <input type="text" id="cedula" name="cedula" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="direccion">Dirección:</label>
+                                <input type="text" id="direccion" name="direccion" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo:</label>
+                                <input type="email" id="correo" name="correo" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="tipo_cliente">Tipo Cliente:</label>
+                                <select id="tipo_cliente" name="tipo_cliente" required>
+                                    <option value="V">V</option>
+                                    <option value="J">J</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="lote_id">Lote ID:</label>
+                                <input type="text" id="lote_id" name="lote_id" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="producto">Producto:</label>
+                                <input type="text" id="producto" name="producto" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad">Cantidad:</label>
+                                <input type="number" id="cantidad" name="cantidad" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="costurero">Costurero:</label>
+                                <input type="text" id="costurero" name="costurero" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="ano">Año:</label>
+                                <input type="number" id="ano" name="ano" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="precio_total">Precio Total:</label>
+                                <input type="number" step="0.01" id="precio_total" name="precio_total" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="fecha_venta">Fecha de la Venta:</label>
+                                <input type="date" id="fecha_venta" name="fecha_venta" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Crear Venta</button>
+                        </form>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="cedula">Cédula:</label>
-                    <input type="text" id="cedula" name="cedula" required>
-                </div>
-                <div class="form-group">
-                    <label for="direccion">Dirección:</label>
-                    <input type="text" id="direccion" name="direccion" required>
-                </div>
-                <div class="form-group">
-                    <label for="correo">Correo:</label>
-                    <input type="email" id="correo" name="correo" required>
-                </div>
-                <div class="form-group">
-                    <label for="tipo_cliente">Tipo Cliente:</label>
-                    <select id="tipo_cliente" name="tipo_cliente" required>
-                        <option value="V">V</option>
-                        <option value="J">J</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="lote_id">Lote ID:</label>
-                    <input type="text" id="lote_id" name="lote_id" required>
-                </div>
-                <div class="form-group">
-                    <label for="producto">Producto:</label>
-                    <input type="text" id="producto" name="producto" required>
-                </div>
-                <div class="form-group">
-                    <label for="cantidad">Cantidad:</label>
-                    <input type="number" id="cantidad" name="cantidad" required>
-                </div>
-                <div class="form-group">
-                    <label for="costurero">Costurero:</label>
-                    <input type="text" id="costurero" name="costurero" required>
-                </div>
-                <div class="form-group">
-                    <label for="ano">Año:</label>
-                    <input type="number" id="ano" name="ano" required>
-                </div>
-                <div class="form-group">
-                    <label for="precio_total">Precio Total:</label>
-                    <input type="number" step="0.01" id="precio_total" name="precio_total" required>
-                </div>
-                <div class="form-group">
-                    <label for="fecha_venta">Fecha de la Venta:</label>
-                    <input type="date" id="fecha_venta" name="fecha_venta" required>
-                </div>
-                <button type="submit">Crear Venta</button>
-            </form>
+            </div>
         </div>
         
         <!-- Sección Consultar Ventas -->
@@ -105,27 +114,11 @@
     </div>
 
     <script>
-        // JavaScript para funcionalidad
-        const createBtn = document.getElementById('createBtn');
-        const createSection = document.getElementById('createSection');
-        const consultSection = document.getElementById('consultSection');
+        // JavaScript para funcionalidad de búsqueda (el modal se maneja con Bootstrap)
         const searchInput = document.getElementById('search');
         const salesList = document.getElementById('salesList');
         const saleCards = document.querySelectorAll('.sale-card');
         const noResults = document.getElementById('noResults');
-
-        // Toggle para mostrar/ocultar sección Crear Venta
-        createBtn.addEventListener('click', () => {
-            if (createSection.style.display === 'none' || createSection.style.display === '') {
-                createSection.style.display = 'block';
-                consultSection.style.display = 'none';
-                createBtn.textContent = 'Ocultar Crear Venta';
-            } else {
-                createSection.style.display = 'none';
-                consultSection.style.display = 'block';
-                createBtn.textContent = 'Crear Venta';
-            }
-        });
 
         // Función de búsqueda
         searchInput.addEventListener('input', () => {
@@ -150,5 +143,3 @@
 </html>
 
 <?php echo $this->endSection(); ?>
-</body>
-</html>
