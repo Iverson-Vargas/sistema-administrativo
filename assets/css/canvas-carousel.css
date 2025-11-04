@@ -1,0 +1,69 @@
+/* canvas-carousel.css: Estilos para centrar y mejorar el canvas y sus textos/flechas en el carrusel */
+
+#conteiner-canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 400px;
+    padding: 24px 0;
+    background: #181818;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+    margin: 0 auto;
+    max-width: 700px;
+}
+
+#conteiner-canvas canvas {
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Mejorar legibilidad de textos en el gráfico */
+#conteiner-canvas .chartjs-render-monitor,
+#conteiner-canvas .chartjs-size-monitor {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1rem;
+    color: #222;
+    font-weight: 500;
+}
+
+/* Personalizar flechas del carrusel para que se vean bien sobre fondo oscuro */
+.carousel-control-prev,
+.carousel-control-next {
+    background: #222 !important;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    opacity: 0.9;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-image: none !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel-control-prev-icon:after {
+    content: '\2039';
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.carousel-control-next-icon:after {
+    content: '\203A';
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+}

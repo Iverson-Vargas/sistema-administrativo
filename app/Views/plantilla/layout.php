@@ -56,11 +56,14 @@
 
 
 
-    <?php echo $this->renderSection('scripts'); ?>
-
     
     <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
     <script src="<?php echo base_url('assets/js/dataTables.min.js'); ?>"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+
+    <?php echo $this->renderSection('scripts'); ?>
+
     <script>
         function cerrarSeccion() {
             window.location.href = "<?php echo base_url('/'); ?>"; 

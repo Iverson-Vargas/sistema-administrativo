@@ -9,6 +9,7 @@ body {
                 "menuLateral contenido contenido";
             min-height: 100vh;
             font-family: "fantasy";
+            height: 200px;
         }
 
         #tabla-produccion {
@@ -72,5 +73,38 @@ body {
         .contenido {
             grid-area: contenido;
             padding: 20px;
+            overflow-y: auto;
         }
         
+        #container-card{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        #container-card .card{
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+
+        #container-card thead tr{
+            font-size: 10px;
+        }
+
+        #container-card tbody tr{
+            font-size: 10px;
+        }
+        #container-card table{
+            font-size: 12px;
+        }
+
+
+    #carouselExampleCaptions .carousel-control-prev-icon,
+    #carouselExampleCaptions .carousel-control-next-icon {
+        filter: invert(1);
+    }
+
+    .carousel-item div{
+        gap: 10px;
+    }
