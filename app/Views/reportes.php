@@ -247,6 +247,7 @@
             options: {
                 responsive: false,
                 maintainAspectRatio: false
+                
             }
         });
 
