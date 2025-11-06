@@ -14,8 +14,7 @@
             <button style="background-color: #162456; color: white;" class="btn"
                 type="button"
                 data-bs-toggle="modal"
-                data-bs-target="#modalreporte1"
-                onclick="LimpiarFormulario()">
+                data-bs-target="#modalreporte1">
                 Reporte 1
             </button>
 
@@ -33,7 +32,7 @@
             <button style="background-color: #162456; color: white;" class="btn"
                 type="button"
                 data-bs-toggle="modal"
-                data-bs-target="#modalreporte1"
+                data-bs-target="#modalreporte2"
                 onclick="LimpiarFormulario()">
                 Reporte 2
             </button>
@@ -52,7 +51,7 @@
             <button style="background-color: #162456; color: white;" class="btn"
                 type="button"
                 data-bs-toggle="modal"
-                data-bs-target="#modalreporte1"
+                data-bs-target="#modalreporte3"
                 onclick="LimpiarFormulario()">
                 Reporte 3
             </button>
@@ -67,7 +66,7 @@
             </div>
         </div>
 
-        
+
 
     </div>
 
@@ -80,6 +79,120 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
+</div>
+
+<div class="modal fade" id="modalreporte1" tabindex="-1" aria-labelledby="modalreporte1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalreporte1">Reporte 1</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Reporte 1</h3>
+                <div>
+                    <table id="tablareporte1" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Columna 1</th>
+                                <th>Columna 2</th>
+                                <th>Columna 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dato 1</td>
+                                <td>Dato 2</td>
+                                <td>Dato 3</td>
+                            </tr>
+                            <tr>
+                                <td>Dato 4</td>
+                                <td>Dato 5</td>
+                                <td>Dato 6</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalreporte2" tabindex="-1" aria-labelledby="modalreporte2" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalreporte2">Reporte 2</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Reporte 2</h3>
+                <div>
+                    <table id="tablareporte2" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Columna 1</th>
+                                <th>Columna 2</th>
+                                <th>Columna 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dato 1</td>
+                                <td>Dato 2</td>
+                                <td>Dato 3</td>
+                            </tr>
+                            <tr>
+                                <td>Dato 4</td>
+                                <td>Dato 5</td>
+                                <td>Dato 6</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalreporte3" tabindex="-1" aria-labelledby="modalreporte3" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="modalreporte3">Reporte 3</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3 class="text-center">Reporte 3</h3>
+                <div>
+                    <table id="tablareporte3" class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Columna 1</th>
+                                <th>Columna 2</th>
+                                <th>Columna 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Dato 1</td>
+                                <td>Dato 2</td>
+                                <td>Dato 3</td>
+                            </tr>
+                            <tr>
+                                <td>Dato 4</td>
+                                <td>Dato 5</td>
+                                <td>Dato 6</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <?php echo $this->endSection(); ?>
@@ -104,7 +217,7 @@
                 maintainAspectRatio: false
             }
         });
-        
+
         const ctx2 = document.getElementById('myChart2').getContext('2d');
         const myChart2 = new Chart(ctx2, {
             type: 'bar',
@@ -134,6 +247,22 @@
             options: {
                 responsive: false,
                 maintainAspectRatio: false
+            }
+        });
+
+        tabla = $('#tablareporte1').DataTable({
+            language: {
+                url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json"
+            }
+        });
+        tabla = $('#tablareporte2').DataTable({
+            language: {
+                url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json"
+            }
+        });
+        tabla = $('#tablareporte3').DataTable({
+            language: {
+                url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json"
             }
         });
     });
