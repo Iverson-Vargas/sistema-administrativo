@@ -1,0 +1,624 @@
+CRITICAL - 2025-11-12 03:17:24 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "base_url('"
+[Method: GET, Route: base_url%28%27/reportes%27%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('base_url(\'/reportes\')')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('base_url(\'/reportes\')')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:18:38 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "base_url('"
+[Method: GET, Route: base_url%28%27/reportes%27%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('base_url(\'/reportes\')')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('base_url(\'/reportes\')')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:18:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "base_url('"
+[Method: GET, Route: base_url%28%27/reportes%27%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('base_url(\'/reportes\')')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('base_url(\'/reportes\')')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:18:57 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "base_url('"
+[Method: GET, Route: base_url%28%27/reportes%27%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('base_url(\'/reportes\')')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('base_url(\'/reportes\')')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:18:59 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "base_url('"
+[Method: GET, Route: base_url%28%27/reportes%27%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('base_url(\'/reportes\')')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('base_url(\'/reportes\')')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:19:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "base_url('"
+[Method: GET, Route: base_url%28%27/reportes%27%29]
+in SYSTEMPATH\Router\Router.php on line 741.
+ 1 SYSTEMPATH\Router\Router.php(207): CodeIgniter\Router\Router->checkDisallowedChars('base_url(\'/reportes\')')
+ 2 SYSTEMPATH\CodeIgniter.php(832): CodeIgniter\Router\Router->handle('base_url(\'/reportes\')')
+ 3 SYSTEMPATH\CodeIgniter.php(455): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:25:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:25:40 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:25:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:26:51 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:27:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:27:38 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:27:39 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:27:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:30:50 --> ParseError: syntax error, unexpected token "echo"
+[Method: GET, Route: home]
+in APPPATH\Views\plantilla\layout.php on line 205.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('plantilla/layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('home', [], true)
+ 4 APPPATH\Controllers\MostrarVistas.php(22): view('home')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarHome()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 03:30:59 --> ParseError: syntax error, unexpected token "echo"
+[Method: GET, Route: home]
+in APPPATH\Views\plantilla\layout.php on line 205.
+ 1 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\View\View.php(240): CodeIgniter\View\View->render('plantilla/layout', [], true)
+ 3 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('home', [], true)
+ 4 APPPATH\Controllers\MostrarVistas.php(22): view('home')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarHome()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 22:50:24 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Talla::traerTallas
+[Method: GET, Route: listaTalla]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\ListarTallas.php(11): CodeIgniter\Model->__call('traerTallas', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarTallas->returnTallas()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarTallas))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 22:50:50 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Talla::traerTallas
+[Method: GET, Route: listaTalla]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\ListarTallas.php(11): CodeIgniter\Model->__call('traerTallas', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarTallas->returnTallas()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarTallas))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 22:51:01 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Talla::traerTallas
+[Method: GET, Route: listaTalla]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\ListarTallas.php(11): CodeIgniter\Model->__call('traerTallas', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarTallas->returnTallas()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarTallas))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 22:51:14 --> CodeIgniter\Exceptions\BadMethodCallException: Call to undefined method App\Models\Talla::traerTallas
+[Method: GET, Route: listaTalla]
+in SYSTEMPATH\Model.php on line 930.
+ 1 APPPATH\Controllers\ListarTallas.php(11): CodeIgniter\Model->__call('traerTallas', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarTallas->returnTallas()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarTallas))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 23:41:51 --> mysqli_sql_exception: Duplicate entry 'sarea1212' for key 'producto.PRIMARY' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-11-12 23:41:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sarea1212' for key 'producto.PRIMARY'
+[Method: POST, Route: crearProducto]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 2 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:41:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sarea1212' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sarea1212\', \'3\', \'3\', \'ssasdsasd\', \'1231244\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sarea1212\', \'3\', \'3\', \'ssasdsasd\', \'1231244\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 4 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:41:51 --> [Caused by] mysqli_sql_exception: Duplicate entry 'sarea1212' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sarea1212\', \'3\', \'3\', \'ssasdsasd\', \'1231244\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sarea1212\', \'3\', \'3\', \'ssasdsasd\', \'1231244\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sarea1212\', \'3\', \'3\', \'ssasdsasd\', \'1231244\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 5 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 23:43:26 --> mysqli_sql_exception: Duplicate entry '2sdd1' for key 'producto.PRIMARY' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-11-12 23:43:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '2sdd1' for key 'producto.PRIMARY'
+[Method: POST, Route: crearProducto]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 2 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:43:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry '2sdd1' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'2sdd1\', \'4\', \'6\', \'sadsds\', \'212131\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'2sdd1\', \'4\', \'6\', \'sadsds\', \'212131\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 4 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:43:26 --> [Caused by] mysqli_sql_exception: Duplicate entry '2sdd1' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'2sdd1\', \'4\', \'6\', \'sadsds\', \'212131\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'2sdd1\', \'4\', \'6\', \'sadsds\', \'212131\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'2sdd1\', \'4\', \'6\', \'sadsds\', \'212131\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 5 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 23:49:20 --> mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-11-12 23:49:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+[Method: POST, Route: crearProducto]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 2 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:20 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 4 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:20 --> [Caused by] mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 5 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 23:49:24 --> mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-11-12 23:49:24 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+[Method: POST, Route: crearProducto]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 2 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:24 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 4 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:24 --> [Caused by] mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 5 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 23:49:25 --> mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-11-12 23:49:25 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+[Method: POST, Route: crearProducto]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 2 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:25 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 4 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:25 --> [Caused by] mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 5 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 23:49:45 --> mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-11-12 23:49:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+[Method: POST, Route: crearProducto]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 2 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:45 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 4 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:45 --> [Caused by] mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 5 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-11-12 23:49:47 --> mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pr...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pr...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pr...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pr...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-11-12 23:49:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+[Method: POST, Route: crearProducto]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 2 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 3 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 4 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 5 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:49:47 --> [Caused by] mysqli_sql_exception: Duplicate entry 'sadd12312' for key 'producto.PRIMARY'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (\'sadd12312\', \'3\', \'3\', \'asddsa1\', \'100\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `producto` (`id_producto`, `id_tono`, `id_talla`, `descripcion`, `precio_unitario`) VALUES (:id_producto:, :id_tono:, :id_talla:, :descripcion:, :precio_unitario:)', [...], false)
+ 5 APPPATH\Models\CrearProducto.php(21): CodeIgniter\Database\BaseBuilder->insert([...])
+ 6 APPPATH\Controllers\CreateProducto.php(33): App\Models\CrearProducto->insertarMiProducto([...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CreateProducto->validarProducto()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CreateProducto))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:53:09 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "crear_producto.php"
+[Method: GET, Route: crear-producto]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('crear_producto.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(39): view('crear_producto')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarCrearProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-12 23:53:11 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "crear_producto.php"
+[Method: GET, Route: crear-producto]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('crear_producto.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('crear_producto', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(39): view('crear_producto')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarCrearProducto()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

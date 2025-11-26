@@ -1,0 +1,102 @@
+ERROR - 2025-11-13 01:05:44 --> mysqli_sql_exception: Unknown table 'p' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `p`.*\nFR...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*\nFR...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*\nFR...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*\nFR...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Producto.php(31): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\ListarProducto.php(11): App\Models\Producto->traerProductos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\ListarProducto->returnProductos()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarProducto))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-11-13 01:05:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'p'
+[Method: GET, Route: listaProducto]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*
+FROM `producto`
+INNER JOIN `tono` `to` ON `p`.`id_tono` = `to`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`', [], false)
+ 2 APPPATH\Models\Producto.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\ListarProducto.php(11): App\Models\Producto->traerProductos()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarProducto->returnProductos()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarProducto))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-13 01:05:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*
+FROM `producto`
+INNER JOIN `tono` `to` ON `p`.`id_tono` = `to`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*
+FROM `producto`
+INNER JOIN `tono` `to` ON `p`.`id_tono` = `to`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*
+FROM `producto`
+INNER JOIN `tono` `to` ON `p`.`id_tono` = `to`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`', [], false)
+ 4 APPPATH\Models\Producto.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\ListarProducto.php(11): App\Models\Producto->traerProductos()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarProducto->returnProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarProducto))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-13 01:05:44 --> [Caused by] mysqli_sql_exception: Unknown table 'p'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `p`.*
+FROM `producto`
+INNER JOIN `tono` `to` ON `p`.`id_tono` = `to`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `p`.*
+FROM `producto`
+INNER JOIN `tono` `to` ON `p`.`id_tono` = `to`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `p`.*
+FROM `producto`
+INNER JOIN `tono` `to` ON `p`.`id_tono` = `to`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `p`.*
+FROM `producto`
+INNER JOIN `tono` `to` ON `p`.`id_tono` = `to`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`', [], false)
+ 5 APPPATH\Models\Producto.php(31): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\ListarProducto.php(11): App\Models\Producto->traerProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarProducto->returnProductos()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarProducto))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-13 04:22:12 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-11-13 04:22:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "generar_venta.php"
+[Method: GET, Route: generar-venta]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('generar_venta.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('generar_venta', [], true)
+ 3 APPPATH\Controllers\MostrarVistas.php(14): view('generar_venta')
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\MostrarVistas->mostrarGenerarVenta()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\MostrarVistas))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

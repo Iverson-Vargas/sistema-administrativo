@@ -9,9 +9,9 @@ class MostrarVistas extends BaseController
     {
         return view('login');
     }
-    public function mostrarVentas(): string
+    public function mostrarGenerarVenta(): string
     {
-        return view('ventas');
+        return view('generar_venta');
     }
     public function mostrarProduccion(): string
     {
@@ -21,8 +21,21 @@ class MostrarVistas extends BaseController
     {
         return view('home');
     }
+
     public function mostrarReportes(): string
     {
         return view('reportes');
+    }
+    public function mostrarReporteVentas(): string
+    {
+        return view('reporteVentas');
+    }
+    public function mostrarCrearLote(): string
+    {
+        return view('crearLote');
+    }
+    public function mostrarCrearProducto(): string
+    {
+        return view('crearProducto');
     }
 }
