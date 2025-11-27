@@ -127,13 +127,12 @@
   </svg>
   <header
     class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow"
-    data-bs-theme="dark"
-    style="width: 1351px; height: 48px">
+    data-bs-theme="dark">
     <a
       id="titulo-if"
       class="d-flex justify-content-center align-items-center navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white"
       href="#"
-      style="width: 225.16px; height: 48px; font-size: 20px !important;">IF COMPANY</a>
+      style="height: 48px; font-size: 20px !important;">IF COMPANY</a>
     <ul class="navbar-nav flex-row d-md-none">
       <li class="nav-item text-nowrap">
         <button
@@ -172,12 +171,12 @@
         aria-label="Search" />
     </div>
   </header>
-  <div class="container-fluid">
-    <div class="row">
+  <div class="container-fluid" style="height: calc(100vh - 48px);">
+    <div class="row" style="height: 100%;">
       <div
         class="sidebar border border-right col-md-3 col-lg-2 p-0 bg-body-tertiary">
         <div
-          class="offcanvas-md offcanvas-end bg-body-tertiary"
+          class="offcanvas-md offcanvas-end bg-body-tertiary h-100"
           tabindex="-1"
           id="sidebarMenu"
           aria-labelledby="sidebarMenuLabel">
@@ -217,8 +216,8 @@
                 </button>
                 <div class="collapse" id="venta">
                   <ul class="collapse-content px-4">
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/generar-venta'); ?>">Generar Venta</a>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/reporte-ventas'); ?>">Reportes De Ventas</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/generarVenta'); ?>">Generar Venta</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/reporteVentas'); ?>">Reportes De Ventas</a>
                   </ul>
                 </div>
               </div>
@@ -232,8 +231,8 @@
                 </button>
                 <div class="collapse" id="compra">
                   <ul class="collapse-content px-4">
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/generar-compra'); ?>">Generar Compra</a>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/reporte-compras'); ?>">Reportes De Compras</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/generarCompra'); ?>">Generar Compra</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/reporteCompras'); ?>">Reportes De Compras</a>
                   </ul>
                 </div>
               </div>
@@ -247,8 +246,8 @@
                 </button>
                 <div class="collapse" id="produccion">
                   <ul class="collapse-content px-4">
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crear-lote'); ?>">Crear Lote</a>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crear-producto') ?>">Crear Producto</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearLote'); ?>">Crear Lote</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearProducto') ?>">Crear Producto</a>
                   </ul>
                 </div>
               </div>
@@ -262,8 +261,8 @@
                 </button>
                 <div class="collapse" id="personal">
                   <ul>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="#">Crear Usuario</a>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="#">Crear Costurero</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearUsuario'); ?>">Crear Usuario</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearCosturero'); ?>">Crear Costurero</a>
                     <a style="font-size: 15px;" class="nav-link text-white" href="#">Consultar Personal</a>
                   </ul>
                 </div>
@@ -300,7 +299,7 @@
           </div>
         </div>
       </div>
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light text-dark" data-bs-theme="light" style="overflow-y: auto;">
         <?php echo $this->renderSection('contenido'); ?>
       </main>
     </div>
