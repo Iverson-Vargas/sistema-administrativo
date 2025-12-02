@@ -246,8 +246,8 @@
                 </button>
                 <div class="collapse" id="produccion">
                   <ul class="collapse-content px-4">
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearLote'); ?>">Crear Lote</a>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearProducto') ?>">Crear Producto</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearLote'); ?>">Lote</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/producto') ?>">Producto</a>
                   </ul>
                 </div>
               </div>
@@ -261,9 +261,9 @@
                 </button>
                 <div class="collapse" id="personal">
                   <ul>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearUsuario'); ?>">Crear Usuario</a>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearCosturero'); ?>">Crear Costurero</a>
-                    <a style="font-size: 15px;" class="nav-link text-white" href="#">Consultar Personal</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/usuario'); ?>">Usuario</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/costurero'); ?>">Costurero</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/personal'); ?>">Consultar Personal</a>
                   </ul>
                 </div>
               </div>
@@ -311,7 +311,20 @@
   <?php echo $this->renderSection('scripts'); ?>
   <script>
     function cerrarSeccion() {
-      window.location.href = "<?php echo base_url('/'); ?>";
+            const salirUrl = "<?= base_url('salir') ?>";
+            fetch(salirUrl)
+                .then(response => response.json()) // 1. Convertir la respuesta a JSON
+                .then(data => {
+                    // 2. Usar los datos convertidos (data)
+                    if (data.success) {
+                        window.location.href = '<?= base_url('/'); ?>';
+                    } else {
+                        console.error('Error al cerrar sesión:', data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
     }
 
     function abrirConfiguracionSistema() {

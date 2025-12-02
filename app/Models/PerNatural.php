@@ -18,6 +18,6 @@ class PerNatural extends Model
 
     public function insertarMiPerNatural($data){
         $builder = $this->db->table('per_natural');
-        return $builder->insert($data); // No necesita devolver ID, solo el resultado
+        return $builder->insert($data); 
     }
 }

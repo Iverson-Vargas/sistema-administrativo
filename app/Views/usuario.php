@@ -1,10 +1,13 @@
 <?php echo $this->extend('plantilla/layout'); ?>
 <?php echo $this->section('contenido'); ?>
 
+<!-- 1. Estilos para el calendario (Flatpickr) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
 <div class="container">
     <div style="margin-bottom: 10px;" class="row mt-3">
         <div class="col-md-12">
-            <h3 class="text-center">Crear Usuario</h3>
+            <h3 class="text-center">Gestion de Usuarios</h3>
             <hr>
             <button class="btn btn-primary"
                 type="button"
@@ -18,11 +21,12 @@
                 <table id="tablaUsuarios" class="table table-striped table-bordered mt-3">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>Seleccionar</th>
+                            <th>ID del Usuario</th>
+                            <th>Rol</th>
+                            <th>Persona</th>
+                            <th>Nick</th>
+                            <th>Contraseña</th>
                         </tr>
                     </thead>
                     <!-- <tbody id="cuerpoTablaMisProductos">
@@ -49,8 +53,8 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="tipo_persona">Tipo de Persona</label>
-                            <select id="tipo_persona" class="form-select">
-                                <option value="N" selected>Natural</option>
+                            <select id="tipo_persona" class="form-select" disabled>
+                                <option value="N">Natural</option>
                                 <option value="J">Jurídico</option>
                                 <option value="G">Gubernamental</option>
                             </select>
@@ -95,7 +99,7 @@
 
                     <hr>
 
-                    <h6 class="text-success">Datos de Cuenta y Rol</h6>
+                    <h6 class="text-success">Datos de Empleado y Rol</h6>
                     <div class="row mb-3">
                         <div class="col-md-4">
                             <label for="roles">Rol de Usuario</label>
@@ -108,6 +112,10 @@
                         <div class="col-md-4">
                             <label for="contrasena">Contraseña</label>
                             <input type="password" id="contrasena" class="form-control" required>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="fecha_ingreso">Fecha de Ingreso</label>
+                            <input type="text" id="fecha_ingreso" class="form-control" placeholder="AAAA/MM/DD" required>
                         </div>
                     </div>
 
@@ -123,11 +131,60 @@
 
 <?php echo $this->endSection(); ?>
 <?php echo $this->section('scripts'); ?>
+
+<!-- 2. Librería JavaScript para el calendario (Flatpickr) -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
+
 <script>
     // Declaramos la variable 'tabla' en un alcance más amplio
     // para que sea accesible en otras funciones.
     // Asegúrate de inicializar tu DataTable aquí.
-    let tabla; 
+    let tabla; // Declara la variable 'tabla' aquí para que sea global
+    $(document).ready(function() {
+        tabla = $('#tablaUsuarios').DataTable({
+            ajax: '<?= base_url('listaUsuarios'); ?>',
+            columns: [
+                {
+                    data: null,
+                    render: function(data, type, row) {
+                        return `<input type="checkbox" class="usuario-checkbox" name="seleccionarUsuario" value="${data.id_usuario}">`;
+                    },
+                    orderable: false,
+                    searchable: false
+                },
+                {
+                    data: 'id_usuario'
+                },
+                {
+                    data: 'rol'
+                },
+                {
+                    data: 'persona'
+                },
+                {
+                    data: 'nick'
+                },
+                {
+                    data: 'contrasena'
+                },
+            ],
+            language: {
+                url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json"
+            }
+        });
+
+        // Lógica para permitir solo un checkbox seleccionado
+        $('#tablaUsuarios tbody').on('click', '.usuario-checkbox', function() {
+            const clickedCheckbox = this;
+
+            if ($(clickedCheckbox).is(':checked')) {
+                // Desmarcar todos los demás checkboxes en el cuerpo de la tabla
+                $('#tablaUsuarios tbody .usuario-checkbox').not(clickedCheckbox).prop('checked', false);
+            }
+        });
+
+    });
 
     window.onload = function() {
         ListarRoles();
@@ -146,8 +203,9 @@
         let roles = document.getElementById('roles').value;
         let nick = document.getElementById('nick').value;
         let contrasena = document.getElementById('contrasena').value;
+        let fecha_ingreso = document.getElementById('fecha_ingreso').value;
         
-        if (tipo === '' || ci_rif === '' || nombre === '' || apellido === '' || sexo === '' || telefono === '' || correo === '' || direccion === '' || roles === '' || nick === '' || contrasena === '') {
+        if (tipo === '' || ci_rif === '' || nombre === '' || apellido === '' || sexo === '' || telefono === '' || correo === '' || direccion === '' || roles === '' || nick === '' || contrasena === '' || fecha_ingreso === '') {
             // Usamos la función toast para notificar al usuario, ya que el elemento 'resultado' no existe.
             toast('Por favor, complete todos los campos.');
             return;
@@ -169,13 +227,14 @@
                     direccion: direccion,
                     roles: roles,
                     nick: nick,
-                    contrasena: contrasena
+                    contrasena: contrasena,
+                    fecha_ingreso: fecha_ingreso
                 })
             })
             .then(response => response.json())
             .then(respuesta => {
                 if (respuesta.success) {
-                    // tabla.ajax.reload(); // Descomenta esta línea cuando inicialices tu DataTable
+                    tabla.ajax.reload(); // Descomenta esta línea cuando inicialices tu DataTable
                     let modal = bootstrap.Modal.getInstance(document.getElementById('modalCrearUsuario'));
                     modal.hide();
                     let mensaje = 'El usuario fue creado correctamente.';
@@ -184,7 +243,7 @@
                     }, 500);
                 } else {
                     // Usamos el mensaje de error específico que nos envía el servidor
-                    let mensaje = respuesta.message || 'Error al crear el usuario.';
+                    let mensaje = respuesta.message;
                     setTimeout(function() {
                         toast(mensaje)
                     }, 500);
@@ -223,7 +282,7 @@
 
     function limpiarFormulario() {
         document.getElementById('roles').value = '';
-        document.getElementById('tipo_persona').value = '';
+        document.getElementById('tipo_persona').value = 'N';
         document.getElementById('ci_rif').value = '';
         document.getElementById('nombre').value = '';
         document.getElementById('apellido').value = '';
@@ -233,7 +292,16 @@
         document.getElementById('direccion').value = '';
         document.getElementById('nick').value = '';
         document.getElementById('contrasena').value = '';
+        document.getElementById('fecha_ingreso').value = '';
     }
+
+    // 3. Activación del calendario en el campo de fecha
+    document.addEventListener('DOMContentLoaded', function() {
+        flatpickr("#fecha_ingreso", {
+            "locale": "es", // Usar el idioma español
+            dateFormat: "Y/m/d", // Formato de fecha AAAA/MM/DD
+        });
+    });
 </script>
 
 

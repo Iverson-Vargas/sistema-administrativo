@@ -5,12 +5,14 @@ namespace App\Controllers;
 use App\Models\Persona;
 use App\Models\PerNatural;
 use App\Models\Usuario;
+use App\Models\Empleado;
 
 class CrearUsuario extends BaseController
 {
 
     public function CrearUnUsuario()
-    {
+    {   
+        try {
         $json = $this->request->getJSON();
         $tipo = $json->tipo ?? null;
         $ci_rif = $json->ci_rif ?? null;
@@ -23,8 +25,9 @@ class CrearUsuario extends BaseController
         $roles = $json->roles ?? null;
         $nick = $json->nick ?? null;
         $contrasena = $json->contrasena ?? null;
+        $fecha_ingreso = $json->fecha_ingreso ?? null;
 
-        if (empty($tipo) || empty($ci_rif) || empty($nombre) || empty($apellido) || empty($sexo) || empty($telefono) || empty($correo) || empty($direccion) || empty($roles) || empty($nick) || empty($contrasena)) {
+        if (empty($tipo) || empty($ci_rif) || empty($nombre) || empty($apellido) || empty($sexo) || empty($telefono) || empty($correo) || empty($direccion) || empty($roles) || empty($nick) || empty($contrasena) || empty($fecha_ingreso)) {
             return $this->response->setJSON(['success' => false, 'message' => 'Los datos no pueden estar vacíos']);
         }
 
@@ -61,18 +64,34 @@ class CrearUsuario extends BaseController
                 $CrearMiUsuario = new Usuario();
                 $resultadoUsuario = $CrearMiUsuario->insertarMiUsuario($datosUsuario);
  
-                if ($resultadoUsuario) {
-                    return $this->response->setJSON(['success' => true, 'message' => 'El usuario fue creado correctamente']);
+                if ($resultadoUsuario) { // $resultadoUsuario contiene el id del usuario insertado
+
+                    $datosEmpleado = [
+                        'id_persona' => $id_persona,
+                        'fecha_ingreso' => $fecha_ingreso,
+                        'estatus' => 'A'
+                    ];
+
+                    $crearEmpleado = new Empleado();
+                    $resultadoEmpleado = $crearEmpleado->insertarEmpleado($datosEmpleado);
+
+                    if ($resultadoEmpleado) {
+                        return $this->response->setJSON(['success' => true, 'message' => 'El usuario fue creado correctamente']);
+                    } else {
+                        return $this->response->setJSON(['success' => false, 'message' => 'Error al guardar los datos del empleado.']);
+                    }
                 } else {
-                    // Falló la inserción en la tabla 'usuario'.
+                    // Falló la inserción en la tabla 'usuario'. 
                     return $this->response->setJSON(['success' => false, 'message' => 'Error al guardar los datos del usuario. El nick puede que ya esté en uso.']);
                 }
             } else {
                 // Falló la inserción en la tabla 'per_natural'.
                 return $this->response->setJSON(['success' => false, 'message' => 'Error al guardar los datos naturales de la persona.']);
             }
-        } else {
-            return $this->response->setJSON(['success' => false, 'message' => 'Error al guardar los datos de la persona. La cédula o RIF puede que ya esté en uso.']);
+        }
+    } catch (\Exception $e) {
+        // Captura cualquier excepción de la base de datos (ej. duplicados) y envía un mensaje claro.
+        return $this->response->setJSON(['success' => false, 'message' => 'Error en el servidor: ' . $e->getMessage()]);
         }
     }
 }

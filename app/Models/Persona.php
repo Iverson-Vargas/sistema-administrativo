@@ -23,4 +23,15 @@ class Persona extends Model
         $builder->insert($data);
         return $this->db->insertID();
     }
+
+    public function getCostureros(){
+        $builder= $this->db->table('persona p');
+        $builder->select('e.id_empleado, pn.nombre, pn.apellido, p.ci_rif, p.telefono, fe.descripcion_cargo');
+        $builder->join('empleado e', 'p.id_persona = e.id_persona', 'inner');
+        $builder->join('per_natural pn', 'p.id_persona = pn.id_persona', 'inner');
+        $builder->join('funcion_empleado fe', 'e.id_empleado = fe.id_empleado', 'inner');
+        $builder->where('fe.descripcion_cargo', 'Costurero');
+        $query= $builder->get();
+        return $query->getResultArray();
+    }   
 }

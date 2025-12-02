@@ -4,7 +4,7 @@
 <div class="container">
     <div style="margin-bottom: 10px;" class="row mt-3">
         <div class="col-md-12">
-            <h3 class="text-center">Crear Producto</h3>
+            <h3 class="text-center">Gestion de Productos</h3>
             <hr>
             <button class="btn btn-primary"
                 type="button"
@@ -18,6 +18,7 @@
                 <table id="tablaMisProductos" class="table table-striped table-bordered mt-3">
                     <thead>
                         <tr>
+                            <th>Seleccionar</th>
                             <th>ID del Producto</th>
                             <th>Tono</th>
                             <th>Talla</th>
@@ -101,6 +102,12 @@
         tabla = $('#tablaMisProductos').DataTable({
             ajax: '<?= base_url('listaProducto'); ?>',
             columns: [{
+                    data: null,
+                    render: function(data, type, row) {
+                        return `<input type="checkbox" class="producto-checkbox" name="seleccionarProducto" value="${data.id_producto}">`;
+                    }
+                },
+                {
                     data: 'id_producto'
                 },
                 {
@@ -121,6 +128,15 @@
             }
         });
 
+        // Lógica para permitir solo un checkbox seleccionado
+        $('#tablaMisProductos tbody').on('click', '.producto-checkbox', function() {
+            const clickedCheckbox = this;
+
+            if ($(clickedCheckbox).is(':checked')) {
+                // Desmarcar todos los demás checkboxes en el cuerpo de la tabla
+                $('#tablaMisProductos tbody .producto-checkbox').not(clickedCheckbox).prop('checked', false);
+            }
+        });
     });
 
     function listarTonos() {

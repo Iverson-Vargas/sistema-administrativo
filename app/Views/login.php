@@ -13,19 +13,7 @@
 </head>
 
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
-    <!--  
-    <div class="system-title">Sistema de Producción y Ventas de Pantalones</div>
-    <div class="login-container">
-        <h2>INICIAR SESIÓN</h2>
-        <form action="/login" method="post"> Ajusta la acción según tu backend
-            <label for="username">Usuario</label>
-            <input type="text" id="username" name="username" placeholder="Usuario o Correo" >
-            <label for="password">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Contraseña" >
-            <button type="button" onclick="redirigirAlHome()">Entrar</button>
-        </form>
-   </div> -->
-   
+
     <main class="form-signin w-100 m-auto">
         <form>
             <div id="logo-if" style="font-family: serifa;" class="text-center mb-4">
@@ -37,19 +25,19 @@
                 <input
                     type="text"
                     class="form-control"
-                    id="input-Usuario"
+                    id="usuario"
                     placeholder="Usuario" required />
-                <label for="input-Usuario">Usuario</label>
+                <label for="usuario">Usuario</label>
             </div>
             <div class="form-floating">
                 <input
                     type="password"
                     class="form-control"
-                    id="input-contrasena"
+                    id="contrasena"
                     placeholder="Contraseña" required />
-                <label for="input-contrasena">Contraseña</label>
+                <label for="contrasena">Contraseña</label>
             </div>
-            <button class="btn btn-primary w-100 py-2" type="button" onclick="redirigirAlHome()">
+            <button class="btn btn-primary w-100 py-2" type="button" onclick="validarLogin()">
                 Iniciar Sesión
             </button>
             <p class="text-center mt-5 mb-3 text-body-secondary">&copy; IF COMPANY 2025</p>
@@ -57,8 +45,31 @@
     </main>
     <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
     <script>
-        function redirigirAlHome() {
-            window.location.href = "<?php echo base_url('home'); ?>";
+
+        function validarLogin() {
+            const loginUrl = "<?= base_url('validarDatos') ?>";
+            const usuario = document.getElementById('usuario').value
+            const contrasena = document.getElementById('contrasena').value
+
+
+            fetch(loginUrl, {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        usuario: usuario,
+                        contrasena: contrasena,
+                    })
+                })
+                .then(response => response.json())
+                .then(respuesta => {
+                    if (respuesta.success) {
+                        window.location.href = '<?= base_url('/home'); ?>';
+                    } else {
+                        alert(respuesta.mensaje);
+                    }
+                });
         }
 
         (() => {

@@ -45,18 +45,23 @@ class MostrarVistas extends BaseController
         return view('crearLote');
     }
 
-    public function mostrarCrearProducto(): string
+    public function mostrarProducto(): string
     {
-        return view('crearProducto');
+        return view('producto');
     }
 
-    public function mostrarCrearUsuario(): string
+    public function mostrarUsuario(): string
     {
-        return view('crearUsuario');
+        return view('usuario');
     }
 
-    public function mostrarCrearCosturero(): string
+    public function mostrarCosturero(): string
     {
-        return view('crearCosturero');
+        return view('costurero');
+    }
+
+    public function mostrarPersonal(): string
+    {
+        return view('personal');
     }
 }
