@@ -104,20 +104,32 @@ class Filters extends BaseFilters
      *
      * @var array<string, array<string, list<string>>>
      */
-        public array $filters = [
-            'validarsesion' => [
-                'before' => [
-                    'home',
-                    'reportes',
-                    'generarVenta',
-                    'generarCompra',
-                    'reporteVentas',
-                    'reporteCompras',
-                    'crearLote',
-                    'crearProducto',
-                    'usuario',
-                    'crearCosturero'
-                ]
-            ]
-        ];
+    public array $filters = [
+        'validarsesion' => [
+            'before' => [
+                'home',
+                'reportes',
+                'reportes/*', // Protege todas las sub-rutas de reportes
+                'generarVenta',
+                'generarCompra',
+                'reporteVentas',
+                'reporteCompras',
+                'crearLote',
+                'producto',       // Vista de gestión de productos
+                'crearProducto',  // Acción de crear un producto
+                'usuario',        // Vista de gestión de usuarios
+                'crearUsuario',   // Acción de crear un usuario
+                'costurero',      // Vista de gestión de costureros
+                'crearCosturero', // Acción de crear un costurero
+                'personal',
+                // Rutas de API internas que también deben ser protegidas
+                'listaTono',
+                'listaTalla',
+                'listaProducto',
+                'listaRoles',
+                'listaUsuarios',
+                'listaCostureros',
+            ],
+        ],
+    ];
 }

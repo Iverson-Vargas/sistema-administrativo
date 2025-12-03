@@ -172,12 +172,12 @@
         });
 
         // Lógica para permitir solo un checkbox seleccionado
-        $('#tablaUsuarios tbody').on('click', '.usuario-checkbox', function() {
+        $('#tablaCostureros tbody').on('click', '.usuario-checkbox', function() {
             const clickedCheckbox = this;
 
             if ($(clickedCheckbox).is(':checked')) {
                 // Desmarcar todos los demás checkboxes en el cuerpo de la tabla
-                $('#tablaUsuarios tbody .usuario-checkbox').not(clickedCheckbox).prop('checked', false);
+                $('#tablaCostureros tbody .usuario-checkbox').not(clickedCheckbox).prop('checked', false);
             }
         });
 

@@ -28,3 +28,7 @@ $routes->get('/salir', 'CerrarSesion::cerrarSession');
 $routes->get('/personal', 'MostrarVistas::mostrarPersonal');
 $routes->post('/crearCosturero', 'CrearCosturero::CrearUnCosturero');
 $routes->get('/listaCostureros', 'ListarCostureros::returnCostureros');
+
+// Rutas para los reportes
+$routes->get('reportes/produccionPorCosturero', 'Reportes::produccionPorCosturero');
+$routes->get('reportes/productosMasVendidos', 'Reportes::productosMasVendidos');
