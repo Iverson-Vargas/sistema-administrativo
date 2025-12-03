@@ -13,7 +13,7 @@
                 type="button"
                 data-bs-toggle="modal"
                 data-bs-target="#modalCrearUsuario"
-                onclick="limpiarFormulario()">
+                onclick="limpiarFormulario()"><i class="bi bi-plus-circle"></i>
                 Crear Usuario
             </button>
             <div class="tabla-scroll-vertical">
@@ -73,16 +73,16 @@
                             <label for="apellido">Apellido</label>
                             <input type="text" id="apellido" class="form-control" required>
                         </div>
+                    </div>
+                    <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="sexo">Sexo</label>
-                            <select id="sexo" class="form-select">
+                            <select id="sexo" class="form-select" required>
+                                <option value="" selected disabled>Seleccione...</option>
                                 <option value="M">Masculino</option>
                                 <option value="F">Femenino</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="row mb-3">
                         <div class="col-md-6">
                             <label for="telefono">Teléfono</label>
                             <input type="text" id="telefono" class="form-control">
@@ -92,6 +92,8 @@
                             <input type="email" id="correo" class="form-control">
                         </div>
                     </div>
+
+
                     <div class="mb-3">
                         <label for="direccion">Dirección</label>
                         <textarea id="direccion" class="form-control" rows="2"></textarea>
@@ -101,21 +103,23 @@
 
                     <h6 class="text-success">Datos de Empleado y Rol</h6>
                     <div class="row mb-3">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label for="roles">Rol de Usuario</label>
                             <select type="text" class="form-select" id="roles"></select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
+                            <label for="fecha_ingreso">Fecha de Ingreso</label>
+                            <input type="text" id="fecha_ingreso" class="form-control" placeholder="AAAA/MM/DD" required>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
                             <label for="nick">Nick (Usuario)</label>
                             <input type="text" id="nick" class="form-control" required>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                             <label for="contrasena">Contraseña</label>
                             <input type="password" id="contrasena" class="form-control" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="fecha_ingreso">Fecha de Ingreso</label>
-                            <input type="text" id="fecha_ingreso" class="form-control" placeholder="AAAA/MM/DD" required>
                         </div>
                     </div>
 
@@ -263,9 +267,8 @@
             .then(respuesta => {
                 if (respuesta.success) {
                     let select = document.getElementById('roles');
-                    select.innerHTML = '';
+                    select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
                     respuesta.data.forEach(rol => {
-
                         let option = document.createElement('option');
                         option.value = rol.id_roles;
                         option.textContent = rol.tipo_rol;

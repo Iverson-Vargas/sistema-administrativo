@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ERROR - 2025-12-03 04:04:15 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
 Stack trace:
 #0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
@@ -8,11 +9,24 @@ Stack trace:
 #5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
 #6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
 #7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+=======
+ERROR - 2025-12-03 04:06:47 --> mysqli_sql_exception: Unknown column 'puesto' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `emplead...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `emplead...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `emplead...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `emplead...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+>>>>>>> 4ee8712026298b8026e8747294c1109338b780d2
 #8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
 #10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 #11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #12 {main}
+<<<<<<< HEAD
 ERROR - 2025-12-03 04:04:38 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
 Stack trace:
 #0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
@@ -23,11 +37,71 @@ Stack trace:
 #5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
 #6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
 #7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+=======
+CRITICAL - 2025-12-03 04:06:47 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'puesto' in 'field list'
+[Method: POST, Route: actualizarEmpleado/6]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 2 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 04:06:47 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'puesto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 4 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 04:06:47 --> [Caused by] mysqli_sql_exception: Unknown column 'puesto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 5 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-03 04:11:31 --> mysqli_sql_exception: Unknown column 'puesto' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `emplead...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `emplead...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `emplead...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `emplead...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+>>>>>>> 4ee8712026298b8026e8747294c1109338b780d2
 #8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
 #10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 #11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #12 {main}
+<<<<<<< HEAD
 ERROR - 2025-12-03 04:06:18 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
 Stack trace:
 #0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
@@ -38,11 +112,71 @@ Stack trace:
 #5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
 #6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
 #7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+=======
+CRITICAL - 2025-12-03 04:11:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'puesto' in 'field list'
+[Method: POST, Route: actualizarEmpleado/6]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 2 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 04:11:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'puesto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 4 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 04:11:31 --> [Caused by] mysqli_sql_exception: Unknown column 'puesto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 5 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-03 04:11:49 --> mysqli_sql_exception: Unknown column 'puesto' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `emplead...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `emplead...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `emplead...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `emplead...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+>>>>>>> 4ee8712026298b8026e8747294c1109338b780d2
 #8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
 #10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 #11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #12 {main}
+<<<<<<< HEAD
 ERROR - 2025-12-03 04:06:33 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
 Stack trace:
 #0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
@@ -383,8 +517,155 @@ Stack trace:
 #5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
 #6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
 #7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+=======
+CRITICAL - 2025-12-03 04:11:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'puesto' in 'field list'
+[Method: POST, Route: actualizarEmpleado/6]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 2 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 04:11:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'puesto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 4 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 04:11:49 --> [Caused by] mysqli_sql_exception: Unknown column 'puesto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 5 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-03 04:12:23 --> mysqli_sql_exception: Unknown column 'puesto' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `emplead...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `emplead...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `emplead...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `emplead...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+>>>>>>> 4ee8712026298b8026e8747294c1109338b780d2
 #8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
 #10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 #11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #12 {main}
+<<<<<<< HEAD
+=======
+CRITICAL - 2025-12-03 04:12:23 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'puesto' in 'field list'
+[Method: POST, Route: actualizarEmpleado/6]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 2 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 3 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 04:12:23 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'puesto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 4 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 5 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 04:12:23 --> [Caused by] mysqli_sql_exception: Unknown column 'puesto' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE `empleado` SET `puesto` = NULL
+WHERE `id_empleado` = \'6\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2521): CodeIgniter\Database\BaseConnection->query('UPDATE `empleado` SET `puesto` = :puesto:
+WHERE `id_empleado` = :id_empleado:', [...], false)
+ 5 APPPATH\Models\Empleado.php(76): CodeIgniter\Database\BaseBuilder->update([...])
+ 6 APPPATH\Controllers\ListarEmpleados.php(35): App\Models\Empleado->actualizarEmpleado('6', [...])
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ListarEmpleados->actualizarEmpleado('6')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ListarEmpleados))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-03 04:23:32 --> Datos incompletos para la actualización.
+ERROR - 2025-12-03 04:23:44 --> Datos incompletos para la actualización.
+CRITICAL - 2025-12-03 05:14:34 --> ParseError: Unclosed '{' on line 8
+[Method: GET, Route: listaEmpleados]
+in APPPATH\Controllers\ListarEmpleados.php on line 72.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\sistema-administrativo\\app\\Controllers\\ListarEmpleados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ListarEmpleados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ListarEmpleados')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ListarEmpleados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 05:14:37 --> ParseError: Unclosed '{' on line 8
+[Method: GET, Route: listaEmpleados]
+in APPPATH\Controllers\ListarEmpleados.php on line 72.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\sistema-administrativo\\app\\Controllers\\ListarEmpleados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ListarEmpleados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ListarEmpleados')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ListarEmpleados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-03 05:14:38 --> ParseError: Unclosed '{' on line 8
+[Method: GET, Route: listaEmpleados]
+in APPPATH\Controllers\ListarEmpleados.php on line 72.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\sistema-administrativo\\app\\Controllers\\ListarEmpleados.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\ListarEmpleados')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\ListarEmpleados')
+ 4 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\ListarEmpleados', true)
+ 5 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+>>>>>>> 4ee8712026298b8026e8747294c1109338b780d2

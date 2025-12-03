@@ -27,6 +27,8 @@ class Usuario extends Model
         $builder->join('roles r', 'usuario.id_roles = r.id_roles', 'inner');
         $builder->join('persona p', 'usuario.id_persona = p.id_persona', 'inner');
         $builder->join('per_natural pn', 'p.id_persona = pn.id_persona', 'inner');
+        $builder->join('empleado e', 'p.id_persona = e.id_persona', 'inner');
+        $builder->where('e.estatus', 'A');
         $query= $builder->get();
         return $query->getResultArray();
     }
