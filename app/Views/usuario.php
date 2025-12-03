@@ -75,7 +75,8 @@
                         </div>
                         <div class="col-md-6">
                             <label for="sexo">Sexo</label>
-                            <select id="sexo" class="form-select">
+                            <select id="sexo" class="form-select" required>
+                                <option value="" selected disabled>Seleccione...</option>
                                 <option value="M">Masculino</option>
                                 <option value="F">Femenino</option>
                             </select>

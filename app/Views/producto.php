@@ -147,7 +147,7 @@
             .then(respuesta => {
                 if (respuesta.success) {
                     let select = document.getElementById('tonoProducto');
-                    select.innerHTML = '';
+                    select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
                     respuesta.data.forEach(tono => {
                         let option = document.createElement('option');
                         option.value = tono.id_tono;
@@ -171,7 +171,7 @@
             .then(respuesta => {
                 if (respuesta.success) {
                     let select = document.getElementById('tallaProducto');
-                    select.innerHTML = '';
+                    select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
                     respuesta.data.forEach(talla => {
                         let option = document.createElement('option');
                         option.value = talla.id_talla;
