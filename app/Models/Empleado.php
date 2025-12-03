@@ -98,4 +98,39 @@ class Empleado extends Model
             return false;
         }
     }
+
+    public function deshabilitarEmpleado($id_empleado)
+    {
+        try {
+            // Verificar el estado actual del empleado
+            $builder = $this->db->table('empleado');
+            $builder->select('estatus');
+            $builder->where('id_empleado', $id_empleado);
+            $empleado = $builder->get()->getRow();
+
+            if (!$empleado) {
+                log_message('error', "Empleado con ID $id_empleado no encontrado.");
+                return false; // Empleado no existe
+            }
+
+            if ($empleado->estatus === 'I') {
+                log_message('info', "El empleado con ID $id_empleado ya está deshabilitado.");
+                return false; // Empleado ya deshabilitado
+            }
+
+            // Actualizar el estado del empleado a 'I' (Inactivo)
+            $result = $builder->update(['estatus' => 'I']);
+
+            if ($result) {
+                log_message('info', "Empleado con ID $id_empleado deshabilitado correctamente.");
+                return true;
+            } else {
+                log_message('error', "No se pudo deshabilitar el empleado con ID $id_empleado.");
+                return false;
+            }
+        } catch (\Exception $e) {
+            log_message('error', 'Error al deshabilitar empleado: ' . $e->getMessage());
+            return false;
+        }
+    }
 }
