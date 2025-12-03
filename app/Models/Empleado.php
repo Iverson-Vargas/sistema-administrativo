@@ -46,53 +46,59 @@ class Empleado extends Model
 
     public function actualizarEmpleado($id_empleado, $data)
     {
-        $builder = $this->db->table('empleado e');
-        $builder->select('e.id_empleado, pn.id_persona, pn.nombre, pn.apellido, pn.sexo, e.fecha_ingreso, e.estatus, p.tipo, p.direccion, p.telefono, p.correo , p.ci_rif');
-        $builder->join('per_natural pn', 'e.id_persona = pn.id_persona');
-        $builder->join('persona p', 'e.id_persona = p.id_persona');
-        $builder->where('e.id_empleado', $id_empleado);
-        $query = $builder->get();
-        $empleado = $query->getRowArray();
+        // Primero, obtenemos solo el id_persona del empleado, que es lo que necesitamos.
+        $empleado = $this->select('id_persona')->find($id_empleado);
 
         if (!$empleado) {
             log_message('error', 'Empleado no encontrado con ID: ' . $id_empleado);
             return false; // Empleado no encontrado
         }
 
+        $id_persona = $empleado['id_persona'];
+
+        // Usar transacciones para asegurar la integridad de los datos.
+        $this->db->transStart();
+
         try {
             log_message('info', 'Datos recibidos para actualizar: ' . json_encode($data));
 
+            // Preparamos los datos para cada tabla
+            $personaData = [];
+            if (isset($data['direccion'])) $personaData['direccion'] = $data['direccion'];
+            if (isset($data['telefono'])) $personaData['telefono'] = $data['telefono'];
+            if (isset($data['correo'])) $personaData['correo'] = $data['correo'];
+            if (isset($data['ci_rif'])) $personaData['ci_rif'] = $data['ci_rif'];
+
+            $perNaturalData = [];
+            if (isset($data['sexo'])) $perNaturalData['sexo'] = $data['sexo'];
+            if (isset($data['nombre'])) $perNaturalData['nombre'] = $data['nombre'];
+            if (isset($data['apellido'])) $perNaturalData['apellido'] = $data['apellido'];
+
+            $empleadoData = [];
+            if (isset($data['fecha_ingreso'])) $empleadoData['fecha_ingreso'] = $data['fecha_ingreso'];
+
+
             // Actualizar tabla persona
-            if (isset($data['direccion']) || isset($data['telefono']) || isset($data['correo']) || isset($data['ci_rif'])) {
-                $personaData = array_filter([
-                    'direccion' => $data['direccion'] ?? null,
-                    'telefono' => $data['telefono'] ?? null,
-                    'correo' => $data['correo'] ?? null,
-                    'ci_rif' => $data['ci_rif'] ?? null,
-                ]);
-                $this->db->table('persona')->where('id_persona', $empleado['id_persona'])->update($personaData);
-                log_message('info', 'Resultado de actualizar persona: ' . json_encode($personaData));
+            if (!empty($personaData)) {
+                $this->db->table('persona')->where('id_persona', $id_persona)->update($personaData);
             }
 
             // Actualizar tabla per_natural
-            if (isset($data['sexo'])) {
-                $perNaturalData = array_filter([
-                    'sexo' => $data['sexo'] ?? null,
-                ]);
-                $this->db->table('per_natural')->where('id_persona', $empleado['id_persona'])->update($perNaturalData);
-                log_message('info', 'Resultado de actualizar per_natural: ' . json_encode($perNaturalData));
+            if (!empty($perNaturalData)) {
+                $this->db->table('per_natural')->where('id_persona', $id_persona)->update($perNaturalData);
             }
 
             // Actualizar tabla empleado
-            if (isset($data['puesto'])) {
-                $empleadoData = array_filter([
-                    'puesto' => $data['puesto'] ?? null,
-                ]);
-                $empleadoUpdate = $this->db->table('empleado')->where('id_empleado', $id_empleado)->update($empleadoData);
-                log_message('info', 'Resultado de actualizar empleado: ' . json_encode($empleadoUpdate));
+            if (!empty($empleadoData)) {
+                $this->db->table('empleado')->where('id_empleado', $id_empleado)->update($empleadoData);
             }
 
-            return true;
+            // Completar la transacción
+            $this->db->transComplete();
+
+            // Verificar si la transacción fue exitosa
+            return $this->db->transStatus();
+
         } catch (\Exception $e) {
             log_message('error', 'Error al actualizar empleado: ' . $e->getMessage());
             return false;
@@ -119,7 +125,8 @@ class Empleado extends Model
             }
 
             // Actualizar el estado del empleado a 'I' (Inactivo)
-            $result = $builder->update(['estatus' => 'I']);
+            // Se debe volver a especificar el WHERE, ya que el builder se reinicia después de un get().
+            $result = $builder->where('id_empleado', $id_empleado)->update(['estatus' => 'I']);
 
             if ($result) {
                 log_message('info', "Empleado con ID $id_empleado deshabilitado correctamente.");

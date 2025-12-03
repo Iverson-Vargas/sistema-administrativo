@@ -27,10 +27,10 @@ class ListarEmpleados extends BaseController
     public function actualizarEmpleado($id_empleado){
         $Empleado = new Empleado();
 
-        // Obtener los datos enviados
-        $data = $this->request->getPost();
+        // Obtener los datos enviados como JSON y convertirlos a un array asociativo
+        $data = $this->request->getJSON(true);
 
-        // Registrar los datos recibidos para depuración
+        // Registrar los datos recibidos para depuración (esto ya está bien)
         log_message('info', 'Datos recibidos: ' . json_encode($data));
 
         // Validar que al menos un campo esté presente
@@ -49,6 +49,24 @@ class ListarEmpleados extends BaseController
             }
         } catch (\Exception $e) {
             log_message('error', $e->getMessage());
+            return $this->response->setJSON(['success' => false, 'message' => 'Error interno del servidor.']);
+        }
+    }
+
+    public function deshabilitarEmpleado($id_empleado)
+    {
+        $empleadoModel = new Empleado();
+
+        try {
+            $resultado = $empleadoModel->deshabilitarEmpleado($id_empleado);
+
+            if ($resultado) {
+                return $this->response->setJSON(['success' => true, 'message' => 'Empleado deshabilitado correctamente.']);
+            } else {
+                return $this->response->setJSON(['success' => false, 'message' => 'El empleado no se pudo deshabilitar o ya estaba inactivo.']);
+            }
+        } catch (\Exception $e) {
+            log_message('error', 'Error al deshabilitar empleado: ' . $e->getMessage());
             return $this->response->setJSON(['success' => false, 'message' => 'Error interno del servidor.']);
         }
     }

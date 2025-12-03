@@ -924,3 +924,52 @@ Stack trace:
 #10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 #11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #12 {main}
+ERROR - 2025-12-03 22:09:31 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'localhost' (using password: NO) in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:201
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(201): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'sistema_adminis...', 3306, '', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Usuario.php(43): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\Login.php(19): App\Models\Usuario->getOneUsuario('Iverson25')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Login->validarDatos()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'localhost' (using password: NO) in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:246
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `usuario...', Array, false)
+#3 C:\xampp\htdocs\sistema-administrativo\app\Models\Usuario.php(43): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\sistema-administrativo\app\Controllers\Login.php(19): App\Models\Usuario->getOneUsuario('Iverson25')
+#5 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Login->validarDatos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#10 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#11 {main}
+CRITICAL - 2025-12-03 22:09:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'localhost' (using password: NO)
+[Method: POST, Route: validarDatos]
+in SYSTEMPATH\Database\BaseConnection.php on line 467.
+ 1 SYSTEMPATH\Database\BaseConnection.php(620): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `usuario`.*, `r`.`tipo_rol` as `rol`, concat(pn.nombre, " ", pn.apellido) as persona
+FROM `usuario`
+INNER JOIN `roles` `r` ON `usuario`.`id_roles` = `r`.`id_roles`
+INNER JOIN `persona` `p` ON `usuario`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+WHERE `usuario`.`nick` = :usuario.nick:', [...], false)
+ 3 APPPATH\Models\Usuario.php(43): CodeIgniter\Database\BaseBuilder->get()
+ 4 APPPATH\Controllers\Login.php(19): App\Models\Usuario->getOneUsuario('Iverson25')
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Login->validarDatos()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Login))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

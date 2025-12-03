@@ -39,3 +39,4 @@ $routes->get('/listaEmpleados', 'ListarEmpleados::returnEmpleados');
 $routes->get('/getOneEmpleado/(:num)', 'ListarEmpleados::getOneEmpleado/$1');
 $routes->post('/actualizarEmpleado/(:num)', 'ListarEmpleados::actualizarEmpleado/$1');
 
+$routes->post('/deshabilitarEmpleado/(:num)', 'ListarEmpleados::deshabilitarEmpleado/$1');

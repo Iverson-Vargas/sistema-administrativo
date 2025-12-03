@@ -1,14 +1,13 @@
 <?php echo $this->extend('plantilla/layout'); ?>
 <?php echo $this->section('contenido'); ?>
 
-<div class="container">
-    <div style="margin-bottom: 10px;" class="row mt-3">
+    <div class="row mt-1 " style="position: relative; right: 13px;">
         <div class="col-md-12">
             <h3 class="text-center">Gestion de Personal</h3>
             <hr>
             <div class="d-flex justify-content-end mb-3">
                 <button id="btnActualizar" class="btn btn-warning me-2" style="color: #FCF7F7;"><i class="bi bi-pencil-square"></i> Actualizar </button>
-                <button class="btn btn-danger"><i class="bi bi-trash"></i> Deshabilitar </button>
+                <button id="btnDeshabilitar" class="btn btn-danger"><i class="bi bi-trash"></i> Deshabilitar </button>
             </div>
 
 
@@ -17,17 +16,18 @@
                 <table id="tablaPersonal" class="table table-striped table-bordered mt-3">
                     <thead>
                         <tr>
-                            <th>Seleccionar</th>
-                            <th>ID del Empleado</th>
-                            <th>Nombre</th>
-                            <th>Apellido</th>
-                            <th>Sexo</th>
-                            <th>Tipo</th>
-                            <th>Direccion</th>
-                            <th>Telefono</th>
-                            <th>Correo</th>
-                            <th>CI/RIF</th>
-                            <th>Estatus</th>
+                            <th class="text-center">Seleccionar</th>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Apellido</th>
+                            <th class="text-center">Sexo</th>
+                            <th class="text-center">Tipo</th>
+                            <th class="text-center">Direccion</th>
+                            <th class="text-center">Telefono</th>
+                            <th class="text-center">Correo</th>
+                            <th class="text-center">CI/RIF</th>
+                            <th class="text-center">F. Ingreso</th>
+                            <th class="text-center">Estatus</th>
                         </tr>
                     </thead>
                     <!-- <tbody id="cuerpoTablaMisProductos">
@@ -37,7 +37,6 @@
             </div>
         </div>
     </div>
-</div>
 
 <!-- Modal para actualizar -->
 <div class="modal fade" id="modalActualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -97,6 +96,25 @@
     </div>
 </div>
 
+<!-- Modal para confirmar deshabilitación -->
+<div class="modal fade" id="modalDeshabilitar" tabindex="-1" aria-labelledby="modalDeshabilitarLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalDeshabilitarLabel">Confirmar Deshabilitación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea deshabilitar a este empleado? Esta acción no se puede deshacer fácilmente.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btnConfirmarDeshabilitar">Sí, deshabilitar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php echo $this->endSection(); ?>
 <?php echo $this->section('scripts'); ?>
 
@@ -105,13 +123,24 @@
     $(document).ready(function() {
         tabla = $('#tablaPersonal').DataTable({
             ajax: '<?= base_url('listaEmpleados'); ?>',
-            columns: [{
+            columnDefs: [{
+                    targets: 0, // Columna "Seleccionar"
+                    width: "10px", // Ancho reducido
+                    className: "text-center", // Centrar contenido
+                    orderable: false,
+                    searchable: false
+                },
+                {
+                    targets: [1, 4, 5, 11], // ID, Sexo, Tipo, Estatus
+                    className: "text-center"
+                }
+            ],
+            columns: [
+                {
                     data: null,
                     render: function(data, type, row) {
                         return `<input type="checkbox" class="empleado-checkbox" name="seleccionarEmpleado" value="${data.id_empleado}">`;
-                    },
-                    orderable: false,
-                    searchable: false
+                    }
                 },
                 {
                     data: 'id_empleado'
@@ -139,8 +168,10 @@
                 },
                 {
                     data: 'ci_rif'
-                }
-                ,
+                },
+                {
+                    data: 'fecha_ingreso'
+                },
                 {
                     data: 'estatus'
                 }
@@ -217,6 +248,46 @@
                 }
             });
         });
+
+        $('#btnDeshabilitar').on('click', function() {
+            const checkboxSeleccionado = $('#tablaPersonal tbody .empleado-checkbox:checked');
+
+            if (checkboxSeleccionado.length === 0) {
+                setTimeout(() => toast('Por favor, seleccione un empleado para deshabilitar.'), 500);
+                return;
+            }
+
+            const idEmpleado = checkboxSeleccionado.val();
+            const modal = new bootstrap.Modal(document.getElementById('modalDeshabilitar'));
+            modal.show();
+
+            // Al hacer clic en el botón de confirmación del modal
+            $('#btnConfirmarDeshabilitar').off('click').on('click', function() {
+                 $.ajax({
+                     url: `<?= base_url('deshabilitarEmpleado/') ?>/${idEmpleado}`,
+                     type: 'POST',
+                     dataType: 'json',
+                     success: function(response) {
+                         if (response && response.success) {
+                             toast('Empleado deshabilitado correctamente.');
+                             tabla.ajax.reload(); // Recargar la tabla
+                         } else {
+                             // Usar el mensaje del servidor si está disponible
+                             const mensaje = response.message || 'Error al deshabilitar el empleado.';
+                             toast(mensaje);
+                         }
+                     },
+                     error: function(xhr, status, error) {
+                         console.error('Error en la solicitud AJAX:', error);
+                         console.error('Detalles del error:', xhr.responseText);
+                         toast('Error al contactar al servidor.');
+                     },
+                    complete: function() {
+                        modal.hide();
+                    }
+                 });
+            });
+        });
     });
 
     function guardarCambios() {
@@ -237,8 +308,9 @@
         $.ajax({
             url: `<?= base_url('actualizarEmpleado/') ?>/${idEmpleado}`,
             type: 'POST',
-            data: datosActualizar,
-            dataType: 'json',
+            contentType: 'application/json', // Especifica que estamos enviando JSON
+            data: JSON.stringify(datosActualizar), // Convierte el objeto a una cadena JSON
+            dataType: 'json', // Espera una respuesta JSON del servidor
             success: function(response) {
                 console.log('Respuesta del servidor:', response); // Depuración
                 if (response && response.success) {
