@@ -669,3 +669,258 @@ in APPPATH\Controllers\ListarEmpleados.php on line 72.
  8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
  9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 >>>>>>> 4ee8712026298b8026e8747294c1109338b780d2
+ERROR - 2025-12-03 18:38:25 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 18:39:12 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 18:48:31 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 18:57:06 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:06:57 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:35:13 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:47:49 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:47:51 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:47:52 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:48:39 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:48:40 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:48:45 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 19:51:07 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 20:31:04 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 20:50:03 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 21:19:02 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-03 22:02:13 --> mysqli_sql_exception: Table 'sistema_administrativo.produccion' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(30): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(20): App\Models\ReporteModel->getProduccionPorCosturero(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->produccionPorCosturero()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}

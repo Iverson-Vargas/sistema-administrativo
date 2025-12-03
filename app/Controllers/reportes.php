@@ -25,10 +25,6 @@ class Reportes extends BaseController
         }
     }
 
-    // --- Aquí puedes agregar los métodos para los otros 8 reportes ---
-    // --- Aquí puedes agregar los métodos para los otros 8 reportes ---
-    // public function productosMasVendidos() { ... }
-    // public function ventasMensuales() { ... }
     /**
      * Obtiene los datos para el reporte de productos más vendidos.
      * Acepta un rango de fechas como parámetros GET.
@@ -49,4 +45,59 @@ class Reportes extends BaseController
         }
     }
 
+    /**
+     * Obtiene una lista de productos que tienen suficientes datos de ventas
+     * para un análisis de correlación (ej. más de 2 ventas).
+     */
+    public function getProductsForCorrelation()
+    {
+        try {
+            $db = \Config\Database::connect();
+            $builder = $db->table('producto p');
+
+            $builder->select('p.id_producto, p.descripcion, COUNT(dv.id_detalle_venta) as num_ventas');
+            $builder->join('detalle_venta dv', 'p.id_producto = dv.id_producto', 'inner');
+            $builder->groupBy('p.id_producto, p.descripcion');
+            $builder->having('num_ventas >', 2); // Necesitamos al menos 3 puntos para un análisis simple
+
+            $query = $builder->get();
+            $data = $query->getResultArray();
+
+            return $this->response->setJSON(['success' => true, 'data' => $data]);
+
+        } catch (\Exception $e) {
+            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
+
+    /**
+     * Obtiene los datos de (precio, cantidad) para un producto específico.
+     */
+    public function getCorrelationDataForProduct()
+    {
+        try {
+            $productId = $this->request->getGet('id_producto');
+
+            if (empty($productId)) {
+                return $this->response->setStatusCode(400)->setJSON(['success' => false, 'message' => 'ID de producto no proporcionado.']);
+            }
+
+            $db = \Config\Database::connect();
+            $builder = $db->table('detalle_venta');
+
+            $builder->select('precio_unitario as x, cantidad as y');
+            $builder->where('id_producto', $productId);
+            // Opcional: filtrar valores no válidos
+            $builder->where('precio_unitario >', 0);
+            $builder->where('cantidad >', 0);
+
+            $query = $builder->get();
+            $data = $query->getResultArray();
+
+            return $this->response->setJSON(['success' => true, 'data' => $data]);
+
+        } catch (\Exception $e) {
+            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => $e->getMessage()]);
+        }
+    }
 }

@@ -3,203 +3,249 @@
 
 <!-- Estilos para el calendario (Flatpickr) -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<style>
+    .report-section {
+        display: none;
+    }
+</style>
 
 <div class="container-fluid mt-3">
     <h2 class="text-center">Módulo de Reportes</h2>
     <hr>
 
-    <ul class="nav nav-tabs" id="reportesTab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="operacionales-tab" data-bs-toggle="tab" data-bs-target="#operacionales" type="button" role="tab" aria-controls="operacionales" aria-selected="true">Reportes Operacionales</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="supervision-tab" data-bs-toggle="tab" data-bs-target="#supervision" type="button" role="tab" aria-controls="supervision" aria-selected="false">Reportes de Supervisión</button>
-        </li>
-        <li class="nav-item" role="presentation">
-            <button class="nav-link" id="gerenciales-tab" data-bs-toggle="tab" data-bs-target="#gerenciales" type="button" role="tab" aria-controls="gerenciales" aria-selected="false">Reportes Gerenciales</button>
-        </li>
-    </ul>
-
-    <div class="tab-content p-3 border border-top-0" id="reportesTabContent">
-        <!-- Pestaña de Reportes Operacionales -->
-        <div class="tab-pane fade show active" id="operacionales" role="tabpanel" aria-labelledby="operacionales-tab">
-            <div class="accordion" id="accordionOperacionales">
-                <!-- Reporte 1 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOp1" aria-expanded="false" aria-controls="collapseOp1">
-                            #1 - Listado de Producción por Fechas
-                        </button>
-                    </h2>
-                    <div id="collapseOp1" class="accordion-collapse collapse" data-bs-parent="#accordionOperacionales">
-                        <div class="accordion-body">
-                            <p>Contenido del reporte 1...</p>
-                        </div>
+    <!-- Sección de Reportes Operacionales -->
+    <div id="operacionales" class="report-section mb-5">
+        <h3 class="mb-3">Reportes Operacionales</h3>
+        <div class="accordion" id="accordionOperacionales">
+            <!-- Reporte 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOp1" aria-expanded="false" aria-controls="collapseOp1">
+                        #1 - Listado de Producción por Fechas
+                    </button>
+                </h2>
+                <div id="collapseOp1" class="accordion-collapse collapse" data-bs-parent="#accordionOperacionales">
+                    <div class="accordion-body">
+                        <p>Contenido del reporte 1...</p>
                     </div>
                 </div>
-                <!-- Reporte 2 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOp2" aria-expanded="false" aria-controls="collapseOp2">
-                            #2 - Inventario Actual de Productos
-                        </button>
-                    </h2>
-                    <div id="collapseOp2" class="accordion-collapse collapse" data-bs-parent="#accordionOperacionales">
-                        <div class="accordion-body">
-                            <p>Contenido del reporte 2...</p>
-                        </div>
+            </div>
+            <!-- Reporte 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOp2" aria-expanded="false" aria-controls="collapseOp2">
+                        #2 - Inventario Actual de Productos
+                    </button>
+                </h2>
+                <div id="collapseOp2" class="accordion-collapse collapse" data-bs-parent="#accordionOperacionales">
+                    <div class="accordion-body">
+                        <p>Contenido del reporte 2...</p>
                     </div>
                 </div>
-                <!-- Reporte 3 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOp3" aria-expanded="false" aria-controls="collapseOp3">
-                            #3 - Detalle de Ventas Recientes
-                        </button>
-                    </h2>
-                    <div id="collapseOp3" class="accordion-collapse collapse" data-bs-parent="#accordionOperacionales">
-                        <div class="accordion-body">
-                            <p>Contenido del reporte 3...</p>
-                        </div>
+            </div>
+            <!-- Reporte 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOp3" aria-expanded="false" aria-controls="collapseOp3">
+                        #3 - Detalle de Ventas Recientes
+                    </button>
+                </h2>
+                <div id="collapseOp3" class="accordion-collapse collapse" data-bs-parent="#accordionOperacionales">
+                    <div class="accordion-body">
+                        <p>Contenido del reporte 3...</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Pestaña de Reportes de Supervisión -->
-        <div class="tab-pane fade" id="supervision" role="tabpanel" aria-labelledby="supervision-tab">
-            <div class="accordion" id="accordionSupervision">
-                <!-- Reporte 4: Producción por Costurero (EJEMPLO IMPLEMENTADO) -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup1" aria-expanded="true" aria-controls="collapseSup1">
-                            #4 - Producción por Costurero
-                        </button>
-                    </h2>
-                    <div id="collapseSup1" class="accordion-collapse collapse show" data-bs-parent="#accordionSupervision">
-                        <div class="accordion-body">
-                            <div class="row mb-3 align-items-end">
-                                <div class="col-md-4">
-                                    <label for="fechasCosturero" class="form-label">Rango de Fechas</label>
-                                    <input type="text" id="fechasCosturero" class="form-control" placeholder="Seleccione un rango">
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-primary" id="btnFiltrarCosturero">Filtrar</button>
-                                </div>
+    <!-- Sección de Reportes de Supervisión -->
+    <div id="supervision" class="report-section mb-5">
+        <h3 class="mb-3">Reportes de Supervisión</h3>
+        <div class="accordion" id="accordionSupervision">
+            <!-- Reporte 4: Producción por Costurero (EJEMPLO IMPLEMENTADO) -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup1" aria-expanded="true" aria-controls="collapseSup1">
+                        #4 - Producción por Costurero
+                    </button>
+                </h2>
+                <div id="collapseSup1" class="accordion-collapse collapse show" data-bs-parent="#accordionSupervision">
+                    <div class="accordion-body">
+                        <div class="row mb-3 align-items-end">
+                            <div class="col-md-4">
+                                <label for="fechasCosturero" class="form-label">Rango de Fechas</label>
+                                <input type="text" id="fechasCosturero" class="form-control" placeholder="Seleccione un rango">
                             </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-primary" id="btnFiltrarCosturero">Filtrar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <canvas id="chartProduccionCosturero"></canvas>
+                            </div>
+                            <div class="col-lg-4">
+                                <h5>Datos Detallados</h5>
+                                <table id="tablaProduccionCosturero" class="table table-sm table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Costurero</th>
+                                            <th>Total Producido</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Reporte 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup2" aria-expanded="false" aria-controls="collapseSup2">
+                        #5 - Productos Más Vendidos
+                    </button>
+                </h2>
+                <div id="collapseSup2" class="accordion-collapse collapse" data-bs-parent="#accordionSupervision">
+                    <div class="accordion-body">
+                        <div class="row mb-3 align-items-end">
+                            <div class="col-md-4">
+                                <label for="fechasMasVendidos" class="form-label">Rango de Fechas</label>
+                                <input type="text" id="fechasMasVendidos" class="form-control" placeholder="Seleccione un rango (opcional)">
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-primary" id="btnFiltrarMasVendidos">Filtrar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <canvas id="chartProductosMasVendidos"></canvas>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5>Top 10 Productos</h5>
+                                <table id="tablaProductosMasVendidos" class="table table-sm table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Total Vendido</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Reporte 6 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup3" aria-expanded="false" aria-controls="collapseSup3">
+                        #6 - Rendimiento de Vendedores
+                    </button>
+                </h2>
+                <div id="collapseSup3" class="accordion-collapse collapse" data-bs-parent="#accordionSupervision">
+                    <div class="accordion-body">
+                        <p>Contenido del reporte 6...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Reportes Gerenciales -->
+    <div id="gerenciales" class="report-section mb-5">
+        <h3 class="mb-3">Reportes Gerenciales</h3>
+        <div class="accordion" id="accordionGerenciales">
+            <!-- Reporte 7 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGer1" aria-expanded="false" aria-controls="collapseGer1">
+                        #7 - Comparativa de Ventas Mensuales
+                    </button>
+                </h2>
+                <div id="collapseGer1" class="accordion-collapse collapse" data-bs-parent="#accordionGerenciales">
+                    <div class="accordion-body">
+                        <p>Contenido del reporte 7...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Reporte 8 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGer2" aria-expanded="false" aria-controls="collapseGer2">
+                        #8 - Análisis de Rentabilidad por Producto
+                    </button>
+                </h2>
+                <div id="collapseGer2" class="accordion-collapse collapse" data-bs-parent="#accordionGerenciales">
+                    <div class="accordion-body">
+                        <p>Contenido del reporte 8...</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Reporte 9 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGer3" aria-expanded="false" aria-controls="collapseGer3">
+                        #9 - Eficiencia de la Producción General
+                    </button>
+                </h2>
+                <div id="collapseGer3" class="accordion-collapse collapse" data-bs-parent="#accordionGerenciales">
+                    <div class="accordion-body">
+                        <p>Contenido del reporte 9...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NUEVA SECCIÓN: Reportes Estadísticos -->
+    <div id="estadisticos" class="report-section mb-5">
+        <h3 class="mb-3">Reportes Estadísticos</h3>
+        <div class="accordion" id="accordionEstadisticos">
+            <!-- Reporte Estadístico 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEst1" aria-expanded="true" aria-controls="collapseEst1">
+                        #10 - Correlación entre Precio y Unidades Vendidas por Producto
+                    </button>
+                </h2>
+                <div id="collapseEst1" class="accordion-collapse collapse show" data-bs-parent="#accordionEstadisticos">
+                    <div class="accordion-body">
+                        <div class="row mb-3">
+                            <div class="col-md-5">
+                                <label for="selectProductoCorrelacion" class="form-label">Seleccione un producto para analizar:</label>
+                                <select id="selectProductoCorrelacion" class="form-select"></select>
+                            </div>
+                            <div class="col-md-3 d-flex align-items-end">
+                                <button id="btnGenerarCorrelacion" class="btn btn-primary">Generar Gráfico</button>
+                            </div>
+                        </div>
+                        <div id="correlationAnalysisContainer" class="mt-4" style="display: none;">
                             <div class="row">
                                 <div class="col-lg-8">
-                                    <canvas id="chartProduccionCosturero"></canvas>
+                                    <canvas id="chartCorrelacion"></canvas>
                                 </div>
                                 <div class="col-lg-4">
-                                    <h5>Datos Detallados</h5>
-                                    <table id="tablaProduccionCosturero" class="table table-sm table-bordered" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Costurero</th>
-                                                <th>Total Producido</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
+                                    <h4>Análisis de Correlación</h4>
+                                    <p id="correlationProductTitle" class="fw-bold"></p>
+                                    <p>
+                                        Este gráfico de dispersión analiza la relación entre dos variables para el producto seleccionado:
+                                    </p>
+                                    <ul>
+                                        <li><strong>Variable Independiente (Eje X):</strong> Precio de Venta.</li>
+                                        <li><strong>Variable Dependiente (Eje Y):</strong> Cantidad Vendida en esa transacción.</li>
+                                    </ul>
+                                    <div id="correlationAnalysisResult" class="alert">
+                                        <!-- El resultado del análisis se insertará aquí -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- Reporte 5 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup2" aria-expanded="false" aria-controls="collapseSup2">
-                            #5 - Productos Más Vendidos
-                        </button>
-                    </h2>
-                    <div id="collapseSup2" class="accordion-collapse collapse" data-bs-parent="#accordionSupervision">
-                        <div class="accordion-body">
-                            <div class="row mb-3 align-items-end">
-                                <div class="col-md-4">
-                                    <label for="fechasMasVendidos" class="form-label">Rango de Fechas</label>
-                                    <input type="text" id="fechasMasVendidos" class="form-control" placeholder="Seleccione un rango (opcional)">
-                                </div>
-                                <div class="col-md-2">
-                                    <button class="btn btn-primary" id="btnFiltrarMasVendidos">Filtrar</button>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <canvas id="chartProductosMasVendidos"></canvas>
-                                </div>
-                                <div class="col-lg-5">
-                                    <h5>Top 10 Productos</h5>
-                                    <table id="tablaProductosMasVendidos" class="table table-sm table-bordered" style="width:100%">
-                                        <thead>
-                                            <tr>
-                                                <th>Producto</th>
-                                                <th>Total Vendido</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody></tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Reporte 6 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSup3" aria-expanded="false" aria-controls="collapseSup3">
-                            #6 - Rendimiento de Vendedores
-                        </button>
-                    </h2>
-                    <div id="collapseSup3" class="accordion-collapse collapse" data-bs-parent="#accordionSupervision">
-                        <div class="accordion-body">
-                            <p>Contenido del reporte 6...</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Pestaña de Reportes Gerenciales -->
-        <div class="tab-pane fade" id="gerenciales" role="tabpanel" aria-labelledby="gerenciales-tab">
-            <div class="accordion" id="accordionGerenciales">
-                <!-- Reporte 7 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGer1" aria-expanded="false" aria-controls="collapseGer1">
-                            #7 - Comparativa de Ventas Mensuales
-                        </button>
-                    </h2>
-                    <div id="collapseGer1" class="accordion-collapse collapse" data-bs-parent="#accordionGerenciales">
-                        <div class="accordion-body">
-                            <p>Contenido del reporte 7...</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Reporte 8 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGer2" aria-expanded="false" aria-controls="collapseGer2">
-                            #8 - Análisis de Rentabilidad por Producto
-                        </button>
-                    </h2>
-                    <div id="collapseGer2" class="accordion-collapse collapse" data-bs-parent="#accordionGerenciales">
-                        <div class="accordion-body">
-                            <p>Contenido del reporte 8...</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Reporte 9 -->
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseGer3" aria-expanded="false" aria-controls="collapseGer3">
-                            #9 - Eficiencia de la Producción General
-                        </button>
-                    </h2>
-                    <div id="collapseGer3" class="accordion-collapse collapse" data-bs-parent="#accordionGerenciales">
-                        <div class="accordion-body">
-                            <p>Contenido del reporte 9...</p>
+                        <div id="correlationPlaceholder" class="text-center text-muted p-5">
+                            <p>Seleccione un producto y haga clic en "Generar Gráfico" para ver el análisis.</p>
                         </div>
                     </div>
                 </div>
@@ -221,87 +267,289 @@
     let tablaProduccionCosturero;
     let chartProductosMasVendidos;
     let tablaProductosMasVendidos;
+    let chartCorrelacion;
 
-    document.addEventListener('DOMContentLoaded', function() {
-        // --- INICIALIZACIÓN REPORTE #4: Producción por Costurero ---
+    // Banderas para evitar reinicializaciones
+    let reporte4Inicializado = false;
+    let reporte5Inicializado = false;
+    let reporteEstadisticoInicializado = false;
+
+    function inicializarReporte4() {
+        if (reporte4Inicializado) return;
+
         const fp = flatpickr("#fechasCosturero", {
             mode: "range",
             "locale": "es",
             dateFormat: "Y-m-d",
         });
 
-        // Inicializar DataTable
         tablaProduccionCosturero = $('#tablaProduccionCosturero').DataTable({
-            columns: [{
-                data: 'costurero'
-            }, {
-                data: 'total_producido'
-            }, ],
-            language: {
-                url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json"
-            },
+            columns: [{ data: 'costurero' }, { data: 'total_producido' }],
+            language: { url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json" },
             searching: false,
             lengthChange: false,
             pageLength: 5
         });
 
-        // Cargar datos al hacer clic en el botón de filtrar
         document.getElementById('btnFiltrarCosturero').addEventListener('click', function() {
             cargarDatosProduccionCosturero(fp.selectedDates);
         });
 
-        // Cargar datos iniciales (sin filtro de fecha)
         cargarDatosProduccionCosturero();
+        reporte4Inicializado = true;
+    }
 
-        // --- INICIALIZACIÓN REPORTE #5: Productos Más Vendidos ---
-        const collapseMasVendidos = document.getElementById('collapseSup2');
-        collapseMasVendidos.addEventListener('shown.bs.collapse', function() {
-            const fpMasVendidos = flatpickr("#fechasMasVendidos", {
-                mode: "range",
-                "locale": "es",
-                dateFormat: "Y-m-d",
-            });
+    function inicializarReporte5() {
+        if (reporte5Inicializado) return;
 
-            tablaProductosMasVendidos = $('#tablaProductosMasVendidos').DataTable({
-                columns: [{ data: 'producto' }, { data: 'total_vendido' }],
-                language: { url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json" },
-                searching: false,
-                lengthChange: false,
-                pageLength: 10,
-                ordering: false
-            });
+        const fpMasVendidos = flatpickr("#fechasMasVendidos", {
+            mode: "range",
+            "locale": "es",
+            dateFormat: "Y-m-d",
+        });
 
-            document.getElementById('btnFiltrarMasVendidos').addEventListener('click', function() {
-                cargarDatosMasVendidos(fpMasVendidos.selectedDates);
-            });
+        tablaProductosMasVendidos = $('#tablaProductosMasVendidos').DataTable({
+            columns: [{ data: 'producto' }, { data: 'total_vendido' }],
+            language: { url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json" },
+            searching: false,
+            lengthChange: false,
+            pageLength: 10,
+            ordering: false
+        });
 
-            // Cargar datos iniciales del reporte de más vendidos
-            cargarDatosMasVendidos();
+        document.getElementById('btnFiltrarMasVendidos').addEventListener('click', function() {
+            cargarDatosMasVendidos(fpMasVendidos.selectedDates);
+        });
 
-        }, { once: true }); // El listener se ejecuta solo una vez para optimizar.
+        cargarDatosMasVendidos();
+        reporte5Inicializado = true;
+    }
 
-        // --- LÓGICA PARA ABRIR LA PESTAÑA CORRECTA DESDE EL MENÚ LATERAL ---
-        const handleHashChange = () => {
-            const hash = window.location.hash;
-            if (hash) {
-                // Construimos el ID del botón de la pestaña a partir del hash
-                // Ejemplo: #supervision -> supervision-tab
-                const tabId = hash.substring(1) + '-tab';
-                const tabButton = document.getElementById(tabId);
+    function inicializarReporteEstadistico() {
+        if (reporteEstadisticoInicializado) return;
 
-                if (tabButton) {
-                    // Usamos el método de Bootstrap para mostrar la pestaña
-                    const tab = new bootstrap.Tab(tabButton);
-                    tab.show();
+        // Cargar la lista de productos analizables
+        fetch('<?= base_url('reportes/getProductsForCorrelation') ?>')
+            .then(response => response.json())
+            .then(respuesta => {
+                const select = document.getElementById('selectProductoCorrelacion');
+                select.innerHTML = '<option value="" selected disabled>Seleccione un producto...</option>';
+                if (respuesta.success && respuesta.data.length > 0) {
+                    respuesta.data.forEach(producto => {
+                        const option = document.createElement('option');
+                        option.value = producto.id_producto;
+                        option.textContent = producto.descripcion;
+                        select.appendChild(option);
+                    });
+                } else {
+                    select.innerHTML = '<option value="" disabled>No hay productos con suficientes datos</option>';
+                    document.getElementById('btnGenerarCorrelacion').disabled = true;
                 }
+            });
+
+        // Añadir evento al botón
+        document.getElementById('btnGenerarCorrelacion').addEventListener('click', () => {
+            const productId = document.getElementById('selectProductoCorrelacion').value;
+            if (productId) {
+                fetchAndDrawCorrelationGraph(productId);
+            } else {
+                toast('Por favor, seleccione un producto.');
+            }
+        });
+
+        reporteEstadisticoInicializado = true;
+    }
+
+    function fetchAndDrawCorrelationGraph(productId) {
+        const url = `<?= base_url('reportes/getCorrelationDataForProduct') ?>?id_producto=${productId}`;
+        
+        fetch(url)
+            .then(response => response.json())
+            .then(respuesta => {
+                const placeholder = document.getElementById('correlationPlaceholder');
+                const container = document.getElementById('correlationAnalysisContainer');
+
+                if (!respuesta.success || respuesta.data.length < 3) {
+                    placeholder.style.display = 'block';
+                    container.style.display = 'none';
+                    placeholder.innerHTML = '<p>No hay suficientes datos para este producto para generar un análisis de correlación.</p>';
+                    toast('Datos insuficientes para el producto seleccionado.');
+                    return;
+                }
+
+                placeholder.style.display = 'none';
+                container.style.display = 'block';
+
+                const dataPoints = respuesta.data.map(p => ({
+                    x: parseFloat(p.x), // precio_unitario
+                    y: parseFloat(p.y)  // cantidad
+                }));
+
+                // --- Cálculos estadísticos ---
+                const { m, b, r } = calculateCorrelation(dataPoints);
+
+                // --- Actualizar texto de análisis ---
+                const productName = document.getElementById('selectProductoCorrelacion').options[document.getElementById('selectProductoCorrelacion').selectedIndex].text;
+                document.getElementById('correlationProductTitle').textContent = `Análisis para: ${productName}`;
+                updateAnalysisText(r);
+
+                // --- Preparar datos para el gráfico ---
+                const trendlineData = dataPoints.map(p => ({ x: p.x, y: m * p.x + b }));
+                trendlineData.sort((a, b) => a.x - b.x);
+
+                // --- Dibujar el gráfico ---
+                if (chartCorrelacion) {
+                    chartCorrelacion.destroy();
+                }
+                const ctx = document.getElementById('chartCorrelacion').getContext('2d');
+                chartCorrelacion = new Chart(ctx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [{
+                            label: `Ventas de ${productName}`,
+                            data: dataPoints,
+                            backgroundColor: 'rgba(54, 162, 235, 0.6)'
+                        }, {
+                            label: 'Línea de Tendencia',
+                            data: trendlineData,
+                            type: 'line',
+                            fill: false,
+                            borderColor: 'rgba(255, 99, 132, 1)',
+                            borderWidth: 2,
+                            pointRadius: 0
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: { position: 'top' },
+                            title: { display: true, text: `Correlación Precio vs. Cantidad Vendida` },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        const point = context.raw; 
+                                        return `Precio de Venta del producto "${productName}"= ${point.x.toFixed(2)} y y la cantidad vendida es de ${point.y}.`;
+                                    }
+                                }
+                            }
+                        },
+                        scales: {
+                            x: {
+                                type: 'linear', position: 'bottom', beginAtZero: true,
+                                title: { display: true, text: 'Precio de Venta ($)' }
+                            },
+                            y: {
+                                beginAtZero: true,
+                                title: { display: true, text: 'Cantidad Vendida (Unidades)' }
+                            }
+                        }
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error al cargar datos de correlación:', error);
+                toast('Error de comunicación al cargar datos para el reporte estadístico.');
+            });
+    }
+
+    function calculateCorrelation(data) {
+        let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
+        const n = data.length;
+
+        if (n < 2) return { m: 0, b: 0, r: 0 };
+
+        data.forEach(p => {
+            sumX += p.x;
+            sumY += p.y;
+            sumXY += p.x * p.y;
+            sumX2 += p.x * p.x;
+            sumY2 += p.y * p.y;
+        });
+
+        const m = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
+        const b = (sumY - m * sumX) / n;
+
+        const numerator = n * sumXY - sumX * sumY;
+        const denominator = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
+        const r = denominator === 0 ? 0 : numerator / denominator;
+
+        return { m, b, r };
+    }
+
+    function updateAnalysisText(r) {
+        const analysisDiv = document.getElementById('correlationAnalysisResult');
+        let strength = '';
+        let direction = '';
+        let conclusion = '';
+        let alertClass = 'alert-secondary';
+
+        if (r > 0.7) {
+            strength = 'fuerte';
+            direction = 'positiva';
+            alertClass = 'alert-success';
+            conclusion = 'A medida que el precio aumenta, las ventas de este producto tienden a aumentar significativamente. Podría ser percibido como un artículo de mayor calidad o deseabilidad a precios más altos.';
+        } else if (r > 0.3) {
+            strength = 'moderada';
+            direction = 'positiva';
+            alertClass = 'alert-info';
+            conclusion = 'Existe una tendencia a que las ventas aumenten con el precio, aunque la relación no es muy fuerte.';
+        } else if (r < -0.7) {
+            strength = 'fuerte';
+            direction = 'negativa';
+            alertClass = 'alert-danger';
+            conclusion = 'A medida que el precio aumenta, las ventas de este producto tienden a disminuir significativamente. Es un producto sensible al precio.';
+        } else if (r < -0.3) {
+            strength = 'moderada';
+            direction = 'negativa';
+            alertClass = 'alert-warning';
+            conclusion = 'Existe una tendencia a que las ventas disminuyan con el precio, aunque otros factores también influyen.';
+        } else {
+            strength = 'muy débil o nula';
+            direction = '';
+            alertClass = 'alert-secondary';
+            conclusion = 'No parece haber una relación clara entre el precio y la cantidad vendida. Las ventas pueden depender de otros factores como promociones, temporada, etc.';
+        }
+
+        analysisDiv.className = `alert ${alertClass}`;
+        analysisDiv.innerHTML = `
+            <strong>Coeficiente de Correlación (r): ${r.toFixed(4)}</strong>
+            <p>Esto indica una correlación ${direction} <strong>${strength}</strong>.</p>
+            <hr>
+            <p class="mb-0"><strong>Conclusión:</strong> ${conclusion}</p>
+        `;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const showSectionFromHash = () => {
+            document.querySelectorAll('.report-section').forEach(section => {
+                section.style.display = 'none';
+            });
+
+            let hash = window.location.hash || '#operacionales';
+            const targetSection = document.querySelector(hash);
+
+            if (targetSection) {
+                targetSection.style.display = 'block';
+
+                if (hash === '#supervision') {
+                    inicializarReporte4();
+                    if (document.getElementById('collapseSup2').classList.contains('show')) {
+                        inicializarReporte5();
+                    }
+                } else if (hash === '#estadisticos') {
+                    inicializarReporteEstadistico();
+                }
+
+            } else {
+                document.querySelector('#operacionales').style.display = 'block';
             }
         };
 
-        // Ejecutar al cargar la página por primera vez
-        handleHashChange();
+        const collapseMasVendidos = document.getElementById('collapseSup2');
+        collapseMasVendidos.addEventListener('shown.bs.collapse', inicializarReporte5, { once: true });
 
-        // Ejecutar cada vez que el hash en la URL cambie (si el usuario navega entre hashes en la misma página)
-        window.addEventListener('hashchange', handleHashChange, false);
+        showSectionFromHash();
+        window.addEventListener('hashchange', showSectionFromHash, false);
     });
 
     function cargarDatosProduccionCosturero(fechas = []) {
@@ -328,21 +576,14 @@
     }
 
     function actualizarGraficoYTabla(data) {
-        // Actualizar DataTable
-        tablaProduccionCosturero.clear();
-        tablaProduccionCosturero.rows.add(data);
-        tablaProduccionCosturero.draw();
-
-        // Preparar datos para el gráfico
+        tablaProduccionCosturero.clear().rows.add(data).draw();
         const labels = data.map(item => item.costurero);
         const valores = data.map(item => item.total_producido);
 
-        // Destruir gráfico anterior si existe
         if (chartProduccionCosturero) {
             chartProduccionCosturero.destroy();
         }
 
-        // Crear nuevo gráfico
         const ctx = document.getElementById('chartProduccionCosturero').getContext('2d');
         chartProduccionCosturero = new Chart(ctx, {
             type: 'bar',
@@ -357,20 +598,11 @@
                 }]
             },
             options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                },
+                scales: { y: { beginAtZero: true } },
                 responsive: true,
                 plugins: {
-                    legend: {
-                        position: 'top',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Producción Total por Costurero'
-                    }
+                    legend: { position: 'top' },
+                    title: { display: true, text: 'Producción Total por Costurero' }
                 }
             }
         });
@@ -400,23 +632,18 @@
     }
 
     function actualizarGraficoYTablaMasVendidos(data) {
-        // Actualizar DataTable
         tablaProductosMasVendidos.clear().rows.add(data).draw();
-
-        // Preparar datos para el gráfico
         const labels = data.map(item => item.producto);
         const valores = data.map(item => item.total_vendido);
         const colores = generarColores(data.length);
 
-        // Destruir gráfico anterior si existe
         if (chartProductosMasVendidos) {
             chartProductosMasVendidos.destroy();
         }
 
-        // Crear nuevo gráfico de pastel
         const ctx = document.getElementById('chartProductosMasVendidos').getContext('2d');
         chartProductosMasVendidos = new Chart(ctx, {
-            type: 'pie', // Tipo de gráfico
+            type: 'pie',
             data: {
                 labels: labels,
                 datasets: [{
