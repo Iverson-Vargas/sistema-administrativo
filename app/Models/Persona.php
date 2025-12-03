@@ -31,6 +31,7 @@ class Persona extends Model
         $builder->join('per_natural pn', 'p.id_persona = pn.id_persona', 'inner');
         $builder->join('funcion_empleado fe', 'e.id_empleado = fe.id_empleado', 'inner');
         $builder->where('fe.descripcion_cargo', 'Costurero');
+        $builder->where('e.estatus', 'A');
         $query= $builder->get();
         return $query->getResultArray();
     }   

@@ -11,6 +11,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#modalCrearProducto"
                 onclick="limpiarFormulario()">
+                <i class="bi bi-plus-circle"></i>
                 Crear Producto
             </button>
             <div class="tabla-scroll-vertical">
@@ -45,35 +46,29 @@
             <div class="modal-body">
                 <h3 class="text-center">Detalles del Producto</h3>
                 <div class="row">
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="idProducto" class="form-label">Ingresar ID del Producto</label>
-                            <input type="text" class="form-control" id="idProducto">
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="idProducto" class="form-label">Ingresar ID del Producto</label>
+                        <input type="text" class="form-control" id="idProducto">
                     </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="tonoProducto" class="form-label">Seleccionar tono del producto</label>
-                            <select type="text" class="form-select" id="tonoProducto"></select>
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="precioUnitario" class="form-label">Ingresar Precio Unitario</label>
+                        <input type="number" class="form-control" id="precioUnitario">
                     </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="tallaProducto" class="form-label">Seleccionar talla del producto</label>
-                            <select type="text" class="form-select" id="tallaProducto"></select>
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="tonoProducto" class="form-label">Seleccionar tono del producto</label>
+                        <select type="text" class="form-select" id="tonoProducto"></select>
                     </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="descripcion" class="form-label">Descripción</label>
-                            <textarea name="text" class="form-control" id="descripcion"></textarea>
-                        </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="tallaProducto" class="form-label">Seleccionar talla del producto</label>
+                        <select type="text" class="form-select" id="tallaProducto"></select>
                     </div>
-                    <div class="col-md-6">
-                        <div class="mb-3">
-                            <label for="precioUnitario" class="form-label">Ingresar Precio Unitario</label>
-                            <input type="number" class="form-control" id="precioUnitario">
-                        </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <textarea name="text" class="form-control" id="descripcion" rows="2"></textarea>
                     </div>
                 </div>
                 <div id="resultado"></div>

@@ -268,14 +268,23 @@
                 </div>
               </div>
 
-              <li class="nav-item">
-                <a style="font-size: 20px;" class="nav-link d-flex align-items-center gap-2 text-white" href="<?= base_url('/reportes'); ?>">
+              <div class="nav-item">
+                <button data-bs-toggle="collapse" data-bs-target="#reportes" style="font-size: 20px;" class="nav-link d-flex align-items-center gap-2 text-white" href="#">
                   <svg class="bi" aria-hidden="true">
                     <use xlink:href="#graph-up"></use>
                   </svg>
                   Reportes
-                </a>
-              </li>
+                </button>
+                <div class="collapse" id="reportes">
+                  <ul>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('#'); ?>">reporte 1</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('#'); ?>">reporte 2</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('#'); ?>">reporte 3</a>
+                  </ul>
+                </div>
+              </div>
+
+
             </ul>
             <hr class="my-3" />
             <ul class="nav flex-column mb-auto">
@@ -311,20 +320,20 @@
   <?php echo $this->renderSection('scripts'); ?>
   <script>
     function cerrarSeccion() {
-            const salirUrl = "<?= base_url('salir') ?>";
-            fetch(salirUrl)
-                .then(response => response.json()) // 1. Convertir la respuesta a JSON
-                .then(data => {
-                    // 2. Usar los datos convertidos (data)
-                    if (data.success) {
-                        window.location.href = '<?= base_url('/'); ?>';
-                    } else {
-                        console.error('Error al cerrar sesión:', data.message);
-                    }
-                })
-                .catch(error => {
-                    console.error('Error:', error);
-                });
+      const salirUrl = "<?= base_url('salir') ?>";
+      fetch(salirUrl)
+        .then(response => response.json()) // 1. Convertir la respuesta a JSON
+        .then(data => {
+          // 2. Usar los datos convertidos (data)
+          if (data.success) {
+            window.location.href = '<?= base_url('/'); ?>';
+          } else {
+            console.error('Error al cerrar sesión:', data.message);
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
     }
 
     function abrirConfiguracionSistema() {

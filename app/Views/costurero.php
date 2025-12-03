@@ -14,6 +14,7 @@
                 data-bs-toggle="modal"
                 data-bs-target="#modalCrearCosturero"
                 onclick="limpiarFormulario()">
+                <i class="bi bi-plus-circle"></i>
                 Crear Costurero
             </button>
             <div class="tabla-scroll-vertical">

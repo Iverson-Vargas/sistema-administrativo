@@ -28,3 +28,6 @@ $routes->get('/salir', 'CerrarSesion::cerrarSession');
 $routes->get('/personal', 'MostrarVistas::mostrarPersonal');
 $routes->post('/crearCosturero', 'CrearCosturero::CrearUnCosturero');
 $routes->get('/listaCostureros', 'ListarCostureros::returnCostureros');
+$routes->get('/listaEmpleados', 'ListarEmpleados::returnEmpleados');
+$routes->get('/getOneEmpleado/(:num)', 'ListarEmpleados::getOneEmpleado/$1');
+$routes->post('/actualizarEmpleado/(:num)', 'ListarEmpleados::actualizarEmpleado/$1');
