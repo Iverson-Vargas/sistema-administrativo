@@ -17,12 +17,10 @@
                 <i class="bi bi-plus-circle"></i>
                 Crear Costurero
             </button>
-            <div class="tabla-scroll-vertical">
-
                 <table id="tablaCostureros" class="table table-striped table-bordered mt-3">
                     <thead>
                         <tr>
-                            <th>Seleccionar</th>
+                         
                             <th>ID del Empleado</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
@@ -139,15 +137,19 @@
     $(document).ready(function() {
         tabla = $('#tablaCostureros').DataTable({
             ajax: '<?= base_url('listaCostureros'); ?>',
-            columns: [
-                {
-                    data: null,
-                    render: function(data, type, row) {
-                        return `<input type="checkbox" class="usuario-checkbox" name="seleccionarUsuario" value="${data.id_usuario}">`;
-                    },
+            columnDefs: [{
+                    targets: 0, // Columna "Seleccionar"
+                    width: "10px", // Ancho reducido
+                    className: "text-center", // Centrar contenido
                     orderable: false,
                     searchable: false
                 },
+                {
+                    targets: [1, 2, 3, 4 , 5], // ID del Empleado, Nombre, Apellido, Cédula, Cargo
+                    className: "text-center"
+                }
+            ],
+            columns: [
                 {
                     data: 'id_empleado'
                 },

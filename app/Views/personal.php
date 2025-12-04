@@ -1,42 +1,42 @@
 <?php echo $this->extend('plantilla/layout'); ?>
 <?php echo $this->section('contenido'); ?>
 
-    <div class="row mt-1 " style="position: relative; right: 13px;">
-        <div class="col-md-12">
-            <h3 class="text-center">Gestion de Personal</h3>
-            <hr>
-            <div class="d-flex justify-content-end mb-3">
-                <button id="btnActualizar" class="btn btn-warning me-2" style="color: #FCF7F7;"><i class="bi bi-pencil-square"></i> Actualizar </button>
-                <button id="btnDeshabilitar" class="btn btn-danger"><i class="bi bi-trash"></i> Deshabilitar </button>
-            </div>
+<div class="row mt-1 " style="position: relative; right: 13px;">
+    <div class="col-md-12">
+        <h3 class="text-center">Gestion de Personal</h3>
+        <hr>
+        <div class="d-flex justify-content-end mb-3">
+            <button id="btnActualizar" class="btn btn-warning me-2" style="color: #FCF7F7;"><i class="bi bi-pencil-square"></i> Actualizar </button>
+            <button id="btnDeshabilitar" class="btn btn-danger"><i class="bi bi-trash"></i> Deshabilitar </button>
+        </div>
 
 
-            <div class="tabla-scroll-vertical">
+        <div class="tabla-scroll-vertical">
 
-                <table id="tablaPersonal" class="table table-striped table-bordered mt-3">
-                    <thead>
-                        <tr>
-                            <th class="text-center">Seleccionar</th>
-                            <th class="text-center">ID</th>
-                            <th class="text-center">Nombre</th>
-                            <th class="text-center">Apellido</th>
-                            <th class="text-center">Sexo</th>
-                            <th class="text-center">Tipo</th>
-                            <th class="text-center">Direccion</th>
-                            <th class="text-center">Telefono</th>
-                            <th class="text-center">Correo</th>
-                            <th class="text-center">CI/RIF</th>
-                            <th class="text-center">F. Ingreso</th>
-                            <th class="text-center">Estatus</th>
-                        </tr>
-                    </thead>
-                    <!-- <tbody id="cuerpoTablaMisProductos">
+            <table id="tablaPersonal" class="table table-striped table-bordered mt-3">
+                <thead>
+                    <tr>
+                        <th class="text-center">Seleccionar</th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Nombre</th>
+                        <th class="text-center">Apellido</th>
+                        <th class="text-center">Sexo</th>
+                        <th class="text-center">Tipo</th>
+                        <th class="text-center">Direccion</th>
+                        <th class="text-center">Telefono</th>
+                        <th class="text-center">Correo</th>
+                        <th class="text-center">CI/RIF</th>
+                        <th class="text-center">F. Ingreso</th>
+                        <th class="text-center">Estatus</th>
+                    </tr>
+                </thead>
+                <!-- <tbody id="cuerpoTablaMisProductos">
                 <!-- Los datos se llenarán con JavaScript -->
-                    <!--</tbody> -->
-                </table>
-            </div>
+                <!--</tbody> -->
+            </table>
         </div>
     </div>
+</div>
 
 <!-- Modal para actualizar -->
 <div class="modal fade" id="modalActualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -135,8 +135,7 @@
                     className: "text-center"
                 }
             ],
-            columns: [
-                {
+            columns: [{
                     data: null,
                     render: function(data, type, row) {
                         return `<input type="checkbox" class="empleado-checkbox" name="seleccionarEmpleado" value="${data.id_empleado}">`;
@@ -263,29 +262,29 @@
 
             // Al hacer clic en el botón de confirmación del modal
             $('#btnConfirmarDeshabilitar').off('click').on('click', function() {
-                 $.ajax({
-                     url: `<?= base_url('deshabilitarEmpleado/') ?>/${idEmpleado}`,
-                     type: 'POST',
-                     dataType: 'json',
-                     success: function(response) {
-                         if (response && response.success) {
-                             toast('Empleado deshabilitado correctamente.');
-                             tabla.ajax.reload(); // Recargar la tabla
-                         } else {
-                             // Usar el mensaje del servidor si está disponible
-                             const mensaje = response.message || 'Error al deshabilitar el empleado.';
-                             toast(mensaje);
-                         }
-                     },
-                     error: function(xhr, status, error) {
-                         console.error('Error en la solicitud AJAX:', error);
-                         console.error('Detalles del error:', xhr.responseText);
-                         toast('Error al contactar al servidor.');
-                     },
+                $.ajax({
+                    url: `<?= base_url('deshabilitarEmpleado/') ?>/${idEmpleado}`,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response && response.success) {
+                            toast('Empleado deshabilitado correctamente.');
+                            tabla.ajax.reload(); // Recargar la tabla
+                        } else {
+                            // Usar el mensaje del servidor si está disponible
+                            const mensaje = response.message || 'Error al deshabilitar el empleado.';
+                            toast(mensaje);
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error en la solicitud AJAX:', error);
+                        console.error('Detalles del error:', xhr.responseText);
+                        toast('Error al contactar al servidor.');
+                    },
                     complete: function() {
                         modal.hide();
                     }
-                 });
+                });
             });
         });
     });
@@ -337,7 +336,6 @@
             }
         });
     }
-
 </script>
 
-    <?php echo $this->endSection(); ?>
+<?php echo $this->endSection(); ?>

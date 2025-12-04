@@ -9,13 +9,16 @@
         <div class="col-md-12">
             <h3 class="text-center">Gestion de Usuarios</h3>
             <hr>
-            <button class="btn btn-primary"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#modalCrearUsuario"
-                onclick="limpiarFormulario()"><i class="bi bi-plus-circle"></i>
-                Crear Usuario
-            </button>
+            <div class="d-flex justify-content-start mb-3">
+                <button class="btn btn-primary me-2"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalCrearUsuario"
+                    onclick="limpiarFormulario()"><i class="bi bi-plus-circle"></i>
+                    Crear Usuario
+                </button>
+                <button id="btnActualizar" class="btn btn-warning" style="color: #FCF7F7;"><i class="bi bi-pencil-square"></i> Actualizar </button>
+            </div>
             <div class="tabla-scroll-vertical">
 
                 <table id="tablaUsuarios" class="table table-striped table-bordered mt-3">
@@ -27,6 +30,7 @@
                             <th>Persona</th>
                             <th>Nick</th>
                             <th>Contraseña</th>
+                            <th>Estatus</th>
                         </tr>
                     </thead>
                     <!-- <tbody id="cuerpoTablaMisProductos">
@@ -119,7 +123,12 @@
                         </div>
                         <div class="col-md-6">
                             <label for="contrasena">Contraseña</label>
-                            <input type="password" id="contrasena" class="form-control" required>
+                            <div class="input-group">
+                                <input type="password" id="contrasena" class="form-control" required>
+                                <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                    <i class="bi bi-eye-fill"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -132,6 +141,43 @@
         </div>
     </div>
 </div>
+
+<!-- Modal para Actualizar Usuario -->
+<div class="modal fade" id="modalActualizarUsuario" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Actualizar Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id_usuario_actualizar">
+                <div class="mb-3">
+                    <label for="roles_actualizar" class="form-label">Rol</label>
+                    <select id="roles_actualizar" class="form-select"></select>
+                </div>
+                <div class="mb-3">
+                    <label for="nick_actualizar" class="form-label">Nick</label>
+                    <input type="text" id="nick_actualizar" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="contrasena_actualizar" class="form-label">Contraseña</label>
+                    <div class="input-group">
+                        <input type="password" id="contrasena_actualizar" class="form-control">
+                        <button class="btn btn-outline-secondary" type="button" id="togglePasswordActualizar">
+                            <i class="bi bi-eye-fill"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-warning" onclick="ActualizarUsuario()">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <?php echo $this->endSection(); ?>
 <?php echo $this->section('scripts'); ?>
@@ -148,7 +194,20 @@
     $(document).ready(function() {
         tabla = $('#tablaUsuarios').DataTable({
             ajax: '<?= base_url('listaUsuarios'); ?>',
+            columnDefs: [{
+                    targets: 0, // Columna "Seleccionar"
+                    width: "10px", // Ancho reducido
+                    className: "text-center", // Centrar contenido
+                    orderable: false,
+                    searchable: false
+                },
+                {
+                    targets: [1, 2, 3, 4, 5, 6], // ID, Rol, Persona, Nick, Contraseña, Estatus
+                    className: "text-center"
+                }
+            ],
             columns: [
+                
                 {
                     data: null,
                     render: function(data, type, row) {
@@ -172,6 +231,9 @@
                 {
                     data: 'contrasena'
                 },
+                {
+                    data: 'estatus'
+                },
             ],
             language: {
                 url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json"
@@ -188,10 +250,100 @@
             }
         });
 
+        $('#btnActualizar').on('click', function() {
+            const checkboxSeleccionado = $('#tablaUsuarios tbody .usuario-checkbox:checked');
+
+            if (checkboxSeleccionado.length === 0) {
+                let mensaje = 'Por favor, seleccione un usuario para actualizar.';
+                setTimeout(function() {
+                    toast(mensaje);
+                }, 500);
+                return;
+            }
+
+            const idUsuario = checkboxSeleccionado.val();
+            console.log("ID del usuario seleccionado:", idUsuario);
+            // AJAX para obtener los datos del usuario
+            $.ajax({
+                url: `<?= base_url('getOneUsuario/') ?>/${idUsuario}`,
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    if (response && response.success && response.data) {
+                        // Accedemos al objeto del usuario dentro de response.data
+                        const usuario = response.data; // response.data ya es el objeto del usuario
+                        if (usuario) {
+                            // Llenar el select de roles para la modal de actualización
+                            ListarRoles('#roles_actualizar', usuario.id_roles);
+
+                            // Llenar el formulario en el modal
+                            $('#id_usuario_actualizar').val(usuario.id_usuario);
+                            $('#nick_actualizar').val(usuario.nick);
+                            $('#contrasena_actualizar').val(usuario.contrasena); // Dejar en blanco por seguridad
+
+                            // Mostrar el modal
+                            $('#modalActualizarUsuario').modal('show');
+                        } else {
+                            let mensaje = 'No se pudo obtener la información del usuario.';
+                            setTimeout(function() {
+                                toast(mensaje);
+                            }, 500);
+                        }
+                    } else {
+                        let mensaje = 'No se pudo obtener la información del usuario.';
+                        setTimeout(function() {
+                            toast(mensaje);
+                        }, 500);
+                    }
+                },
+                error: function() {
+                    let mensaje = 'Error al contactar al servidor.';
+                    setTimeout(function() {
+                        toast(mensaje);
+                    }, 500);
+                }
+            });
+        });
+
+        // Funcionalidad para mostrar/ocultar contraseña en modal de CREAR
+        const togglePassword = document.querySelector('#togglePassword');
+        const password = document.querySelector('#contrasena');
+        togglePassword.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            // toggle the eye icon
+            const icon = this.querySelector('i');
+            if (type === 'password') {
+                icon.classList.remove('bi-eye-slash-fill');
+                icon.classList.add('bi-eye-fill');
+            } else {
+                icon.classList.remove('bi-eye-fill');
+                icon.classList.add('bi-eye-slash-fill');
+            }
+        });
+
+        // Funcionalidad para mostrar/ocultar contraseña en modal de ACTUALIZAR
+        const togglePasswordActualizar = document.querySelector('#togglePasswordActualizar');
+        const passwordActualizar = document.querySelector('#contrasena_actualizar');
+        togglePasswordActualizar.addEventListener('click', function (e) {
+            // toggle the type attribute
+            const type = passwordActualizar.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordActualizar.setAttribute('type', type);
+            // toggle the eye icon
+            const icon = this.querySelector('i');
+            if (type === 'password') {
+                icon.classList.remove('bi-eye-slash-fill');
+                icon.classList.add('bi-eye-fill');
+            } else {
+                icon.classList.remove('bi-eye-fill');
+                icon.classList.add('bi-eye-slash-fill');
+            }
+        });
     });
 
     window.onload = function() {
-        ListarRoles();
+        ListarRoles('#roles');
     };
 
     function CrearUsuario() {
@@ -259,14 +411,52 @@
             })
     }
 
-    function ListarRoles() {
+    function ActualizarUsuario() {
+        let id_usuario = document.getElementById('id_usuario_actualizar').value;
+        const url = `<?= base_url('actualizarUsuario/'); ?>${id_usuario}`;
+        let id_roles = document.getElementById('roles_actualizar').value;
+        let nick = document.getElementById('nick_actualizar').value;
+        let contrasena = document.getElementById('contrasena_actualizar').value;
+
+        if (!id_roles || !nick) {
+            toast('Por favor, complete todos los campos requeridos.');
+            return;
+        }
+
+        fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id_roles: id_roles,
+                nick: nick,
+                contrasena: contrasena // Enviar vacía si no se cambia
+            })
+        })
+        .then(response => response.json())
+        .then(respuesta => {
+            if (respuesta.success) {
+                tabla.ajax.reload();
+                let modal = bootstrap.Modal.getInstance(document.getElementById('modalActualizarUsuario'));
+                modal.hide();
+                toast('El usuario fue actualizado correctamente.');
+            } else {
+                toast(respuesta.message || 'Ocurrió un error al actualizar.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            toast('Ocurrió un error de comunicación con el servidor.');
+        });
+    }
+
+    function ListarRoles(selector, selectedId = null) {
 
         const url = '<?= base_url('listaRoles') ?>';
         fetch(url)
             .then(response => response.json())
             .then(respuesta => {
                 if (respuesta.success) {
-                    let select = document.getElementById('roles');
+                    let select = document.querySelector(selector);
                     select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
                     respuesta.data.forEach(rol => {
                         let option = document.createElement('option');
@@ -274,6 +464,9 @@
                         option.textContent = rol.tipo_rol;
                         select.appendChild(option);
                     });
+                    if (selectedId) {
+                        select.value = selectedId;
+                    }
                 } else {
                     alert('Error al cargar los roles.')
                 }

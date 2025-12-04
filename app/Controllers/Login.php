@@ -16,7 +16,7 @@ class Login extends BaseController
         }
 
         $Usuario = new Usuario();
-        $datosUsuario = $Usuario->getOneUsuario($usuario);
+        $datosUsuario = $Usuario->getOneUsuarioValidar($usuario);
 
         if (count($datosUsuario) > 0) {
             if ($contrasena == $datosUsuario[0]->contrasena) {

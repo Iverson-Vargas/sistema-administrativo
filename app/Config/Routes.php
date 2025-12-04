@@ -28,15 +28,14 @@ $routes->get('/salir', 'CerrarSesion::cerrarSession');
 $routes->get('/personal', 'MostrarVistas::mostrarPersonal');
 $routes->post('/crearCosturero', 'CrearCosturero::CrearUnCosturero');
 $routes->get('/listaCostureros', 'ListarCostureros::returnCostureros');
-
 // Rutas para los reportes
 $routes->get('reportes/produccionPorCosturero', 'Reportes::produccionPorCosturero');
 $routes->get('reportes/productosMasVendidos', 'Reportes::productosMasVendidos');
 $routes->get('reportes/getProductsForCorrelation', 'Reportes::getProductsForCorrelation');
 $routes->get('reportes/getCorrelationDataForProduct', 'Reportes::getCorrelationDataForProduct');
-
 $routes->get('/listaEmpleados', 'ListarEmpleados::returnEmpleados');
 $routes->get('/getOneEmpleado/(:num)', 'ListarEmpleados::getOneEmpleado/$1');
 $routes->post('/actualizarEmpleado/(:num)', 'ListarEmpleados::actualizarEmpleado/$1');
-
 $routes->post('/deshabilitarEmpleado/(:num)', 'ListarEmpleados::deshabilitarEmpleado/$1');
+$routes->get('getOneUsuario/(:num)', 'ListarUsuarios::getOneUsuario/$1');
+$routes->post('actualizarUsuario/(:num)', 'ListarUsuarios::actualizarUsuario/$1');

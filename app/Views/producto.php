@@ -6,14 +6,20 @@
         <div class="col-md-12">
             <h3 class="text-center">Gestion de Productos</h3>
             <hr>
-            <button class="btn btn-primary"
-                type="button"
-                data-bs-toggle="modal"
-                data-bs-target="#modalCrearProducto"
-                onclick="limpiarFormulario()">
-                <i class="bi bi-plus-circle"></i>
-                Crear Producto
-            </button>
+            <div class="d-flex justify-content-between mb-3">
+                <button class="btn btn-primary"
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#modalCrearProducto"
+                    onclick="limpiarFormulario()">
+                    <i class="bi bi-plus-circle"></i>
+                    Crear Producto
+                </button>
+                <div>
+                    <button id="btnActualizar" class="btn btn-warning me-2" style="color: #FCF7F7;"><i class="bi bi-pencil-square"></i> Actualizar </button>
+                    <button id="btnDeshabilitar" class="btn btn-danger"><i class="bi bi-trash"></i> Deshabilitar </button>
+                </div>
+            </div>
             <div class="tabla-scroll-vertical">
 
                 <table id="tablaMisProductos" class="table table-striped table-bordered mt-3">
