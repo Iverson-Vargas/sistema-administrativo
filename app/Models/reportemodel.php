@@ -13,18 +13,18 @@ class ReporteModel extends Model
     public function getProduccionPorCosturero($fechaDesde = null, $fechaHasta = null)
     {
         // IMPORTANTE: Ajusta los nombres de tablas y columnas si son diferentes en tu base de datos.
-        $builder = $this->db->table('produccion');
-        $builder->select("CONCAT(pn.nombre, ' ', pn.apellido) AS costurero, SUM(produccion.cantidad) AS total_producido");
-        $builder->join('empleado e', 'produccion.id_empleado = e.id_empleado');
+        $builder = $this->db->table('inventario i');
+        $builder->select("CONCAT(pn.nombre, ' ', pn.apellido) AS costurero, SUM(i.cantidad_inicial) AS total_producido");
+        $builder->join('empleado e', 'i.id_empleado = e.id_empleado');
         $builder->join('persona p', 'e.id_persona = p.id_persona');
         $builder->join('per_natural pn', 'p.id_persona = pn.id_persona');
 
         if ($fechaDesde && $fechaHasta) {
-            $builder->where('produccion.fecha_produccion >=', $fechaDesde);
-            $builder->where('produccion.fecha_produccion <=', $fechaHasta);
+            $builder->where('i.fecha_ingreso >=', $fechaDesde);
+            $builder->where('i.fecha_ingreso <=', $fechaHasta);
         }
 
-        $builder->groupBy('produccion.id_empleado, costurero');
+        $builder->groupBy('i.id_empleado, costurero');
         $builder->orderBy('total_producido', 'DESC');
 
         return $builder->get()->getResultArray();
@@ -36,15 +36,9 @@ class ReporteModel extends Model
      */
     public function getInventarioActual()
     {
-        // NOTA: Esta consulta asume que tienes una columna 'stock' en tu tabla 'producto'.
-        // Si no es así, deberás calcular el stock real sumando las entradas de 'produccion'
-        // y restando las salidas de 'detalle_venta' para cada producto.
-        // CORRECCIÓN: Esta consulta ahora usa la tabla `inventario` para calcular el stock real.
-        // Suma la `cantidad_disponible` de todos los lotes para cada producto.
         $builder = $this->db->table('producto p');
-        $builder->select("CONCAT(p.descripcion, ' (', p.id_producto, ')') AS producto_desc, t.descripcion as talla, o.descripcion as tono, p.stock_actual AS stock");
         $builder->select("
-            CONCAT(p.descripcion, ' (', p.id_producto, ')') AS producto_desc, 
+            CONCAT(p.descripcion, ' Color: ', o.descripcion, ' Talla: ', t.descripcion) AS producto_desc, 
             t.descripcion as talla, 
             o.descripcion as tono, 
             SUM(i.cantidad_disponible) AS stock
@@ -52,7 +46,6 @@ class ReporteModel extends Model
         $builder->join('inventario i', 'p.id_producto = i.id_producto', 'left');
         $builder->join('talla t', 'p.id_talla = t.id_talla');
         $builder->join('tono o', 'p.id_tono = o.id_tono');
-        // ->where('p.stock_actual >', 0) // Descomenta si solo quieres ver productos con stock
         $builder->groupBy('p.id_producto, p.descripcion, t.descripcion, o.descripcion');
         $builder->having('stock >', 0);
         $builder->orderBy('p.descripcion', 'ASC');
@@ -83,6 +76,31 @@ class ReporteModel extends Model
 
         return $builder->get()->getResultArray();
     }
+
+    /**
+     * Obtiene el rendimiento de los vendedores por monto total vendido.
+     * Puede ser filtrado por un rango de fechas.
+     */
+    public function getRendimientoVendedores($fechaDesde = null, $fechaHasta = null)
+    {
+        $builder = $this->db->table('venta v');
+        $builder->select("CONCAT(pn.nombre, ' ', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido");
+        $builder->join('detalle_venta dv', 'v.id_venta = dv.id_venta', 'inner');
+        $builder->join('usuario u', 'v.id_usuario = u.id_usuario', 'inner');
+        $builder->join('persona p', 'u.id_persona = p.id_persona', 'inner');
+        $builder->join('per_natural pn', 'p.id_persona = pn.id_persona', 'inner');
+
+        if ($fechaDesde && $fechaHasta) {
+            $builder->where('v.fecha >=', $fechaDesde);
+            $builder->where('v.fecha <=', $fechaHasta);
+        }
+
+        $builder->groupBy('v.id_usuario, vendedor');
+        $builder->orderBy('total_vendido', 'DESC');
+
+        return $builder->get()->getResultArray();
+    }
+
     // --- Aquí puedes agregar los métodos para las consultas de los otros 8 reportes ---
 
 }

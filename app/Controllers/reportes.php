@@ -26,6 +26,22 @@ class Reportes extends BaseController
     }
 
     /**
+     * Obtiene los datos para el reporte de inventario actual.
+     */
+    public function inventarioActual()
+    {
+        try {
+            $reporteModel = new ReporteModel();
+            $data = $reporteModel->getInventarioActual();
+
+            return $this->response->setJSON(['success' => true, 'data' => $data]);
+        } catch (\Exception $e) {
+            log_message('error', '[Reportes] Error en inventarioActual: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => 'Error interno al procesar el reporte de inventario.']);
+        }
+    }
+
+    /**
      * Obtiene los datos para el reporte de productos más vendidos.
      * Acepta un rango de fechas como parámetros GET.
      */
@@ -41,6 +57,26 @@ class Reportes extends BaseController
             return $this->response->setJSON(['success' => true, 'data' => $data]);
         } catch (\Exception $e) {
             log_message('error', '[Reportes] Error en productosMasVendidos: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => 'Error interno al procesar el reporte.']);
+        }
+    }
+
+    /**
+     * Obtiene los datos para el reporte de rendimiento de vendedores.
+     * Acepta un rango de fechas como parámetros GET.
+     */
+    public function rendimientoVendedores()
+    {
+        try {
+            $fechaDesde = $this->request->getGet('fecha_desde');
+            $fechaHasta = $this->request->getGet('fecha_hasta');
+
+            $reporteModel = new ReporteModel();
+            $data = $reporteModel->getRendimientoVendedores($fechaDesde, $fechaHasta);
+
+            return $this->response->setJSON(['success' => true, 'data' => $data]);
+        } catch (\Exception $e) {
+            log_message('error', '[Reportes] Error en rendimientoVendedores: ' . $e->getMessage());
             return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => 'Error interno al procesar el reporte.']);
         }
     }

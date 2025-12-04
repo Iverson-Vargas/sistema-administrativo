@@ -10,5 +10,6 @@ class ListarTonos extends BaseController
         $Tonos = new Tono();
         $datos = $Tonos->traerTonos ();
         return json_encode(array('success' => true, 'data' => $datos));
+        return $this->response->setJSON(['success' => true, 'data' => $datos]);
     }
 }

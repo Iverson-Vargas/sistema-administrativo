@@ -53,28 +53,28 @@
                 <h3 class="text-center">Detalles del Producto</h3>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="idProducto" class="form-label">Ingresar ID del Producto</label>
-                        <input type="text" class="form-control" id="idProducto">
+                        <label for="idProducto_crear" class="form-label">Ingresar ID del Producto</label>
+                        <input type="text" class="form-control" id="idProducto_crear">
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="precioUnitario" class="form-label">Ingresar Precio Unitario</label>
-                        <input type="number" class="form-control" id="precioUnitario">
+                        <label for="precioUnitario_crear" class="form-label">Ingresar Precio Unitario</label>
+                        <input type="number" class="form-control" id="precioUnitario_crear">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6 mb-3">
-                        <label for="tonoProducto" class="form-label">Seleccionar tono del producto</label>
-                        <select type="text" class="form-select" id="tonoProducto"></select>
+                        <label for="tonoProducto_crear" class="form-label">Seleccionar tono del producto</label>
+                        <select type="text" class="form-select" id="tonoProducto_crear"></select>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="tallaProducto" class="form-label">Seleccionar talla del producto</label>
-                        <select type="text" class="form-select" id="tallaProducto"></select>
+                        <label for="tallaProducto_crear" class="form-label">Seleccionar talla del producto</label>
+                        <select type="text" class="form-select" id="tallaProducto_crear"></select>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-12 mb-3">
-                        <label for="descripcion" class="form-label">Descripción</label>
-                        <textarea name="text" class="form-control" id="descripcion" rows="2"></textarea>
+                        <label for="descripcion_crear" class="form-label">Descripción</label>
+                        <textarea name="text" class="form-control" id="descripcion_crear" rows="2"></textarea>
                     </div>
                 </div>
                 <div id="resultado"></div>
@@ -119,7 +119,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-warning" id="btnGuardarCambios" onclick="guardarCambios()">Guardar Cambios</button>
+                <button type="button" class="btn btn-warning" id="btnGuardarCambios">Guardar Cambios</button>
             </div>
         </div>
     </div>
@@ -148,8 +148,8 @@
 <?php echo $this->section('scripts'); ?>
 <script>
     window.onload = function() {
-        listarTonos('#tonoProducto');
-        listarTallas('#tallaProducto');
+        listarTonos('#tonoProducto_crear');
+        listarTallas('#tallaProducto_crear');
     };
 
     let tabla; // Declara la variable 'tabla' aquí para que sea global
@@ -220,6 +220,12 @@
                         $('#descripcion_actualizar').val(producto.descripcion);
 
                         $('#modalActualizarProducto').modal('show');
+
+                        // Asignar el evento click al botón de guardar, pasando el ID
+                        // Se usa .off() para evitar múltiples listeners si el modal se abre varias veces
+                        $('#btnGuardarCambios').off('click').on('click', function() {
+                            guardarCambios(producto.id_producto);
+                        });
                     } else {
                         toast(response.message || 'No se pudo obtener la información del producto.');
                     }
@@ -322,11 +328,11 @@
 
     function CrearProducto() {
         const url = '<?= base_url('crearProducto'); ?>';
-        let idProducto = document.getElementById('idProducto').value;
-        let tonoProducto = document.getElementById('tonoProducto').value;
-        let tallaProducto = document.getElementById('tallaProducto').value;
-        let descripcion = document.getElementById('descripcion').value;
-        let precioUnitario = document.getElementById('precioUnitario').value;
+        let idProducto = document.getElementById('idProducto_crear').value;
+        let tonoProducto = document.getElementById('tonoProducto_crear').value;
+        let tallaProducto = document.getElementById('tallaProducto_crear').value;
+        let descripcion = document.getElementById('descripcion_crear').value;
+        let precioUnitario = document.getElementById('precioUnitario_crear').value;
 
         if (idProducto === '' || tonoProducto === '' || tallaProducto === '' || descripcion === '' || precioUnitario === '') {
             const mensaje = document.getElementById('resultado');
@@ -369,8 +375,7 @@
             })
     }
 
-    function guardarCambios() {
-        const idProducto = $('#id_producto_actualizar').val();
+    function guardarCambios(idProducto) {
         const datosActualizar = {
             id_tono: $('#tonoProducto_actualizar').val(),
             id_talla: $('#tallaProducto_actualizar').val(),
@@ -378,9 +383,14 @@
             precio_unitario: $('#precioUnitario_actualizar').val()
         };
 
+        if (!datosActualizar.id_tono || !datosActualizar.id_talla || !datosActualizar.descripcion || !datosActualizar.precio_unitario) {
+            toast('Por favor, complete todos los campos.');
+            return;
+        }
+
         $.ajax({
-            url: `<?= base_url('actualizarProducto/') ?>/${idProducto}`,
-            type: 'POST',
+            url: `<?= base_url('actualizarProducto') ?>/${idProducto}`,
+            method: 'POST',
             contentType: 'application/json',
             data: JSON.stringify(datosActualizar),
             dataType: 'json',
@@ -394,7 +404,7 @@
                 }
             },
             error: function(xhr, status, error) {
-                console.error('Error en la solicitud AJAX:', error);
+                console.error('Error en la solicitud AJAX:', status, error);
                 console.error('Detalles del error:', xhr.responseText);
                 toast('Error al contactar al servidor.');
             }
@@ -402,11 +412,11 @@
     }
 
     function limpiarFormulario() {
-        document.getElementById('idProducto').value = '';
-        document.getElementById('tonoProducto').value = '';
-        document.getElementById('tallaProducto').value = '';
-        document.getElementById('descripcion').value = '';
-        document.getElementById('precioUnitario').value = '';
+        document.getElementById('idProducto_crear').value = '';
+        document.getElementById('tonoProducto_crear').value = '';
+        document.getElementById('tallaProducto_crear').value = '';
+        document.getElementById('descripcion_crear').value = '';
+        document.getElementById('precioUnitario_crear').value = '';
     }
 </script>
 <?php echo $this->endSection(); ?>

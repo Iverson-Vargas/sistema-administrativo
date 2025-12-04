@@ -30,7 +30,9 @@ $routes->post('/crearCosturero', 'CrearCosturero::CrearUnCosturero');
 $routes->get('/listaCostureros', 'ListarCostureros::returnCostureros');
 // Rutas para los reportes
 $routes->get('reportes/produccionPorCosturero', 'Reportes::produccionPorCosturero');
+$routes->get('reportes/inventarioActual', 'Reportes::inventarioActual');
 $routes->get('reportes/productosMasVendidos', 'Reportes::productosMasVendidos');
+$routes->get('reportes/rendimientoVendedores', 'Reportes::rendimientoVendedores');
 $routes->get('reportes/getProductsForCorrelation', 'Reportes::getProductsForCorrelation');
 $routes->get('reportes/getCorrelationDataForProduct', 'Reportes::getCorrelationDataForProduct');
 $routes->get('/listaEmpleados', 'ListarEmpleados::returnEmpleados');
@@ -39,6 +41,13 @@ $routes->post('/actualizarEmpleado/(:num)', 'ListarEmpleados::actualizarEmpleado
 $routes->post('/deshabilitarEmpleado/(:num)', 'ListarEmpleados::deshabilitarEmpleado/$1');
 $routes->get('getOneUsuario/(:num)', 'ListarUsuarios::getOneUsuario/$1');
 $routes->post('actualizarUsuario/(:num)', 'ListarUsuarios::actualizarUsuario/$1');
-$routes->get('getOneProducto/(:segment)', 'ListarProducto::getOneProducto/$1');
+$routes->get('getOneProducto/(:segment)', 'ListarProducto::getOneProducto/$1'); // Ya estaba correcto, pero lo confirmo.
 $routes->post('actualizarProducto/(:segment)', 'ListarProducto::actualizarProducto/$1');
 $routes->post('eliminarProducto/(:segment)', 'ListarProducto::eliminarProducto/$1');
+$routes->get('/listaProductoLote', 'ListarProducto::ProductoParaLote');
+$routes->post('/crearLote', 'CrearLoteInventario::createLote');
+$routes->get('/listaLotes', 'CrearLoteInventario::obtenerLotes');
+
+// Rutas para el módulo de Ventas
+$routes->get('ventas/buscarProductos', 'VentaController::buscarProductos');
+$routes->post('ventas/procesar', 'VentaController::procesarVenta');

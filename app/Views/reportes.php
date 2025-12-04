@@ -39,7 +39,23 @@
                 </h2>
                 <div id="collapseOp2" class="accordion-collapse collapse" data-bs-parent="#accordionOperacionales">
                     <div class="accordion-body">
-                        <p>Contenido del reporte 2...</p>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <canvas id="chartInventarioActual"></canvas>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5>Stock por Producto</h5>
+                                <table id="tablaInventarioActual" class="table table-sm table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Producto</th>
+                                            <th>Stock Actual</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -148,7 +164,32 @@
                 </h2>
                 <div id="collapseSup3" class="accordion-collapse collapse" data-bs-parent="#accordionSupervision">
                     <div class="accordion-body">
-                        <p>Contenido del reporte 6...</p>
+                        <div class="row mb-3 align-items-end">
+                            <div class="col-md-4">
+                                <label for="fechasVendedores" class="form-label">Rango de Fechas</label>
+                                <input type="text" id="fechasVendedores" class="form-control" placeholder="Seleccione un rango (opcional)">
+                            </div>
+                            <div class="col-md-2">
+                                <button class="btn btn-primary" id="btnFiltrarVendedores">Filtrar</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <canvas id="chartRendimientoVendedores"></canvas>
+                            </div>
+                            <div class="col-lg-5">
+                                <h5>Ventas por Vendedor</h5>
+                                <table id="tablaRendimientoVendedores" class="table table-sm table-bordered" style="width:100%">
+                                    <thead>
+                                        <tr>
+                                            <th>Vendedor</th>
+                                            <th>Monto Total Vendido</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -267,11 +308,17 @@
     let tablaProduccionCosturero;
     let chartProductosMasVendidos;
     let tablaProductosMasVendidos;
+    let chartRendimientoVendedores;
+    let tablaRendimientoVendedores;
+    let chartInventarioActual;
+    let tablaInventarioActual;
     let chartCorrelacion;
 
     // Banderas para evitar reinicializaciones
     let reporte4Inicializado = false;
     let reporte5Inicializado = false;
+    let reporte6Inicializado = false;
+    let reporte2Inicializado = false;
     let reporteEstadisticoInicializado = false;
 
     function inicializarReporte4() {
@@ -324,6 +371,50 @@
         cargarDatosMasVendidos();
         reporte5Inicializado = true;
     }
+
+    function inicializarReporte6() {
+        if (reporte6Inicializado) return;
+
+        const fpVendedores = flatpickr("#fechasVendedores", {
+            mode: "range",
+            "locale": "es",
+            dateFormat: "Y-m-d",
+        });
+
+        tablaRendimientoVendedores = $('#tablaRendimientoVendedores').DataTable({
+            columns: [{ data: 'vendedor' }, { data: 'total_vendido', render: $.fn.dataTable.render.number('.', ',', 2, '$') }],
+            language: { url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json" },
+            searching: true,
+            lengthChange: false,
+            pageLength: 5
+        });
+
+        document.getElementById('btnFiltrarVendedores').addEventListener('click', function() {
+            cargarDatosRendimientoVendedores(fpVendedores.selectedDates);
+        });
+
+        // Cargar datos al inicializar
+        cargarDatosRendimientoVendedores();
+        reporte6Inicializado = true;
+    }
+
+    function inicializarReporte2() {
+        if (reporte2Inicializado) return;
+
+        tablaInventarioActual = $('#tablaInventarioActual').DataTable({
+            columns: [{ data: 'producto_desc' }, { data: 'stock' }],
+            language: { url: "https://cdn.datatables.net/plug-ins/1.13.7/i18n/es-ES.json" },
+            searching: true,
+            lengthChange: false,
+            pageLength: 5
+        });
+
+        // Cargar datos al inicializar
+        cargarDatosInventarioActual();
+
+        reporte2Inicializado = true;
+    }
+
 
     function inicializarReporteEstadistico() {
         if (reporteEstadisticoInicializado) return;
@@ -548,6 +639,15 @@
         const collapseMasVendidos = document.getElementById('collapseSup2');
         collapseMasVendidos.addEventListener('shown.bs.collapse', inicializarReporte5, { once: true });
 
+        // Para el reporte #6
+        const collapseVendedores = document.getElementById('collapseSup3');
+        collapseVendedores.addEventListener('shown.bs.collapse', inicializarReporte6, { once: true });
+
+        // Para el reporte #2
+        const collapseInventario = document.getElementById('collapseOp2');
+        collapseInventario.addEventListener('shown.bs.collapse', inicializarReporte2, { once: true });
+
+
         showSectionFromHash();
         window.addEventListener('hashchange', showSectionFromHash, false);
     });
@@ -660,6 +760,115 @@
                     legend: { position: 'right' },
                     title: { display: true, text: 'Top 10 Productos Más Vendidos' }
                 }
+            }
+        });
+    }
+
+    function cargarDatosRendimientoVendedores(fechas = []) {
+        let url = '<?= base_url('reportes/rendimientoVendedores') ?>';
+        if (fechas.length === 2) {
+            const fechaDesde = fechas[0].toISOString().split('T')[0];
+            const fechaHasta = fechas[1].toISOString().split('T')[0];
+            url += `?fecha_desde=${fechaDesde}&fecha_hasta=${fechaHasta}`;
+        }
+
+        fetch(url)
+            .then(response => response.json())
+            .then(respuesta => {
+                if (respuesta.success) {
+                    actualizarGraficoYTablaVendedores(respuesta.data);
+                } else {
+                    toast('Error al cargar los datos de vendedores.');
+                }
+            })
+            .catch(error => {
+                console.error('Error en fetch:', error);
+                toast('Error de comunicación con el servidor.');
+            });
+    }
+
+    function actualizarGraficoYTablaVendedores(data) {
+        tablaRendimientoVendedores.clear().rows.add(data).draw();
+        
+        const labels = data.map(item => item.vendedor);
+        const valores = data.map(item => item.total_vendido);
+
+        if (chartRendimientoVendedores) {
+            chartRendimientoVendedores.destroy();
+        }
+
+        const ctx = document.getElementById('chartRendimientoVendedores').getContext('2d');
+        chartRendimientoVendedores = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Monto Vendido',
+                    data: valores,
+                    backgroundColor: generarColores(labels.length),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: { 
+                    legend: { 
+                        position: 'left',
+                    }, 
+                    title: { display: true, text: 'Rendimiento de Vendedores (Monto Total)' } 
+                }
+            }
+        });
+    }
+
+
+    function cargarDatosInventarioActual() {
+        let url = '<?= base_url('reportes/inventarioActual') ?>';
+
+        fetch(url)
+            .then(response => response.json())
+            .then(respuesta => {
+                if (respuesta.success) {
+                    actualizarGraficoYTablaInventario(respuesta.data);
+                } else {
+                    toast('Error al cargar los datos del inventario.');
+                }
+            })
+            .catch(error => {
+                console.error('Error en fetch:', error);
+                toast('Error de comunicación con el servidor.');
+            });
+    }
+
+    function actualizarGraficoYTablaInventario(data) {
+        tablaInventarioActual.clear().rows.add(data).draw();
+        
+        // Tomar solo los primeros 15 para el gráfico para que sea legible
+        const dataParaGrafico = data.slice(0, 15);
+        const labels = dataParaGrafico.map(item => item.producto_desc);
+        const valores = dataParaGrafico.map(item => item.stock);
+
+        if (chartInventarioActual) {
+            chartInventarioActual.destroy();
+        }
+
+        const ctx = document.getElementById('chartInventarioActual').getContext('2d');
+        chartInventarioActual = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Stock Disponible',
+                    data: valores,
+                    backgroundColor: generarColores(labels.length),
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                indexAxis: 'y', // Gráfico de barras horizontales para mejor legibilidad
+                scales: { x: { beginAtZero: true } },
+                responsive: true,
+                plugins: { legend: { display: false }, title: { display: true, text: 'Inventario Actual de Productos (Top 15)' } }
             }
         });
     }

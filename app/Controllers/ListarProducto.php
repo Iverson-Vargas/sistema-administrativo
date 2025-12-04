@@ -23,4 +23,44 @@ class ListarProducto extends BaseController
 
         return $this->response->setJSON(['success' => true, 'data' => $datos]);
     }
+
+    public function actualizarProducto($idProducto){
+        $Producto = new Producto();
+
+        // Obtener los datos del cuerpo de la solicitud JSON
+        $json = $this->request->getJSON();
+
+        if (!$json) {
+            return $this->response->setStatusCode(400)->setJSON(['success' => false, 'message' => 'Datos inválidos.']);
+        }
+
+        $data = [
+            'id_tono' => $json->id_tono,
+            'id_talla' => $json->id_talla,
+            'descripcion' => $json->descripcion,
+            'precio_unitario' => $json->precio_unitario
+        ];
+
+        if ($Producto->actualizarProducto($idProducto, $data)) {
+            return $this->response->setJSON(['success' => true, 'message' => 'Producto actualizado correctamente.']);
+        }
+        
+        return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => 'Error al actualizar el producto.']);
+    }
+
+    public function eliminarProducto($idProducto){
+        $Producto = new Producto();
+
+        if ($Producto->eliminarProducto($idProducto)) {
+            return $this->response->setJSON(['success' => true, 'message' => 'Producto eliminado correctamente.']);
+        }
+        return $this->response->setStatusCode(409)->setJSON(['success' => false, 'message' => 'No se puede eliminar el producto porque está asociado a un inventario.']);
+    }
+
+    public function ProductoParaLote(){
+        $Producto = new Producto();
+        $datos = $Producto->ListarProductoParaLote();
+        // Se devuelve una respuesta consistente con lo que espera el frontend (success: true).
+        return $this->response->setJSON(['success' => true, 'data' => $datos]);
+    }
 }

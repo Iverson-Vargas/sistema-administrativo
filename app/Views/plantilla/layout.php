@@ -310,7 +310,7 @@
           </div>
         </div>
       </div>
-      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light text-dark" data-bs-theme="light" style="overflow-y: auto;">
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bg-light text-dark" data-bs-theme="light" style="overflow-y: auto; height: 100%;">
         <?php echo $this->renderSection('contenido'); ?>
       </main>
     </div>
