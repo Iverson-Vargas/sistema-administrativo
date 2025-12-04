@@ -33,4 +33,14 @@ class Producto extends Model
 
     }
 
+    public function getOneProducto($idProducto){
+        $builder = $this->db->table('producto');
+        $builder->select('producto.* , to.descripcion as tono, ta.descripcion as talla');
+        $builder->join('tono to', 'producto.id_tono = to.id_tono', 'inner');
+        $builder->join('talla ta', 'producto.id_talla = ta.id_talla', 'inner');
+        $builder->where('producto.id_producto', $idProducto);
+        $query = $builder->get();
+        return $query->getRowArray();
+    }
+
 }

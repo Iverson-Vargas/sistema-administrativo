@@ -38,7 +38,7 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalCrearCosturero" tabindex="-1" aria-hidden="true">
+<div class="modal fade" id="modalCrearCosturero" tabindex="-1" aria-hidden="true" data-bs-theme="light">
     <div class="modal-dialog modal-dialog-centered modal-xl">
         <div class="modal-content bg-light">
             <div class="modal-header">

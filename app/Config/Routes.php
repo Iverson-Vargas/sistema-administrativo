@@ -39,3 +39,6 @@ $routes->post('/actualizarEmpleado/(:num)', 'ListarEmpleados::actualizarEmpleado
 $routes->post('/deshabilitarEmpleado/(:num)', 'ListarEmpleados::deshabilitarEmpleado/$1');
 $routes->get('getOneUsuario/(:num)', 'ListarUsuarios::getOneUsuario/$1');
 $routes->post('actualizarUsuario/(:num)', 'ListarUsuarios::actualizarUsuario/$1');
+$routes->get('getOneProducto/(:segment)', 'ListarProducto::getOneProducto/$1');
+$routes->post('actualizarProducto/(:segment)', 'ListarProducto::actualizarProducto/$1');
+$routes->post('eliminarProducto/(:segment)', 'ListarProducto::eliminarProducto/$1');

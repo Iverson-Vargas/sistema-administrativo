@@ -17,7 +17,7 @@
                 </button>
                 <div>
                     <button id="btnActualizar" class="btn btn-warning me-2" style="color: #FCF7F7;"><i class="bi bi-pencil-square"></i> Actualizar </button>
-                    <button id="btnDeshabilitar" class="btn btn-danger"><i class="bi bi-trash"></i> Deshabilitar </button>
+                    <button id="btnEliminar" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar </button>
                 </div>
             </div>
             <div class="tabla-scroll-vertical">
@@ -44,7 +44,7 @@
 
 <div class="modal fade" id="modalCrearProducto" tabindex="-1" aria-labelledby="modalCrearProducto" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content">
+        <div class="modal-content bg-light">
             <div class="modal-header">
                 <h1 class="modal-title fs-5" id="modalCrearProducto">Crear Producto</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -90,12 +90,66 @@
 </div>
 </div>
 
+<!-- Modal para actualizar -->
+<div class="modal fade" id="modalActualizarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-theme="light">
+    <div class="modal-dialog">
+        <div class="modal-content bg-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Actualizar Información del Producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="id_producto_actualizar">
+                <div class="mb-3">
+                    <label for="descripcion_actualizar" class="form-label">Descripción</label>
+                    <textarea class="form-control" id="descripcion_actualizar" name="descripcion" rows="2"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="precioUnitario_actualizar" class="form-label">Precio Unitario</label>
+                    <input type="number" class="form-control" id="precioUnitario_actualizar" name="precio_unitario">
+                </div>
+                <div class="mb-3">
+                    <label for="tonoProducto_actualizar" class="form-label">Tono del producto</label>
+                    <select class="form-select" id="tonoProducto_actualizar" name="id_tono"></select>
+                </div>
+                <div class="mb-3">
+                    <label for="tallaProducto_actualizar" class="form-label">Talla del producto</label>
+                    <select class="form-select" id="tallaProducto_actualizar" name="id_talla"></select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-warning" id="btnGuardarCambios" onclick="guardarCambios()">Guardar Cambios</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para confirmar eliminación -->
+<div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="modalEliminarLabel" aria-hidden="true" data-bs-theme="light">
+    <div class="modal-dialog">
+        <div class="modal-content bg-light">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalEliminarLabel">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro de que desea eliminar este producto? Esta acción no se puede deshacer.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" id="btnConfirmarEliminar">Sí, eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php echo $this->endSection(); ?>
 <?php echo $this->section('scripts'); ?>
 <script>
     window.onload = function() {
-        listarTonos();
-        listarTallas();
+        listarTonos('#tonoProducto');
+        listarTallas('#tallaProducto');
     };
 
     let tabla; // Declara la variable 'tabla' aquí para que sea global
@@ -138,16 +192,88 @@
                 $('#tablaMisProductos tbody .producto-checkbox').not(clickedCheckbox).prop('checked', false);
             }
         });
+
+        $('#btnActualizar').on('click', function() {
+            const checkboxSeleccionado = $('#tablaMisProductos tbody .producto-checkbox:checked');
+
+            if (checkboxSeleccionado.length === 0) {
+                toast('Por favor, seleccione un producto para actualizar.');
+                return;
+            }
+
+            const idProducto = checkboxSeleccionado.val();
+
+            $.ajax({
+                url: `<?= base_url('getOneProducto') ?>/${idProducto}`,
+                type: 'GET',
+                dataType: 'json',
+                success: function(response) {
+                    if (response && response.success && response.data) {
+                        const producto = response.data;
+                        
+                        // Llenar los selects y luego el resto del formulario
+                        listarTonos('#tonoProducto_actualizar', producto.id_tono);
+                        listarTallas('#tallaProducto_actualizar', producto.id_talla);
+
+                        $('#id_producto_actualizar').val(producto.id_producto);
+                        $('#precioUnitario_actualizar').val(producto.precio_unitario);
+                        $('#descripcion_actualizar').val(producto.descripcion);
+
+                        $('#modalActualizarProducto').modal('show');
+                    } else {
+                        toast(response.message || 'No se pudo obtener la información del producto.');
+                    }
+                },
+                error: function() {
+                    toast('Error al contactar al servidor.');
+                }
+            });
+        });
+
+        $('#btnEliminar').on('click', function() {
+            const checkboxSeleccionado = $('#tablaMisProductos tbody .producto-checkbox:checked');
+
+            if (checkboxSeleccionado.length === 0) {
+                toast('Por favor, seleccione un producto para eliminar.');
+                return;
+            }
+
+            const idProducto = checkboxSeleccionado.val();
+            const modal = new bootstrap.Modal(document.getElementById('modalEliminar'));
+            modal.show();
+
+            $('#btnConfirmarEliminar').off('click').on('click', function() {
+                $.ajax({
+                    url: `<?= base_url('eliminarProducto/') ?>/${idProducto}`,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response && response.success) {
+                            toast('Producto eliminado correctamente.');
+                            tabla.ajax.reload();
+                        } else {
+                            toast(response.message || 'Error al eliminar el producto.');
+                        }
+                    },
+                    error: function() {
+                        toast('Error al contactar al servidor.');
+                    },
+                    complete: function() {
+                        modal.hide();
+                    }
+                });
+            });
+        });
     });
 
-    function listarTonos() {
+    function listarTonos(selector, selectedId = null) {
 
         const url = '<?= base_url('listaTono') ?>';
         fetch(url)
             .then(response => response.json())
             .then(respuesta => {
                 if (respuesta.success) {
-                    let select = document.getElementById('tonoProducto');
+                    let select = document.querySelector(selector);
                     select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
                     respuesta.data.forEach(tono => {
                         let option = document.createElement('option');
@@ -155,6 +281,9 @@
                         option.textContent = tono.descripcion;
                         select.appendChild(option);
                     });
+                    if (selectedId) {
+                        select.value = selectedId;
+                    }
                 } else {
                     alert('Error al cargar los tonos.')
                 }
@@ -164,14 +293,14 @@
             });
     }
 
-    function listarTallas() {
+    function listarTallas(selector, selectedId = null) {
 
         const url = '<?= base_url('listaTalla') ?>';
         fetch(url)
             .then(response => response.json())
             .then(respuesta => {
                 if (respuesta.success) {
-                    let select = document.getElementById('tallaProducto');
+                    let select = document.querySelector(selector);
                     select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
                     respuesta.data.forEach(talla => {
                         let option = document.createElement('option');
@@ -179,6 +308,9 @@
                         option.textContent = talla.descripcion;
                         select.appendChild(option);
                     });
+                    if (selectedId) {
+                        select.value = selectedId;
+                    }
                 } else {
                     alert('Error al cargar las tallas.')
                 }
@@ -235,6 +367,38 @@
             .catch(error => {
                 console.error('Error:', error);
             })
+    }
+
+    function guardarCambios() {
+        const idProducto = $('#id_producto_actualizar').val();
+        const datosActualizar = {
+            id_tono: $('#tonoProducto_actualizar').val(),
+            id_talla: $('#tallaProducto_actualizar').val(),
+            descripcion: $('#descripcion_actualizar').val(),
+            precio_unitario: $('#precioUnitario_actualizar').val()
+        };
+
+        $.ajax({
+            url: `<?= base_url('actualizarProducto/') ?>/${idProducto}`,
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(datosActualizar),
+            dataType: 'json',
+            success: function(response) {
+                if (response && response.success) {
+                    toast('Producto actualizado exitosamente.');
+                    $('#modalActualizarProducto').modal('hide');
+                    tabla.ajax.reload();
+                } else {
+                    toast(response.message || 'Error al actualizar el producto.');
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Error en la solicitud AJAX:', error);
+                console.error('Detalles del error:', xhr.responseText);
+                toast('Error al contactar al servidor.');
+            }
+        });
     }
 
     function limpiarFormulario() {
