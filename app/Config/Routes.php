@@ -9,7 +9,6 @@ $routes->get('/', 'MostrarVistas::mostrarLogin');
 $routes->get('/home', 'MostrarVistas::mostrarHome');
 $routes->get('/reportes', 'MostrarVistas::mostrarReportes');
 $routes->get('/generarVenta', 'MostrarVistas::mostrarGenerarVenta');
-$routes->get('/cliente', 'MostrarVistas::mostrarCliente');
 $routes->get('/generarCompra', 'MostrarVistas::mostrarGenerarCompra');
 $routes->get('/reporteVentas', 'MostrarVistas::mostrarReporteVentas');
 $routes->get('/reporteCompras', 'MostrarVistas::mostrarReporteCompras');
@@ -38,17 +37,12 @@ $routes->post('/actualizarEmpleado/(:num)', 'ListarEmpleados::actualizarEmpleado
 $routes->post('ventas/procesar', 'VentaController::procesarVenta'); // Nueva
 $routes->get('ventas/listarDisponibles', 'VentaController::listarProductosDisponibles');
 
-    // Rutas para Clientes
-    $routes->get('cliente/listar', 'ClienteController::listarClientes');
-    $routes->post('cliente/crear', 'ClienteController::crearCliente');
+// Rutas para Compras
+$routes->post('compra/procesar', 'CompraController::procesarCompra');
+$routes->get('compra/listarInsumos', 'CompraController::listarInsumos');
 
-
-    // Rutas para Compras
-    $routes->post('compra/procesar', 'CompraController::procesarCompra');
-    $routes->get('compra/listarInsumos', 'CompraController::listarInsumos');
-
-    // Grupo de rutas para los reportes, más organizado
-    $routes->group('reportes', function ($routes) {
+// Grupo de rutas para los reportes, más organizado
+$routes->group('reportes', function ($routes) {
     // Reportes de la vista principal de reportes (reportes.php)
     $routes->get('produccionPorCosturero', 'Reportes::produccionPorCosturero');
     $routes->get('inventarioActual', 'Reportes::inventarioActual');
