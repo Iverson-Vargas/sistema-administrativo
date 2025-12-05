@@ -3118,3 +3118,883 @@ Stack trace:
 #11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
 #12 {main}
 ERROR - 2025-12-04 18:17:44 --> [Reportes] Error en rendimientoVendedores: Unknown column 'v.id_usuario' in 'on clause'
+ERROR - 2025-12-04 21:16:12 --> mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, C...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, C...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, C...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, C...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-04 21:16:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+[Method: GET, Route: listaLotes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 2 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:16:12 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 4 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:16:12 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 5 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-04 21:29:58 --> mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, C...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, C...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, C...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, C...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-04 21:29:58 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+[Method: GET, Route: listaLotes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 2 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:29:58 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 4 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:29:58 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 5 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-04 21:30:03 --> mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, C...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, C...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, C...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, C...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-04 21:30:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+[Method: GET, Route: listaLotes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 2 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:30:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 4 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:30:03 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 5 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-04 21:30:26 --> mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, C...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, C...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, C...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, C...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-04 21:30:26 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+[Method: GET, Route: listaLotes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 2 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:30:26 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 4 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:30:26 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 5 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-04 21:31:18 --> mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, C...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, C...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, C...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, C...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-04 21:31:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+[Method: GET, Route: listaLotes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 2 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:31:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 4 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:31:18 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 5 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-04 21:31:19 --> mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, C...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, C...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, C...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, C...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-04 21:31:19 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+[Method: GET, Route: listaLotes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 2 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:31:19 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 4 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:31:19 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 5 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-04 21:31:22 --> mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, C...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, C...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, C...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, C...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-04 21:31:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+[Method: GET, Route: listaLotes]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 2 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:31:22 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 4 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 21:31:22 --> [Caused by] mysqli_sql_exception: Unknown column 'i.id_empleado' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `i`.*, CONCAT(pn.nombre, " ", pn.apellido) as costurero, CONCAT(p.descripcion, " Color ", `t`.`descripcion`, " talla ", ta.descripcion) as producto
+FROM `inventario` `i`
+JOIN `producto` `p` ON `i`.`id_producto` = `p`.`id_producto`
+INNER JOIN `tono` `t` ON `p`.`id_tono` = `t`.`id_tono`
+INNER JOIN `talla` `ta` ON `p`.`id_talla` = `ta`.`id_talla`
+INNER JOIN `empleado` `e` ON `i`.`id_empleado` = `e`.`id_empleado`
+INNER JOIN `persona` `pers` ON `e`.`id_persona` = `pers`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `pers`.`id_persona` = `pn`.`id_persona`', [], false)
+ 5 APPPATH\Models\Inventario.php(40): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\CrearLoteInventario.php(53): App\Models\Inventario->obtenerProductos()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-04 23:53:51 --> mysqli_sql_exception: Unknown column 'v.id_usuario' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(p...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(p...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(p...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(p...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\reportemodel.php(101): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\reportes.php(53): App\Models\ReporteModel->getRendimientoVendedores(NULL, NULL)
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\Reportes->rendimientoVendedores()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2025-12-04 23:53:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'v.id_usuario' in 'on clause'
+[Method: GET, Route: reportes/rendimientoVendedores]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(pn.nombre, \' \', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido
+FROM `venta` `v`
+INNER JOIN `detalle_venta` `dv` ON `v`.`id_venta` = `dv`.`id_venta`
+INNER JOIN `usuario` `u` ON `v`.`id_usuario` = `u`.`id_usuario`
+INNER JOIN `persona` `p` ON `u`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+GROUP BY `v`.`id_usuario`, `vendedor`
+ORDER BY `total_vendido` DESC', [], false)
+ 2 APPPATH\Models\reportemodel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\reportes.php(53): App\Models\ReporteModel->getRendimientoVendedores(null, null)
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Reportes->rendimientoVendedores()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 23:53:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'v.id_usuario' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(pn.nombre, \' \', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido
+FROM `venta` `v`
+INNER JOIN `detalle_venta` `dv` ON `v`.`id_venta` = `dv`.`id_venta`
+INNER JOIN `usuario` `u` ON `v`.`id_usuario` = `u`.`id_usuario`
+INNER JOIN `persona` `p` ON `u`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+GROUP BY `v`.`id_usuario`, `vendedor`
+ORDER BY `total_vendido` DESC')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(pn.nombre, \' \', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido
+FROM `venta` `v`
+INNER JOIN `detalle_venta` `dv` ON `v`.`id_venta` = `dv`.`id_venta`
+INNER JOIN `usuario` `u` ON `v`.`id_usuario` = `u`.`id_usuario`
+INNER JOIN `persona` `p` ON `u`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+GROUP BY `v`.`id_usuario`, `vendedor`
+ORDER BY `total_vendido` DESC')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(pn.nombre, \' \', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido
+FROM `venta` `v`
+INNER JOIN `detalle_venta` `dv` ON `v`.`id_venta` = `dv`.`id_venta`
+INNER JOIN `usuario` `u` ON `v`.`id_usuario` = `u`.`id_usuario`
+INNER JOIN `persona` `p` ON `u`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+GROUP BY `v`.`id_usuario`, `vendedor`
+ORDER BY `total_vendido` DESC', [], false)
+ 4 APPPATH\Models\reportemodel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 5 APPPATH\Controllers\reportes.php(53): App\Models\ReporteModel->getRendimientoVendedores(null, null)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Reportes->rendimientoVendedores()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-04 23:53:51 --> [Caused by] mysqli_sql_exception: Unknown column 'v.id_usuario' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT CONCAT(pn.nombre, \' \', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido
+FROM `venta` `v`
+INNER JOIN `detalle_venta` `dv` ON `v`.`id_venta` = `dv`.`id_venta`
+INNER JOIN `usuario` `u` ON `v`.`id_usuario` = `u`.`id_usuario`
+INNER JOIN `persona` `p` ON `u`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+GROUP BY `v`.`id_usuario`, `vendedor`
+ORDER BY `total_vendido` DESC', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT CONCAT(pn.nombre, \' \', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido
+FROM `venta` `v`
+INNER JOIN `detalle_venta` `dv` ON `v`.`id_venta` = `dv`.`id_venta`
+INNER JOIN `usuario` `u` ON `v`.`id_usuario` = `u`.`id_usuario`
+INNER JOIN `persona` `p` ON `u`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+GROUP BY `v`.`id_usuario`, `vendedor`
+ORDER BY `total_vendido` DESC')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT CONCAT(pn.nombre, \' \', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido
+FROM `venta` `v`
+INNER JOIN `detalle_venta` `dv` ON `v`.`id_venta` = `dv`.`id_venta`
+INNER JOIN `usuario` `u` ON `v`.`id_usuario` = `u`.`id_usuario`
+INNER JOIN `persona` `p` ON `u`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+GROUP BY `v`.`id_usuario`, `vendedor`
+ORDER BY `total_vendido` DESC')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT CONCAT(pn.nombre, \' \', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido
+FROM `venta` `v`
+INNER JOIN `detalle_venta` `dv` ON `v`.`id_venta` = `dv`.`id_venta`
+INNER JOIN `usuario` `u` ON `v`.`id_usuario` = `u`.`id_usuario`
+INNER JOIN `persona` `p` ON `u`.`id_persona` = `p`.`id_persona`
+INNER JOIN `per_natural` `pn` ON `p`.`id_persona` = `pn`.`id_persona`
+GROUP BY `v`.`id_usuario`, `vendedor`
+ORDER BY `total_vendido` DESC', [], false)
+ 5 APPPATH\Models\reportemodel.php(101): CodeIgniter\Database\BaseBuilder->get()
+ 6 APPPATH\Controllers\reportes.php(53): App\Models\ReporteModel->getRendimientoVendedores(null, null)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Reportes->rendimientoVendedores()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Reportes))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

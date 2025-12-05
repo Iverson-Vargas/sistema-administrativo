@@ -216,6 +216,8 @@
                 </button>
                 <div class="collapse" id="venta">
                   <ul class="collapse-content px-4">
+                    
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/cliente'); ?>">Gestión de Clientes</a>
                     <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/generarVenta'); ?>">Generar Venta</a>
                     <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/reporteVentas'); ?>">Reportes De Ventas</a>
                   </ul>

@@ -9,6 +9,7 @@ $routes->get('/', 'MostrarVistas::mostrarLogin');
 $routes->get('/home', 'MostrarVistas::mostrarHome');
 $routes->get('/reportes', 'MostrarVistas::mostrarReportes');
 $routes->get('/generarVenta', 'MostrarVistas::mostrarGenerarVenta');
+$routes->get('/cliente', 'MostrarVistas::mostrarCliente');
 $routes->get('/generarCompra', 'MostrarVistas::mostrarGenerarCompra');
 $routes->get('/reporteVentas', 'MostrarVistas::mostrarReporteVentas');
 $routes->get('/reporteCompras', 'MostrarVistas::mostrarReporteCompras');
@@ -19,6 +20,7 @@ $routes->get('/costurero', 'MostrarVistas::mostrarCosturero');
 $routes->get('/listaTono', 'ListarTonos::returnTonos');
 $routes->get('/listaTalla', 'ListarTallas::returnTallas');
 $routes->post('/crearProducto', 'CreateProducto::validarProducto');
+$routes->get('listaProductoLote', 'ListarProducto::ProductoParaLote'); // Para el formulario de crear lote
 $routes->get('/listaProducto', 'ListarProducto::returnProductos');
 $routes->get('/listaRoles', 'ListarRoles::returnRoles');
 $routes->post('/crearUsuario', 'CrearUsuario::CrearUnUsuario');
@@ -28,26 +30,41 @@ $routes->get('/salir', 'CerrarSesion::cerrarSession');
 $routes->get('/personal', 'MostrarVistas::mostrarPersonal');
 $routes->post('/crearCosturero', 'CrearCosturero::CrearUnCosturero');
 $routes->get('/listaCostureros', 'ListarCostureros::returnCostureros');
-// Rutas para los reportes
-$routes->get('reportes/produccionPorCosturero', 'Reportes::produccionPorCosturero');
-$routes->get('reportes/inventarioActual', 'Reportes::inventarioActual');
-$routes->get('reportes/productosMasVendidos', 'Reportes::productosMasVendidos');
-$routes->get('reportes/rendimientoVendedores', 'Reportes::rendimientoVendedores');
-$routes->get('reportes/getProductsForCorrelation', 'Reportes::getProductsForCorrelation');
-$routes->get('reportes/getCorrelationDataForProduct', 'Reportes::getCorrelationDataForProduct');
+$routes->post('crearLote', 'CrearLoteInventario::createLote'); // Acción de crear un lote
+$routes->get('listaLotes', 'CrearLoteInventario::obtenerLotes'); // Para el dashboard y la gestión de lotes
 $routes->get('/listaEmpleados', 'ListarEmpleados::returnEmpleados');
 $routes->get('/getOneEmpleado/(:num)', 'ListarEmpleados::getOneEmpleado/$1');
 $routes->post('/actualizarEmpleado/(:num)', 'ListarEmpleados::actualizarEmpleado/$1');
-$routes->post('/deshabilitarEmpleado/(:num)', 'ListarEmpleados::deshabilitarEmpleado/$1');
-$routes->get('getOneUsuario/(:num)', 'ListarUsuarios::getOneUsuario/$1');
-$routes->post('actualizarUsuario/(:num)', 'ListarUsuarios::actualizarUsuario/$1');
-$routes->get('getOneProducto/(:segment)', 'ListarProducto::getOneProducto/$1'); // Ya estaba correcto, pero lo confirmo.
-$routes->post('actualizarProducto/(:segment)', 'ListarProducto::actualizarProducto/$1');
-$routes->post('eliminarProducto/(:segment)', 'ListarProducto::eliminarProducto/$1');
-$routes->get('/listaProductoLote', 'ListarProducto::ProductoParaLote');
-$routes->post('/crearLote', 'CrearLoteInventario::createLote');
-$routes->get('/listaLotes', 'CrearLoteInventario::obtenerLotes');
+$routes->post('ventas/procesar', 'VentaController::procesarVenta'); // Nueva
+$routes->get('ventas/listarDisponibles', 'VentaController::listarProductosDisponibles');
 
-// Rutas para el módulo de Ventas
-$routes->get('ventas/buscarProductos', 'VentaController::buscarProductos');
-$routes->post('ventas/procesar', 'VentaController::procesarVenta');
+    // Rutas para Clientes
+    $routes->get('cliente/listar', 'ClienteController::listarClientes');
+    $routes->post('cliente/crear', 'ClienteController::crearCliente');
+
+
+    // Rutas para Compras
+    $routes->post('compra/procesar', 'CompraController::procesarCompra');
+    $routes->get('compra/listarInsumos', 'CompraController::listarInsumos');
+
+    // Grupo de rutas para los reportes, más organizado
+    $routes->group('reportes', function ($routes) {
+    // Reportes de la vista principal de reportes (reportes.php)
+    $routes->get('produccionPorCosturero', 'Reportes::produccionPorCosturero');
+    $routes->get('inventarioActual', 'Reportes::inventarioActual');
+    $routes->get('productosMasVendidos', 'Reportes::productosMasVendidos');
+    $routes->get('rendimientoVendedores', 'Reportes::rendimientoVendedores');
+    $routes->get('getProductsForCorrelation', 'Reportes::getProductsForCorrelation');
+    $routes->get('getCorrelationDataForProduct', 'Reportes::getCorrelationDataForProduct');
+    
+    // Rutas para la vista de reporte de ventas (reporteVentas.php)
+    $routes->get('listadoVentas', 'Reportes::listadoVentas');
+    $routes->get('detalleVenta/(:num)', 'Reportes::detalleVenta/$1');
+
+    // Rutas para la vista de reporte de compras (reporteCompras.php)
+    $routes->get('listadoCompras', 'Reportes::listadoCompras');
+    $routes->get('detalleCompra/(:num)', 'Reportes::detalleCompra/$1');
+});
+
+
+

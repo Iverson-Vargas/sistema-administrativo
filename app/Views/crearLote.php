@@ -163,7 +163,10 @@
 
         // Inicializar DataTable
         tabla = $('#tablaLotes').DataTable({
-            ajax: '<?= base_url('listaLotes'); ?>', // Asegúrate de crear esta ruta y su controlador
+              ajax: {
+                url: '<?= base_url('listaLotes'); ?>',
+                dataSrc: 'data' // Especifica que los datos están en la propiedad 'data' del JSON
+            },
             columnDefs: [{
                 targets: 0,
                 width: "10px",

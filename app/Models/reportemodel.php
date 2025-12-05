@@ -84,10 +84,10 @@ class ReporteModel extends Model
     public function getRendimientoVendedores($fechaDesde = null, $fechaHasta = null)
     {
         $builder = $this->db->table('venta v');
-        $builder->select("CONCAT(pn.nombre, ' ', pn.apellido) AS vendedor, SUM(dv.cantidad * dv.precio_unitario) AS total_vendido");
-        $builder->join('detalle_venta dv', 'v.id_venta = dv.id_venta', 'inner');
-        $builder->join('usuario u', 'v.id_usuario = u.id_usuario', 'inner');
-        $builder->join('persona p', 'u.id_persona = p.id_persona', 'inner');
+        // Se corrige la consulta para usar el id_empleado de la venta y se simplifica usando el total de la venta.
+        $builder->select("CONCAT(pn.nombre, ' ', pn.apellido) AS vendedor, SUM(v.total) AS total_vendido");
+        $builder->join('empleado e', 'v.id_empleado = e.id_empleado', 'inner');
+        $builder->join('persona p', 'e.id_persona = p.id_persona', 'inner');
         $builder->join('per_natural pn', 'p.id_persona = pn.id_persona', 'inner');
 
         if ($fechaDesde && $fechaHasta) {
@@ -95,7 +95,7 @@ class ReporteModel extends Model
             $builder->where('v.fecha <=', $fechaHasta);
         }
 
-        $builder->groupBy('v.id_usuario, vendedor');
+        $builder->groupBy('v.id_empleado, vendedor');
         $builder->orderBy('total_vendido', 'DESC');
 
         return $builder->get()->getResultArray();

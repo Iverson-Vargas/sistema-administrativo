@@ -2,7 +2,8 @@
 
 namespace App\Controllers;
 
-use App\Models\ReporteModel;
+use App\Models\ReporteModel; // Para reportes operacionales (producción, inventario, más vendidos, vendedores)
+use App\Models\ReportesModel; // Para reportes estadísticos (correlación) y de ventas
 
 class Reportes extends BaseController
 {
@@ -16,7 +17,7 @@ class Reportes extends BaseController
             $fechaDesde = $this->request->getGet('fecha_desde');
             $fechaHasta = $this->request->getGet('fecha_hasta');
 
-            $reporteModel = new ReporteModel();
+            $reporteModel = new ReporteModel(); // Usa el modelo singular para este reporte
             $data = $reporteModel->getProduccionPorCosturero($fechaDesde, $fechaHasta);
 
             return $this->response->setJSON(['success' => true, 'data' => $data]);
@@ -31,7 +32,7 @@ class Reportes extends BaseController
     public function inventarioActual()
     {
         try {
-            $reporteModel = new ReporteModel();
+            $reporteModel = new ReporteModel(); // Usa el modelo singular para este reporte
             $data = $reporteModel->getInventarioActual();
 
             return $this->response->setJSON(['success' => true, 'data' => $data]);
@@ -51,7 +52,7 @@ class Reportes extends BaseController
             $fechaDesde = $this->request->getGet('fecha_desde');
             $fechaHasta = $this->request->getGet('fecha_hasta');
 
-            $reporteModel = new ReporteModel();
+            $reporteModel = new ReporteModel(); // Usa el modelo singular para este reporte
             $data = $reporteModel->getProductosMasVendidos($fechaDesde, $fechaHasta);
 
             return $this->response->setJSON(['success' => true, 'data' => $data]);
@@ -71,7 +72,7 @@ class Reportes extends BaseController
             $fechaDesde = $this->request->getGet('fecha_desde');
             $fechaHasta = $this->request->getGet('fecha_hasta');
 
-            $reporteModel = new ReporteModel();
+            $reporteModel = new ReporteModel(); // Usa el modelo singular para este reporte
             $data = $reporteModel->getRendimientoVendedores($fechaDesde, $fechaHasta);
 
             return $this->response->setJSON(['success' => true, 'data' => $data]);
@@ -88,21 +89,12 @@ class Reportes extends BaseController
     public function getProductsForCorrelation()
     {
         try {
-            $db = \Config\Database::connect();
-            $builder = $db->table('producto p');
-
-            $builder->select('p.id_producto, p.descripcion, COUNT(dv.id_detalle_venta) as num_ventas');
-            $builder->join('detalle_venta dv', 'p.id_producto = dv.id_producto', 'inner');
-            $builder->groupBy('p.id_producto, p.descripcion');
-            $builder->having('num_ventas >', 2); // Necesitamos al menos 3 puntos para un análisis simple
-
-            $query = $builder->get();
-            $data = $query->getResultArray();
-
+            $reportesModel = new ReportesModel(); // Usa el modelo plural para este reporte
+            $data = $reportesModel->getProductsForCorrelation();
             return $this->response->setJSON(['success' => true, 'data' => $data]);
-
         } catch (\Exception $e) {
-            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => $e->getMessage()]);
+            log_message('error', '[ReportesController] getProductsForCorrelation: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => 'Ocurrió un error en el servidor al obtener los productos.']);
         }
     }
 
@@ -113,27 +105,48 @@ class Reportes extends BaseController
     {
         try {
             $productId = $this->request->getGet('id_producto');
-
             if (empty($productId)) {
                 return $this->response->setStatusCode(400)->setJSON(['success' => false, 'message' => 'ID de producto no proporcionado.']);
             }
+            $reportesModel = new ReportesModel(); // Usa el modelo plural para este reporte
+            $data = $reportesModel->getCorrelationDataForProduct($productId);
+            return $this->response->setJSON(['success' => true, 'data' => $data]);
+        } catch (\Exception $e) {
+            log_message('error', '[ReportesController] getCorrelationDataForProduct: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => 'Ocurrió un error en el servidor al obtener los datos de correlación.']);
+        }
+    }
 
-            $db = \Config\Database::connect();
-            $builder = $db->table('detalle_venta');
+    // Nuevo método para obtener el listado de ventas
+    public function listadoVentas()
+    {
+        try {
+            $fechaDesde = $this->request->getGet('fecha_desde');
+            $fechaHasta = $this->request->getGet('fecha_hasta');
+            $clienteCi = $this->request->getGet('cliente_ci');
+            $idEmpleado = $this->request->getGet('id_empleado'); // Opcional, si quieres filtrar por empleado
 
-            $builder->select('precio_unitario as x, cantidad as y');
-            $builder->where('id_producto', $productId);
-            // Opcional: filtrar valores no válidos
-            $builder->where('precio_unitario >', 0);
-            $builder->where('cantidad >', 0);
-
-            $query = $builder->get();
-            $data = $query->getResultArray();
+            $reportesModel = new ReportesModel(); // Usa el modelo plural para este reporte
+            $data = $reportesModel->getListadoVentas($fechaDesde, $fechaHasta, $clienteCi, $idEmpleado);
 
             return $this->response->setJSON(['success' => true, 'data' => $data]);
-
         } catch (\Exception $e) {
-            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => $e->getMessage()]);
+            log_message('error', '[Reportes] Error en listadoVentas: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => 'Error interno al procesar el reporte de ventas.']);
+        }
+    }
+
+    // Nuevo método para obtener los detalles de una venta específica
+    public function detalleVenta(int $idVenta)
+    {
+        try {
+            $reportesModel = new ReportesModel(); // Usa el modelo plural para este reporte
+            $data = $reportesModel->getDetalleVenta($idVenta);
+
+            return $this->response->setJSON(['success' => true, 'data' => $data]);
+        } catch (\Exception $e) {
+            log_message('error', '[Reportes] Error en detalleVenta: ' . $e->getMessage());
+            return $this->response->setStatusCode(500)->setJSON(['success' => false, 'message' => 'Error interno al obtener los detalles de la venta.']);
         }
     }
 }

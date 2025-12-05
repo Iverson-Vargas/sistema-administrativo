@@ -517,10 +517,10 @@
                             title: { display: true, text: `Correlación Precio vs. Cantidad Vendida` },
                             tooltip: {
                                 callbacks: {
-                                    label: function(context) {
-                                        const point = context.raw; 
-                                        return `Precio de Venta del producto "${productName}"= ${point.x.toFixed(2)} y y la cantidad vendida es de ${point.y}.`;
-                                    }
+                                    label: function(context) { 
+                                        const point = context.raw;
+                                        return `Precio: $${point.x.toFixed(2)}, Cantidad: ${point.y}`;
+                                    } 
                                 }
                             }
                         },
@@ -547,24 +547,29 @@
         let sumX = 0, sumY = 0, sumXY = 0, sumX2 = 0, sumY2 = 0;
         const n = data.length;
 
-        if (n < 2) return { m: 0, b: 0, r: 0 };
-
+        if (n < 2) return { m: 0, b: 0, r: 0 }; 
+ 
         data.forEach(p => {
             sumX += p.x;
             sumY += p.y;
             sumXY += p.x * p.y;
             sumX2 += p.x * p.x;
-            sumY2 += p.y * p.y;
-        });
+            sumY2 += p.y * p.y; 
+        }); 
+ 
+        const denominatorM = (n * sumX2 - sumX * sumX);
+        if (denominatorM === 0) {
+            // Todos los valores de X son iguales, no se puede determinar una correlación lineal.
+            return { m: 0, b: sumY / n, r: 0 };
+        }
+        const m = (n * sumXY - sumX * sumY) / denominatorM;
+        const b = (sumY - m * sumX) / n; 
+ 
+        const numeratorR = n * sumXY - sumX * sumY;
+        const denominatorR = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
+        const r = denominatorR === 0 ? 0 : numeratorR / denominatorR;
 
-        const m = (n * sumXY - sumX * sumY) / (n * sumX2 - sumX * sumX);
-        const b = (sumY - m * sumX) / n;
-
-        const numerator = n * sumXY - sumX * sumY;
-        const denominator = Math.sqrt((n * sumX2 - sumX * sumX) * (n * sumY2 - sumY * sumY));
-        const r = denominator === 0 ? 0 : numerator / denominator;
-
-        return { m, b, r };
+        return { m, b, r }; 
     }
 
     function updateAnalysisText(r) {

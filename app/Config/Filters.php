@@ -110,6 +110,7 @@ class Filters extends BaseFilters
                 'home',
                 'reportes',
                 'reportes/*', // Protege todas las sub-rutas de reportes
+                'cliente',
                 'generarVenta',
                 'generarCompra',
                 'reporteVentas',
@@ -129,6 +130,15 @@ class Filters extends BaseFilters
                 'listaRoles',
                 'listaUsuarios',
                 'listaCostureros',
+                'listaLotes',
+                'ventas/buscarProductos', // Nueva ruta protegida
+                'ventas/procesar',        // Nueva ruta protegida
+                'cliente/listar',
+                'cliente/crear',
+                'ventas/listarDisponibles', // Nueva ruta protegida
+                'compra/procesar',
+                'compra/listarInsumos',
+                'reporteCompras',
             ],
         ],
     ];

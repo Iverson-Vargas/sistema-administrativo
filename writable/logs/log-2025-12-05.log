@@ -1,0 +1,639 @@
+ERROR - 2025-12-05 01:44:05 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:06 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:08 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:33 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:36 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:36 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:57 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:58 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:58 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:59 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:59 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:59 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:59 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:44:59 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:45:00 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:45:00 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:45:00 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283179', 'anthony')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:55:49 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('233232', 'ewrer')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:55:50 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('233232', 'ewrer')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:55:51 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('233232', 'ewrer')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:55:51 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('233232', 'ewrer')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 01:55:51 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('233232', 'ewrer')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 02:12:52 --> mysqli_sql_exception: Table 'sistema_administrativo.productos' doesn't exist in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `product...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `product...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `product...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `product...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(30): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->listarInsumos()
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#9 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-12-05 02:12:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistema_administrativo.productos' doesn't exist
+[Method: GET, Route: compra/listarInsumos]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`id_producto`, `productos`.`descripcion`, `tonos`.`descripcion` as `tono`, `tallas`.`descripcion` as `talla`
+FROM `productos`
+LEFT JOIN `tonos` ON `tonos`.`id_tono` = `productos`.`id_tono`
+LEFT JOIN `tallas` ON `tallas`.`id_talla` = `productos`.`id_talla`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\CompraController.php(30): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CompraController->listarInsumos()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 02:12:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'sistema_administrativo.productos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`id_producto`, `productos`.`descripcion`, `tonos`.`descripcion` as `tono`, `tallas`.`descripcion` as `talla`
+FROM `productos`
+LEFT JOIN `tonos` ON `tonos`.`id_tono` = `productos`.`id_tono`
+LEFT JOIN `tallas` ON `tallas`.`id_talla` = `productos`.`id_talla`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`id_producto`, `productos`.`descripcion`, `tonos`.`descripcion` as `tono`, `tallas`.`descripcion` as `talla`
+FROM `productos`
+LEFT JOIN `tonos` ON `tonos`.`id_tono` = `productos`.`id_tono`
+LEFT JOIN `tallas` ON `tallas`.`id_talla` = `productos`.`id_talla`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`id_producto`, `productos`.`descripcion`, `tonos`.`descripcion` as `tono`, `tallas`.`descripcion` as `talla`
+FROM `productos`
+LEFT JOIN `tonos` ON `tonos`.`id_tono` = `productos`.`id_tono`
+LEFT JOIN `tallas` ON `tallas`.`id_talla` = `productos`.`id_talla`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\CompraController.php(30): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CompraController->listarInsumos()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 02:12:52 --> [Caused by] mysqli_sql_exception: Table 'sistema_administrativo.productos' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `productos`.`id_producto`, `productos`.`descripcion`, `tonos`.`descripcion` as `tono`, `tallas`.`descripcion` as `talla`
+FROM `productos`
+LEFT JOIN `tonos` ON `tonos`.`id_tono` = `productos`.`id_tono`
+LEFT JOIN `tallas` ON `tallas`.`id_talla` = `productos`.`id_talla`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `productos`.`id_producto`, `productos`.`descripcion`, `tonos`.`descripcion` as `tono`, `tallas`.`descripcion` as `talla`
+FROM `productos`
+LEFT JOIN `tonos` ON `tonos`.`id_tono` = `productos`.`id_tono`
+LEFT JOIN `tallas` ON `tallas`.`id_talla` = `productos`.`id_talla`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `productos`.`id_producto`, `productos`.`descripcion`, `tonos`.`descripcion` as `tono`, `tallas`.`descripcion` as `talla`
+FROM `productos`
+LEFT JOIN `tonos` ON `tonos`.`id_tono` = `productos`.`id_tono`
+LEFT JOIN `tallas` ON `tallas`.`id_talla` = `productos`.`id_talla`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `productos`.`id_producto`, `productos`.`descripcion`, `tonos`.`descripcion` as `tono`, `tallas`.`descripcion` as `talla`
+FROM `productos`
+LEFT JOIN `tonos` ON `tonos`.`id_tono` = `productos`.`id_tono`
+LEFT JOIN `tallas` ON `tallas`.`id_talla` = `productos`.`id_talla`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\CompraController.php(30): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\CompraController->listarInsumos()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-12-05 02:35:50 --> mysqli_sql_exception: Unknown column 'ramo' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `pe...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `pe...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `pe...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `pe...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\app\Models\ProveedorModel.php(38): CodeIgniter\Database\BaseBuilder->insert(Array)
+#5 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CompraController.php(62): App\Models\ProveedorModel->crearNuevoProveedor('32283285', 'ANTHONY')
+#6 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CompraController->procesarCompra()
+#7 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CompraController))
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+ERROR - 2025-12-05 02:52:03 --> mysqli_sql_exception: Unknown column 'inventario.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `inventa...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inventa...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inventa...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `inventa...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema-administrativo\app\Models\LoteModel.php(23): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(46): App\Models\LoteModel->getLotesConDetalles()
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#9 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#10 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-12-05 02:52:03 --> [CrearLoteInventario] Error en obtenerLotes: Unknown column 'inventario.id_empleado' in 'on clause'
+ERROR - 2025-12-05 02:52:35 --> mysqli_sql_exception: Unknown column 'inventario.id_empleado' in 'on clause' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `inventa...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inventa...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inventa...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `inventa...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\sistema-administrativo\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\sistema-administrativo\app\Models\LoteModel.php(23): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(46): App\Models\LoteModel->getLotesConDetalles()
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->obtenerLotes()
+#9 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#10 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-12-05 02:52:35 --> [CrearLoteInventario] Error en obtenerLotes: Unknown column 'inventario.id_empleado' in 'on clause'
+ERROR - 2025-12-05 02:53:02 --> mysqli_sql_exception: Unknown column 'id_empleado' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `in...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `in...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `in...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `in...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sistema-administrativo\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(32): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->createLote()
+#9 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#10 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-12-05 02:53:02 --> [CrearLoteInventario] Error en createLote: Unknown column 'id_empleado' in 'field list'
+ERROR - 2025-12-05 02:53:08 --> mysqli_sql_exception: Unknown column 'id_empleado' in 'field list' in C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\sistema-administrativo\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `in...', 0)
+#1 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `in...')
+#2 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `in...')
+#3 C:\xampp\htdocs\sistema-administrativo\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `in...', Array, false)
+#4 C:\xampp\htdocs\sistema-administrativo\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\xampp\htdocs\sistema-administrativo\system\BaseModel.php(843): CodeIgniter\Model->doInsert(Array)
+#6 C:\xampp\htdocs\sistema-administrativo\system\Model.php(800): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\xampp\htdocs\sistema-administrativo\app\Controllers\CrearLoteInventario.php(32): CodeIgniter\Model->insert(Array)
+#8 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(933): App\Controllers\CrearLoteInventario->createLote()
+#9 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CrearLoteInventario))
+#10 C:\xampp\htdocs\sistema-administrativo\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\sistema-administrativo\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\sistema-administrativo\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+ERROR - 2025-12-05 02:53:08 --> [CrearLoteInventario] Error en createLote: Unknown column 'id_empleado' in 'field list'
+CRITICAL - 2025-12-05 04:14:10 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: GET, Route: cliente/listar]
+in APPPATH\Models\ClienteModel.php on line 30.
+ 1 APPPATH\Controllers\ClienteController.php(15): App\Models\ClienteModel->getClientes()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteController->listarClientes()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:02 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: GET, Route: cliente/listar]
+in APPPATH\Models\ClienteModel.php on line 31.
+ 1 APPPATH\Controllers\ClienteController.php(15): App\Models\ClienteModel->getClientes()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteController->listarClientes()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:28 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('87878')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:29 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('87878')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:31 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('87878')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:35 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('87878')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:36 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('87878')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:36 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('87878')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:37 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('87878')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:49 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('32283179')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:51 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: POST, Route: ventas/procesar]
+in APPPATH\Models\ClienteModel.php on line 48.
+ 1 APPPATH\Controllers\VentaController.php(85): App\Models\ClienteModel->getClienteByCiRif('32283179')
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\VentaController->procesarVenta()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\VentaController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:43:56 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: GET, Route: cliente/listar]
+in APPPATH\Models\ClienteModel.php on line 31.
+ 1 APPPATH\Controllers\ClienteController.php(15): App\Models\ClienteModel->getClientes()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteController->listarClientes()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 04:44:14 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: GET, Route: cliente/listar]
+in APPPATH\Models\ClienteModel.php on line 31.
+ 1 APPPATH\Controllers\ClienteController.php(15): App\Models\ClienteModel->getClientes()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteController->listarClientes()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-12-05 10:18:18 --> Error: Call to undefined method CodeIgniter\Database\MySQLi\Builder::leftJoin()
+[Method: GET, Route: cliente/listar]
+in APPPATH\Models\ClienteModel.php on line 31.
+ 1 APPPATH\Controllers\ClienteController.php(15): App\Models\ClienteModel->getClientes()
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\ClienteController->listarClientes()
+ 3 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ClienteController))
+ 4 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

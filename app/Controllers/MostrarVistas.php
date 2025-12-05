@@ -14,7 +14,10 @@ class MostrarVistas extends BaseController
     {
         return view('generarVenta');
     }
-    
+    public function mostrarCliente(): string
+    {
+        return view('cliente');
+    }
     public function mostrarGenerarCompra(): string
     {
         return view('generarCompra');
