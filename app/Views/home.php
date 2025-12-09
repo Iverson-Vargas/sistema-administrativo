@@ -61,35 +61,35 @@
     <!-- KPIs (Key Performance Indicators) -->
     <div class="row mb-4">
         <div class="col-md-4">
-            <div class="card kpi-card bg-gradient-primary p-3">
+            <div class="card kpi-card bg-gradient-primary p-3 overflow-hidden">
                 <div class="d-flex align-items-center">
                     <div class="flex-grow-1">
                         <h5 class="card-title">Total de Lotes</h5>
                         <h2 class="card-text fw-bold" id="kpi-total-lotes">0</h2>
                     </div>
-                    <i class="bi bi-box-seam kpi-icon"></i>
+                    <i style="position: absolute; right: 38px; bottom: 50px;" class="bi bi-box-seam kpi-icon"></i>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card kpi-card bg-gradient-success p-3">
+            <div class="card kpi-card bg-gradient-success p-3 overflow-hidden">
                 <div class="d-flex align-items-center">
                     <div class="flex-grow-1">
                         <h5 class="card-title">Unidades Disponibles</h5>
                         <h2 class="card-text fw-bold" id="kpi-unidades-disponibles">0</h2>
                     </div>
-                    <i class="bi bi-check2-circle kpi-icon"></i>
+                    <i style="position: absolute; right: 38px; bottom: 50px;"class="bi bi-check2-circle kpi-icon"></i>
                 </div>
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card kpi-card bg-gradient-warning p-3">
+            <div class="card kpi-card bg-gradient-warning p-3 overflow-hidden">
                 <div class="d-flex align-items-center">
                     <div class="flex-grow-1">
                         <h5 class="card-title">Lotes con Bajo Stock</h5>
                         <h2 class="card-text fw-bold" id="kpi-bajo-stock">0</h2>
                     </div>
-                    <i class="bi bi-exclamation-triangle kpi-icon"></i>
+                    <i style="position: absolute; right: 38px; bottom: 50px;" class="bi bi-exclamation-triangle kpi-icon"></i>
                 </div>
             </div>
         </div>
@@ -99,9 +99,11 @@
     <div class="card">
         <div class="card-header d-flex justify-content-between align-items-center">
             <h4 class="card-title mb-0">Resumen de Inventario de Lotes</h4>
-            <div class="form-check form-switch">
-                <input class="form-check-input" type="checkbox" role="switch" id="filtroDisponibles">
-                <label class="form-check-label" for="filtroDisponibles">Mostrar solo con disponibles</label>
+            <div class="form-check form-switch d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" role="switch" id="filtroDisponibles">
+                <label class="form-check-label" for="filtroDisponibles">
+                    Mostrar solo con disponibles
+                </label>
             </div>
         </div>
         <div class="card-body">
