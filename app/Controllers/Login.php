@@ -12,7 +12,7 @@ class Login extends BaseController
         $contrasena = $json->contrasena ?? null;
 
         if (empty($usuario) || empty($contrasena)) {
-            return json_encode(array('success' => false, 'mensaje' => 'el usuario o contraseña no pueden estar vacio'));
+            return json_encode(array('success' => false, 'mensaje' => 'Por favor, complete todos los campos requeridos.'));
         }
 
         $Usuario = new Usuario();

@@ -21,12 +21,15 @@
                 <h3 style="font-size: 10px; margin-top: -15px; margin-bottom: 0; margin-left: 0; margin-right: 0;">COMPANY</h3>
             </div>
             <h1 id="iniciar_Sesion_h1" class="h3 mb-3 fw-normal">Iniciar Sesión</h1>
-            <div class="form-floating">
+            <div id="error-alert" class="alert alert-danger d-none text-center" role="alert"></div>
+            <div class="form-floating" style="margin-bottom: -1px;">
                 <input
                     type="text"
                     class="form-control"
                     id="usuario"
-                    placeholder="Usuario" required />
+                    placeholder="Usuario"
+                    style="border-bottom-left-radius: 0; border-bottom-right-radius: 0;"
+                    required />
                 <label for="usuario">Usuario</label>
             </div>
             <div class="form-floating">
@@ -34,7 +37,9 @@
                     type="password"
                     class="form-control"
                     id="contrasena"
-                    placeholder="Contraseña" required />
+                    placeholder="Contraseña"
+                    style="border-top-left-radius: 0; border-top-right-radius: 0;"
+                    required />
                 <label for="contrasena">Contraseña</label>
             </div>
             <button class="btn btn-primary w-100 py-2" type="button" onclick="validarLogin()">
@@ -47,6 +52,8 @@
     <script>
 
         function validarLogin() {
+            const errorAlert = document.getElementById('error-alert');
+            errorAlert.classList.add('d-none'); // Ocultar alerta previa
             const loginUrl = "<?= base_url('validarDatos') ?>";
             const usuario = document.getElementById('usuario').value
             const contrasena = document.getElementById('contrasena').value
@@ -67,7 +74,8 @@
                     if (respuesta.success) {
                         window.location.href = '<?= base_url('/home'); ?>';
                     } else {
-                        alert(respuesta.mensaje);
+                        errorAlert.textContent = respuesta.mensaje;
+                        errorAlert.classList.remove('d-none');
                     }
                 });
         }
@@ -144,6 +152,13 @@
                         })
                     })
             })
+
+            document.querySelector('form').addEventListener('keydown', function(e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // Evita el envío tradicional del formulario
+                    validarLogin();
+                }
+            });
         })()
     </script>
 </body>
