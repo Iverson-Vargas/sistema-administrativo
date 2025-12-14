@@ -290,14 +290,14 @@
             </ul>
             <hr class="my-3" />
             <ul class="nav flex-column mb-auto">
-              <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a style="font-size: 20px;" class="nav-link d-flex align-items-center gap-2 text-white" href="#">
                   <svg class="bi" aria-hidden="true">
                     <use xlink:href="#gear-wide-connected"></use>
                   </svg>
                   Configuración
                 </a>
-              </li>
+              </li> -->
               <li class="nav-item">
                 <button onclick="cerrarSeccion()" style="font-size: 20px;" class="nav-link d-flex align-items-center gap-2 text-white" href="#">
                   <svg class="bi" aria-hidden="true">

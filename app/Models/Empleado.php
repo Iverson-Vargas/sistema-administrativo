@@ -140,4 +140,15 @@ class Empleado extends Model
             return false;
         }
     }
+
+    public function retonarIdEmpleado($id_usuario)
+    {
+        $builder = $this->db->table('empleado');
+        $builder->select('empleado.id_empleado');
+        $builder->join('usuario', 'usuario.id_persona = empleado.id_persona');
+        $builder->where('usuario.id_usuario', $id_usuario);
+        $query = $builder->get();
+        $resultado = $query->getRow();
+        return $resultado ? $resultado->id_empleado : null;
+    }
 }

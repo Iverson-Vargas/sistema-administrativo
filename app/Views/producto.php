@@ -3,11 +3,43 @@
 
 <div class="container">
     <div style="margin-bottom: 10px;" class="row mt-3">
+    <style>
+        .page-header {
+            background: linear-gradient(135deg, #0d6efd 0%, #0043a8 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .action-btn {
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .action-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+        .table-container {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+    </style>
+    <div class="row mt-1">
         <div class="col-md-12">
-            <h3 class="text-center">Gestion de Productos</h3>
-            <hr>
+            <div class="page-header">
+                <h2 class="fw-bold mb-0"><i style="position: relative; right: 15px; bottom: 3px;" class="bi bi-box-seam-fill me-2"></i>Gestión de Productos</h2>
+                <p class="mb-0 opacity-75">Administre su inventario de productos de manera eficiente</p>
+            </div>
+
             <div class="d-flex justify-content-between mb-3">
-                <button class="btn btn-primary"
+                <button class="btn btn-primary action-btn"
                     type="button"
                     data-bs-toggle="modal"
                     data-bs-target="#modalCrearProducto"
@@ -16,19 +48,18 @@
                     Crear Producto
                 </button>
                 <div>
-                    <button id="btnActualizar" class="btn btn-warning me-2" style="color: #FCF7F7;"><i class="bi bi-pencil-square"></i> Actualizar </button>
-                    <button id="btnEliminar" class="btn btn-danger"><i class="bi bi-trash"></i> Eliminar </button>
+                    <button id="btnActualizar" class="btn btn-warning me-2 action-btn text-white"><i class="bi bi-pencil-square"></i> Actualizar </button>
+                    <button id="btnEliminar" class="btn btn-danger action-btn"><i class="bi bi-trash"></i> Eliminar </button>
                 </div>
             </div>
-            <div class="tabla-scroll-vertical">
+            <div class="tabla-scroll-vertical table-container">
 
-                <table id="tablaMisProductos" class="table table-striped table-bordered mt-3">
+                <table id="tablaMisProductos" class="table table-hover table-bordered mt-3 align-middle">
                     <thead>
-                        <tr>
+                        <tr class="table-light">
                             <th>Seleccionar</th>
                             <th>ID del Producto</th>
-                            <th>Tono</th>
-                            <th>Talla</th>
+                            <th>Nombre</th>
                             <th>Descripcion</th>
                             <th>Precio Unitario</th>
                         </tr>
@@ -42,47 +73,57 @@
     </div>
 </div>
 
-<div class="modal fade" id="modalCrearProducto" tabindex="-1" aria-labelledby="modalCrearProducto" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content bg-light">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalCrearProducto">Crear Producto</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div class="modal fade" id="modalCrearProducto" tabindex="-1" aria-labelledby="modalCrearProductoLabel" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title fw-bold" id="modalCrearProductoLabel">
+                    <i class="bi bi-box-seam-fill me-2"></i>Registrar Nuevo Producto
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-                <h3 class="text-center">Detalles del Producto</h3>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="idProducto_crear" class="form-label">Ingresar ID del Producto</label>
-                        <input type="text" class="form-control" id="idProducto_crear">
+            <div class="modal-body p-4">
+                <p class="text-muted mb-4">Complete la información del producto a continuación.</p>
+                
+                <div class="row g-3">
+                    <!-- Fila 1: ID y Precio -->
+                    <div class="col-md-6">
+                        <label for="idProducto_crear" class="form-label fw-semibold">ID del Producto</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light"><i class="bi bi-upc-scan"></i></span>
+                            <input type="text" class="form-control" id="idProducto_crear" placeholder="Ej: PROD-001">
+                        </div>
                     </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="precioUnitario_crear" class="form-label">Ingresar Precio Unitario</label>
-                        <input type="number" class="form-control" id="precioUnitario_crear">
+                    <div class="col-md-6">
+                        <label for="precioUnitario_crear" class="form-label fw-semibold">Precio Unitario</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light">$</span>
+                            <input type="number" class="form-control" id="precioUnitario_crear" placeholder="0.00" step="0.01">
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label for="tonoProducto_crear" class="form-label">Seleccionar tono del producto</label>
-                        <select type="text" class="form-select" id="tonoProducto_crear"></select>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label for="tallaProducto_crear" class="form-label">Seleccionar talla del producto</label>
-                        <select type="text" class="form-select" id="tallaProducto_crear"></select>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 mb-3">
-                        <label for="descripcion_crear" class="form-label">Descripción</label>
-                        <textarea name="text" class="form-control" id="descripcion_crear" rows="2"></textarea>
-                    </div>
-                </div>
-                <div id="resultado"></div>
 
+                    <!-- Fila 2: Nombre -->
+                    <div class="col-12">
+                        <label for="nombreProducto_crear" class="form-label fw-semibold">Nombre del Producto</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-light"><i class="bi bi-tag"></i></span>
+                            <input type="text" class="form-control" id="nombreProducto_crear" placeholder="Ej: Pantalón Jeans Clásico">
+                        </div>
+                    </div>
 
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary" onclick="CrearProducto()">Crear Producto</button>
+                    <!-- Fila 3: Descripción -->
+                    <div class="col-12">
+                        <label for="descripcion_crear" class="form-label fw-semibold">Descripción</label>
+                        <textarea class="form-control" id="descripcion_crear" rows="3" placeholder="Ingrese una descripción detallada del producto..."></textarea>
+                    </div>
+                </div>
+                <div id="resultado" class="mt-3"></div>
+
+                <div class="modal-footer bg-light mt-3">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary px-4" onclick="CrearProducto()">
+                        <i class="bi bi-save me-2"></i>Guardar Producto
+                    </button>
                 </div>
             </div>
         </div>
@@ -92,34 +133,30 @@
 
 <!-- Modal para actualizar -->
 <div class="modal fade" id="modalActualizarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-theme="light">
-    <div class="modal-dialog">
-        <div class="modal-content bg-light">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Actualizar Información del Producto</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 shadow-lg">
+            <div class="modal-header bg-warning text-white">
+                <h5 class="modal-title fw-bold" id="exampleModalLabel"><i class="bi bi-pencil-square me-2"></i>Actualizar Producto</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body p-4">
                 <input type="hidden" id="id_producto_actualizar">
                 <div class="mb-3">
-                    <label for="descripcion_actualizar" class="form-label">Descripción</label>
+                    <label for="nombreProducto_actualizar" class="form-label fw-semibold">Nombre</label>
+                    <input type="text" class="form-control" id="nombreProducto_actualizar">
+                </div>
+                <div class="mb-3">
+                    <label for="descripcion_actualizar" class="form-label fw-semibold">Descripción</label>
                     <textarea class="form-control" id="descripcion_actualizar" name="descripcion" rows="2"></textarea>
                 </div>
                 <div class="mb-3">
-                    <label for="precioUnitario_actualizar" class="form-label">Precio Unitario</label>
+                    <label for="precioUnitario_actualizar" class="form-label fw-semibold">Precio Unitario</label>
                     <input type="number" class="form-control" id="precioUnitario_actualizar" name="precio_unitario">
                 </div>
-                <div class="mb-3">
-                    <label for="tonoProducto_actualizar" class="form-label">Tono del producto</label>
-                    <select class="form-select" id="tonoProducto_actualizar" name="id_tono"></select>
-                </div>
-                <div class="mb-3">
-                    <label for="tallaProducto_actualizar" class="form-label">Talla del producto</label>
-                    <select class="form-select" id="tallaProducto_actualizar" name="id_talla"></select>
-                </div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer bg-light">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-warning" id="btnGuardarCambios">Guardar Cambios</button>
+                <button type="button" class="btn btn-warning text-white px-4" id="btnGuardarCambios">Guardar Cambios</button>
             </div>
         </div>
     </div>
@@ -147,11 +184,6 @@
 <?php echo $this->endSection(); ?>
 <?php echo $this->section('scripts'); ?>
 <script>
-    window.onload = function() {
-        listarTonos('#tonoProducto_crear');
-        listarTallas('#tallaProducto_crear');
-    };
-
     let tabla; // Declara la variable 'tabla' aquí para que sea global
     $(document).ready(function() {
         tabla = $('#tablaMisProductos').DataTable({
@@ -166,10 +198,7 @@
                     data: 'id_producto'
                 },
                 {
-                    data: 'tono'
-                },
-                {
-                    data: 'talla'
+                    data: 'nombre'
                 },
                 {
                     data: 'descripcion'
@@ -211,11 +240,8 @@
                     if (response && response.success && response.data) {
                         const producto = response.data;
                         
-                        // Llenar los selects y luego el resto del formulario
-                        listarTonos('#tonoProducto_actualizar', producto.id_tono);
-                        listarTallas('#tallaProducto_actualizar', producto.id_talla);
-
                         $('#id_producto_actualizar').val(producto.id_producto);
+                        $('#nombreProducto_actualizar').val(producto.nombre);
                         $('#precioUnitario_actualizar').val(producto.precio_unitario);
                         $('#descripcion_actualizar').val(producto.descripcion);
 
@@ -247,10 +273,11 @@
             const idProducto = checkboxSeleccionado.val();
             const modal = new bootstrap.Modal(document.getElementById('modalEliminar'));
             modal.show();
+            console.log(idProducto);
 
             $('#btnConfirmarEliminar').off('click').on('click', function() {
                 $.ajax({
-                    url: `<?= base_url('eliminarProducto/') ?>/${idProducto}`,
+                    url: `<?= base_url('eliminarProducto') ?>/${encodeURIComponent(idProducto)}`,
                     type: 'POST',
                     dataType: 'json',
                     success: function(response) {
@@ -261,8 +288,12 @@
                             toast(response.message || 'Error al eliminar el producto.');
                         }
                     },
-                    error: function() {
-                        toast('Error al contactar al servidor.');
+                    error: function(xhr) {
+                        let mensaje = 'Error al contactar al servidor.';
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            mensaje = xhr.responseJSON.message;
+                        }
+                        toast(mensaje);
                     },
                     complete: function() {
                         modal.hide();
@@ -272,69 +303,14 @@
         });
     });
 
-    function listarTonos(selector, selectedId = null) {
-
-        const url = '<?= base_url('listaTono') ?>';
-        fetch(url)
-            .then(response => response.json())
-            .then(respuesta => {
-                if (respuesta.success) {
-                    let select = document.querySelector(selector);
-                    select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
-                    respuesta.data.forEach(tono => {
-                        let option = document.createElement('option');
-                        option.value = tono.id_tono;
-                        option.textContent = tono.descripcion;
-                        select.appendChild(option);
-                    });
-                    if (selectedId) {
-                        select.value = selectedId;
-                    }
-                } else {
-                    alert('Error al cargar los tonos.')
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }
-
-    function listarTallas(selector, selectedId = null) {
-
-        const url = '<?= base_url('listaTalla') ?>';
-        fetch(url)
-            .then(response => response.json())
-            .then(respuesta => {
-                if (respuesta.success) {
-                    let select = document.querySelector(selector);
-                    select.innerHTML = '<option value="" selected disabled>Seleccione...</option>';
-                    respuesta.data.forEach(talla => {
-                        let option = document.createElement('option');
-                        option.value = talla.id_talla;
-                        option.textContent = talla.descripcion;
-                        select.appendChild(option);
-                    });
-                    if (selectedId) {
-                        select.value = selectedId;
-                    }
-                } else {
-                    alert('Error al cargar las tallas.')
-                }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }
-
     function CrearProducto() {
         const url = '<?= base_url('crearProducto'); ?>';
         let idProducto = document.getElementById('idProducto_crear').value;
-        let tonoProducto = document.getElementById('tonoProducto_crear').value;
-        let tallaProducto = document.getElementById('tallaProducto_crear').value;
+        let nombreProducto = document.getElementById('nombreProducto_crear').value;
         let descripcion = document.getElementById('descripcion_crear').value;
         let precioUnitario = document.getElementById('precioUnitario_crear').value;
 
-        if (idProducto === '' || tonoProducto === '' || tallaProducto === '' || descripcion === '' || precioUnitario === '') {
+        if (idProducto === '' || nombreProducto === '' || descripcion === '' || precioUnitario === '') {
             const mensaje = document.getElementById('resultado');
             mensaje.innerHTML = '<div class="alert alert-danger" role="alert">Por favor, complete todos los campos.</div>';
             return;
@@ -347,8 +323,7 @@
                 },
                 body: JSON.stringify({
                     idProducto: idProducto,
-                    tonoProducto: tonoProducto,
-                    tallaProducto: tallaProducto,
+                    nombre: nombreProducto,
                     descripcion: descripcion,
                     precioUnitario: precioUnitario
                 })
@@ -377,13 +352,12 @@
 
     function guardarCambios(idProducto) {
         const datosActualizar = {
-            id_tono: $('#tonoProducto_actualizar').val(),
-            id_talla: $('#tallaProducto_actualizar').val(),
+            nombre: $('#nombreProducto_actualizar').val(),
             descripcion: $('#descripcion_actualizar').val(),
             precio_unitario: $('#precioUnitario_actualizar').val()
         };
 
-        if (!datosActualizar.id_tono || !datosActualizar.id_talla || !datosActualizar.descripcion || !datosActualizar.precio_unitario) {
+        if (!datosActualizar.nombre || !datosActualizar.descripcion || !datosActualizar.precio_unitario) {
             toast('Por favor, complete todos los campos.');
             return;
         }
@@ -413,8 +387,7 @@
 
     function limpiarFormulario() {
         document.getElementById('idProducto_crear').value = '';
-        document.getElementById('tonoProducto_crear').value = '';
-        document.getElementById('tallaProducto_crear').value = '';
+        document.getElementById('nombreProducto_crear').value = '';
         document.getElementById('descripcion_crear').value = '';
         document.getElementById('precioUnitario_crear').value = '';
     }

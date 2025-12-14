@@ -26,7 +26,6 @@ class ListarProducto extends BaseController
 
     public function actualizarProducto($idProducto){
         $Producto = new Producto();
-
         // Obtener los datos del cuerpo de la solicitud JSON
         $json = $this->request->getJSON();
 
@@ -35,8 +34,7 @@ class ListarProducto extends BaseController
         }
 
         $data = [
-            'id_tono' => $json->id_tono,
-            'id_talla' => $json->id_talla,
+            'nombre' => $json->nombre,
             'descripcion' => $json->descripcion,
             'precio_unitario' => $json->precio_unitario
         ];
@@ -54,7 +52,8 @@ class ListarProducto extends BaseController
         if ($Producto->eliminarProducto($idProducto)) {
             return $this->response->setJSON(['success' => true, 'message' => 'Producto eliminado correctamente.']);
         }
-        return $this->response->setStatusCode(409)->setJSON(['success' => false, 'message' => 'No se puede eliminar el producto porque está asociado a un inventario.']);
+        return $this->response->setStatusCode(409)->setJSON(['success' => false, 'message' => 'No se puede eliminar: El producto tiene registros asociados (Ventas, Compras o Inventario).']);
+        return $this->response->setStatusCode(409)->setJSON(['success' => false, 'message' => 'No se puede eliminar: El producto tiene registros asociados (Ventas o Inventario).']);
     }
 
     public function ProductoParaLote(){

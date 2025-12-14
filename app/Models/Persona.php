@@ -20,8 +20,20 @@ class Persona extends Model
 
     public function insertarMiPersona($data){
         $builder = $this->db->table('persona');
-        $builder->insert($data);
-        return $this->db->insertID();
+        if ($builder->insert($data)) {
+            return $this->db->insertID();
+        }
+        return false;
+    }
+
+    public function buscarPorCiRif($ci_rif){
+        return $this->select('persona.*, pr.id_proveedor, pn.nombre, pn.apellido, pn.sexo, pj.razon_social, e.estatus as estatus_empleado')
+                    ->join('per_natural pn', 'persona.id_persona = pn.id_persona', 'left')
+                    ->join('per_juridica pj', 'persona.id_persona = pj.id_persona', 'left')
+                    ->join('empleado e', 'persona.id_persona = e.id_persona', 'left')
+                    ->join('proveedor pr', 'persona.id_persona = pr.id_persona', 'left')    
+                    ->where('persona.ci_rif', $ci_rif)
+                    ->first();
     }
 
     public function getCostureros(){

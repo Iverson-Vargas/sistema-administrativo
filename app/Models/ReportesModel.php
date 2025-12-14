@@ -101,6 +101,8 @@ class ReportesModel extends Model
         return $this->db->table('detalle_compra dc')
             ->select('dc.cantidad, dc.costo_unitario, COALESCE(p.descripcion, "Producto/Insumo eliminado") as producto_descripcion, dc.id_producto')
             ->join('producto p', 'p.id_producto = dc.id_producto', 'left')
+            ->select('dc.cantidad, dc.costo_unitario, COALESCE(mp.nombre, "Materia Prima eliminada") as producto_descripcion, dc.id_materia_prima')
+            ->join('materia_prima mp', 'mp.id_materia_prima = dc.id_materia_prima', 'left')
             ->where('dc.id_compra', $idCompra)
             ->get()
             ->getResultArray();

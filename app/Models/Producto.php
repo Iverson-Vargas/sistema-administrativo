@@ -12,8 +12,7 @@ class Producto extends Model
 
     protected $allowedFields = [
         'id_producto',
-        'id_tono',
-        'id_talla',
+        'nombre',
         'descripcion',
         'precio_unitario'
     ];
@@ -26,9 +25,7 @@ class Producto extends Model
     public function traerProductos(){
 
         $builder= $this->db->table('producto');
-        $builder->select('producto.* , to.descripcion as tono, ta.descripcion as talla');
-        $builder->join('tono to', 'producto.id_tono = to.id_tono', 'inner');
-        $builder->join('talla ta', 'producto.id_talla = ta.id_talla', 'inner');
+        $builder->select('producto.*');
         $query= $builder->get();
         return $query->getResultArray();
 
@@ -36,9 +33,7 @@ class Producto extends Model
 
     public function getOneProducto($idProducto){
         $builder = $this->db->table('producto');
-        $builder->select('producto.* , to.descripcion as tono, ta.descripcion as talla');
-        $builder->join('tono to', 'producto.id_tono = to.id_tono', 'inner');
-        $builder->join('talla ta', 'producto.id_talla = ta.id_talla', 'inner');
+        $builder->select('producto.*');
         $builder->where('producto.id_producto', $idProducto);
         $query = $builder->get();
         return $query->getRowArray();
@@ -52,6 +47,7 @@ class Producto extends Model
 
     public function eliminarProducto($idProducto){
         // Verificar si el producto está en uso en el inventario
+        // Si la tabla está vacía, countAllResults() devuelve 0, no genera error.
         $inventarioCheck = $this->db->table('inventario')->where('id_producto', $idProducto)->countAllResults();
 
         if ($inventarioCheck > 0) {
@@ -60,15 +56,18 @@ class Producto extends Model
         }
 
         // Si no está en uso, proceder con la eliminación
-        $builder = $this->db->table($this->table);
-        return $builder->where($this->primaryKey, $idProducto)->delete();
+        try {
+            $builder = $this->db->table($this->table);
+            return $builder->where($this->primaryKey, $idProducto)->delete();
+        } catch (\Exception $e) {
+            // Captura errores de integridad referencial (ej. si el producto está en ventas históricas)
+            return false;
+        }
     }
 
     public function ListarProductoParaLote(){
         $builder= $this->db->table('producto p');
-        $builder->select("p.id_producto, concat(p.descripcion , ' Color ' ,t.descripcion , ' Talla ' , ta.descripcion) as producto_descripcion");
-        $builder->join('tono t', 'p.id_tono = t.id_tono', 'inner');
-        $builder->join('talla ta', 'p.id_talla = ta.id_talla', 'inner');
+        $builder->select("p.id_producto, concat(p.nombre, ' - ', p.descripcion) as producto_descripcion");
         $query= $builder->get();
         return $query->getResultArray();
     }

@@ -10,20 +10,18 @@ class CreateProducto extends BaseController
     {
         $json = $this->request->getJSON();
         $idProducto = $json->idProducto ?? null;
-        $tonoProducto = $json->tonoProducto ?? null;
-        $tallaProducto = $json->tallaProducto ?? null;
+        $nombre = $json->nombre ?? null;
         $descripcion = $json->descripcion ?? null;
         $precioUnitario = $json->precioUnitario ?? null;
 
-        if(empty($idProducto) || empty($tonoProducto) ||  empty($tallaProducto) || empty($descripcion) || empty($precioUnitario)){
+        if(empty($idProducto) || empty($nombre) || empty($descripcion) || empty($precioUnitario)){
             return $this->response->setJSON(['success' => false, 'message' => 'Los datos no pueden estar vacíos']);
         }
 
         $datos = [
 
             'id_producto' => $idProducto,
-            'id_tono' => $tonoProducto,
-            'id_talla' => $tallaProducto,
+            'nombre' => $nombre,
             'descripcion' => $descripcion,
             'precio_unitario' => $precioUnitario
 
