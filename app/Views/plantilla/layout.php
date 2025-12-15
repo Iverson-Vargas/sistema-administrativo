@@ -18,6 +18,46 @@
   <script src="<?php echo base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
   <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>
   <script src="https://cdn.datatables.net/2.0.8/js/dataTables.bootstrap5.js"></script>
+
+  <style>
+    /* Estilos para mejorar la apariencia de los botones del sidebar */
+    .sidebar .nav-link {
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      margin: 4px 10px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sidebar .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+      transform: translateX(5px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      color: #fff !important;
+    }
+
+    .sidebar .nav-link svg {
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar .nav-link:hover svg {
+      transform: scale(1.2);
+    }
+
+    /* Ajuste para la barra de búsqueda y el perfil de usuario en el header */
+    @media (min-width: 768px) {
+      #navbarSearch {
+        width: auto !important;
+        flex-grow: 1;
+      }
+      /* Línea separadora sutil */
+      .user-info-separator {
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        height: 30px;
+        margin: 0 15px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -170,6 +210,18 @@
         placeholder="Search"
         aria-label="Search" />
     </div>
+
+    <!-- Información del Usuario (Visible en Desktop) -->
+    <div class="d-none d-md-flex align-items-center pe-4 text-white">
+      <div class="user-info-separator"></div>
+      <div class="d-flex flex-column align-items-end me-2" style="line-height: 1.2;">
+        <span class="fw-bold" style="font-size: 0.9rem;"><?= session('persona') ?? 'Usuario' ?></span>
+        <span class="badge bg-primary bg-opacity-75" style="font-size: 0.7rem;"><?= session('rol') ?? 'Rol' ?></span>
+      </div>
+      <div class="rounded-circle bg-secondary bg-opacity-50 d-flex justify-content-center align-items-center" style="width: 38px; height: 38px;">
+        <svg class="bi" width="20" height="20" fill="currentColor"><use xlink:href="#people"></use></svg>
+      </div>
+    </div>
   </header>
   <div class="container-fluid" style="height: calc(100vh - 48px);">
     <div class="row" style="height: 100%;">
@@ -194,6 +246,7 @@
           <div
             class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto">
             <ul class="nav flex-column">
+              <?php if ($_SESSION['rol'] === 'Administrador' || $_SESSION['rol'] === 'Vendedor' || $_SESSION['rol'] === 'Almacenista'): ?>
               <li class="nav-item">
                 <a
                   style="font-size: 20px;"
@@ -206,7 +259,8 @@
                   Home
                 </a>
               </li>
-
+              <?php endif; ?>
+              <?php if ($_SESSION['rol'] === 'Administrador' || $_SESSION['rol'] === 'Vendedor'): ?>
               <div class="nav-item">
                 <button style="font-size: 20px;" data-bs-toggle="collapse" data-bs-target="#venta" class="collapse nav-link d-flex align-items-center gap-2 text-white" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
@@ -221,7 +275,8 @@
                   </ul>
                 </div>
               </div>
-
+              <?php endif; ?>
+              <?php if ($_SESSION['rol'] === 'Administrador' || $_SESSION['rol'] === 'Almacenista'): ?>
               <div class="nav-item">
                 <button style="font-size: 20px;" data-bs-toggle="collapse" data-bs-target="#compra" class="collapse nav-link d-flex align-items-center gap-2 text-white" href="#">
                   <svg class="bi" aria-hidden="true">
@@ -236,7 +291,8 @@
                   </ul>
                 </div>
               </div>
-
+              <?php endif; ?>
+              <?php if ($_SESSION['rol'] === 'Administrador' || $_SESSION['rol'] === 'Almacenista'): ?>
               <div class="nav-item">
                 <button data-bs-toggle="collapse" data-bs-target="#produccion" style="font-size: 20px;" class="nav-link d-flex align-items-center gap-2 text-white" href="#">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16">
@@ -248,10 +304,12 @@
                   <ul class="collapse-content px-4">
                     <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/crearLote'); ?>">Lote</a>
                     <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/producto') ?>">Producto</a>
+                    <a style="font-size: 15px;" class="nav-link text-white" href="<?= base_url('/formulaProducto'); ?>">Formula para Producto</a>
                   </ul>
                 </div>
               </div>
-
+              <?php endif; ?>
+              <?php if ($_SESSION['rol'] === 'Administrador'): ?>
               <div class="nav-item">
                 <button data-bs-toggle="collapse" data-bs-target="#personal" style="font-size: 20px;" class="nav-link d-flex align-items-center gap-2 text-white" href="#">
                   <svg class="bi" aria-hidden="true">
@@ -268,8 +326,8 @@
                   </ul>
                 </div>
               </div>
-
-             <!-- PEGA ESTE NUEVO CÓDIGO EN LUGAR DEL ANTERIOR -->
+              <?php endif; ?>
+              <?php if ($_SESSION['rol'] === 'Administrador'): ?>
              <div class="nav-item">
                 <button data-bs-toggle="collapse" data-bs-target="#reportes" style="font-size: 20px;" class="nav-link d-flex align-items-center gap-2 text-white" href="#">
                   <svg class="bi" aria-hidden="true">
@@ -286,7 +344,7 @@
                   </ul>
                 </div>
               </div>
-            
+              <?php endif; ?>
             </ul>
             <hr class="my-3" />
             <ul class="nav flex-column mb-auto">

@@ -23,4 +23,12 @@ class MateriaPrima extends Model
         $builder->insert($data);
         return $this->db->insertID();
     }
+
+    public function getMateriasPrima()
+    {
+         $builder= $this->db->table('materia_prima');
+        $builder->select('materia_prima.*');
+        $query= $builder->get();
+        return $query->getResultArray();
+    }
 }

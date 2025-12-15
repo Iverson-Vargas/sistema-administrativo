@@ -34,7 +34,13 @@ $routes->get('listaLotes', 'CrearLoteInventario::obtenerLotes'); // Para el dash
 $routes->get('/listaEmpleados', 'ListarEmpleados::returnEmpleados');
 $routes->get('/getOneEmpleado/(:num)', 'ListarEmpleados::getOneEmpleado/$1');
 $routes->post('/actualizarEmpleado/(:num)', 'ListarEmpleados::actualizarEmpleado/$1');
-$routes->post('ventas/procesar', 'VentaController::procesarVenta'); // Nueva
+
+// Rutas para Crear Venta (Nuevo Controlador)
+$routes->post('crearVenta/buscarCliente', 'BuscarCliente::buscarPorCiRif');
+$routes->post('crearVenta/crearCliente', 'CrearCliente::CrearUnCliente');
+$routes->get('crearVenta/listarProductos', 'CrearVenta::listarProductosVenta');
+$routes->post('crearVenta/procesar', 'CrearVenta::generarVenta');
+
 $routes->get('ventas/listarDisponibles', 'VentaController::listarProductosDisponibles');
 $routes->post('crearProvedor', 'CrearProvedor::CrearUnProvedor');
 $routes->post('buscarProvedor', 'BuscarProvedor::buscarPorCiRif');
@@ -42,6 +48,9 @@ $routes->post('procesarCompra', 'CrearCompra::generarCompra');
 $routes->get('getOneProducto/(:segment)', 'ListarProducto::getOneProducto/$1');
 $routes->post('actualizarProducto/(:segment)', 'ListarProducto::actualizarProducto/$1');
 $routes->post('eliminarProducto/(:segment)', 'ListarProducto::eliminarProducto/$1');
+$routes->get('/formulaProducto', 'MostrarVistas::formulaProducto');
+$routes->get('listaMateriaPrima', 'ListarMateriaPrima::listarMateriaPrima');
+$routes->post('guardarFormula', 'CrearFormula::crearUnaFormula');
 
 // Rutas para Compras
 $routes->post('compra/procesar', 'CompraController::procesarCompra');

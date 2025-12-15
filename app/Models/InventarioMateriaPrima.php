@@ -23,4 +23,32 @@ class InventarioMateriaPrima extends Model
         $builder = $this->db->table('inventario_materia_prima');
         return $builder->insert($data); 
     }
+
+    public function descontarStock($idMateriaPrima, $cantidadRequerida)
+    {
+        // Buscar lotes disponibles (FIFO - Primero en entrar, primero en salir)
+        $lotesMp = $this->where('id_materia_prima', $idMateriaPrima)
+                        ->where('cantidad_disponible >', 0)
+                        ->orderBy('fecha_ingreso', 'ASC')
+                        ->findAll();
+
+        $pendienteDescontar = $cantidadRequerida;
+
+        foreach ($lotesMp as $loteMp) {
+            if ($pendienteDescontar <= 0) break;
+
+            $disponible = $loteMp['cantidad_disponible'];
+            $descontar = min($disponible, $pendienteDescontar);
+
+            // Actualizar lote MP
+            $nuevoDisponible = $disponible - $descontar;
+            $this->update($loteMp['id_inv_mp'], ['cantidad_disponible' => $nuevoDisponible]);
+
+            $pendienteDescontar -= $descontar;
+        }
+
+        if ($pendienteDescontar > 0) {
+            throw new \Exception("Stock insuficiente de Materia Prima ID: $idMateriaPrima. Faltan $pendienteDescontar unidades.");
+        }
+    }
 }

@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 
 <div class="container">
-    <div style="margin-bottom: 10px;" class="row mt-3">
+    <div style="margin-bottom: 25px;" class="row mt-3">
         <div class="col-md-12">
             <h3 class="text-center">Gestion de Usuarios</h3>
             <hr>

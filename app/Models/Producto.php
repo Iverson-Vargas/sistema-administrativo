@@ -67,7 +67,7 @@ class Producto extends Model
 
     public function ListarProductoParaLote(){
         $builder= $this->db->table('producto p');
-        $builder->select("p.id_producto, concat(p.nombre, ' - ', p.descripcion) as producto_descripcion");
+        $builder->select("p.id_producto, p.nombre, p.descripcion");
         $query= $builder->get();
         return $query->getResultArray();
     }

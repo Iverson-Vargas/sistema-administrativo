@@ -67,4 +67,8 @@ class MostrarVistas extends BaseController
     {
         return view('personal');
     }
+    public function formulaProducto(): string
+    {
+        return view('generarFormula');
+    }
 }

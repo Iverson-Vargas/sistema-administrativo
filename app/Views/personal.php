@@ -11,7 +11,7 @@
         </div>
 
 
-        <div class="tabla-scroll-vertical">
+        <div style="margin-bottom: 25px;" class="tabla-scroll-vertical">
 
             <table id="tablaPersonal" class="table table-striped table-bordered mt-3">
                 <thead>
